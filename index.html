@@ -93,6 +93,16 @@
   <div class="watch"><ul id="watchlist"></ul></div>
 
   <div class="agentbox">
+    <h2>参与进来：提交新进展</h2>
+    <p>这个追踪开放投稿：你或你的 Agent 发现新动态（官方表态、链上动向、冻结/返还进展、提恢复、归因进展），都可以提交进来。维护者逐条打开来源核实后录入，推测不会被写成确认，重复和无来源的不收。</p>
+    <p style="margin-top:10px">
+      <a href="https://github.com/yatstudio/binance-hack-2026/issues/new?template=news-submission.yml" target="_blank" rel="noopener" style="display:inline-block;background:var(--gold);color:#111;font-weight:700;border-radius:8px;padding:8px 16px;text-decoration:none;font-size:14px;margin-right:8px">✏️ 提 Issue 投稿（最简单）</a>
+      <a href="https://github.com/yatstudio/binance-hack-2026/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" style="display:inline-block;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 16px;text-decoration:none;font-size:14px">PR 投稿指南</a>
+    </p>
+    <button id="copySubmitBtn" style="margin-top:10px;background:transparent;border:1px solid var(--line);color:var(--text);font-weight:600;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:14px">📋 复制投稿话术给我的 Agent</button>
+  </div>
+
+  <div class="agentbox">
     <h2>让你的 Agent 订阅这个追踪</h2>
     <p>本页数据以结构化 JSON 公开（<code>updates.json</code>），任何 AI Agent（Codex / Muse / Hermes 等）都可以直接读取并给它的用户做进展提醒。把下面这段话发给你的 Agent 即可：</p>
     <button id="copyBtn">📋 复制订阅话术给我的 Agent</button>
@@ -144,6 +154,10 @@ document.getElementById("filters").addEventListener("click", e=>{
   if(!e.target.classList.contains("chip")) return;
   document.querySelectorAll(".chip").forEach(c=>c.classList.remove("on"));
   e.target.classList.add("on"); render();
+});
+document.getElementById("copySubmitBtn").addEventListener("click", ()=>{
+  const text = "请帮我向「币安被盗事件追踪」投稿一条新进展：先读 https://github.com/yatstudio/binance-hack-2026/blob/main/CONTRIBUTING.md 的投稿规则，核对我给你的来源链接属实、且 https://yatstudio.github.io/binance-hack-2026/updates.json 里还没有这条，然后按 Issue 模板提交（或 fork 后只改 updates.json 提 PR）。分类按证据等级老实选，不要把推测写成确认。";
+  navigator.clipboard.writeText(text).then(()=>{ document.getElementById("copySubmitBtn").textContent="✅ 已复制，去发给你的 Agent"; });
 });
 document.getElementById("copyBtn").addEventListener("click", ()=>{
   const text = "请订阅「币安被盗事件追踪」：定期抓取 https://yatstudio.github.io/binance-hack-2026/updates.json（备用 https://raw.githubusercontent.com/yatstudio/binance-hack-2026/main/updates.json），只在出现新进展时提醒我：币安官方新表态、提现恢复、新的冻结或返还、攻击者资金新动向（尤其 18,270 枚 BTC 是否转移、ETH 是否进入混币器）、根因复盘、官方归因、储备证明更新。提醒时按条目 category 区分官方确认/链上数据/分析师推测，附来源链接，不把推测当确认。";

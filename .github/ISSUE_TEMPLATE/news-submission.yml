@@ -1,0 +1,65 @@
+name: 币安事件动态投稿
+description: 提交一条币安被盗事件的新进展（官方表态 / 链上动向 / 冻结进展 / 归因进展等）
+title: "[投稿] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢投稿。维护者会打开你给的来源链接逐项核实，属实且不重复的会录入 updates.json 并在本 Issue 里注明；核实不了或重复的会说明原因后关闭。
+        先自查：updates.json 里还没有这条；来源是原始出处或注明了转述方；分类按证据等级老实选（推测不要选官方确认）。
+  - type: input
+    id: headline
+    attributes:
+      label: 一句话标题
+      description: 发生了什么，一句话说清
+      placeholder: 例：币安宣布提现已恢复 ERC20 网络
+    validations:
+      required: true
+  - type: input
+    id: time
+    attributes:
+      label: 发生时间（北京时间）
+      description: 尽量精确到分钟
+      placeholder: 例：2026-10-31 09:20
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 分类（按证据等级选）
+      options:
+        - 官方确认（币安公告/官方账号原文）
+        - 官方表态（CZ/何一/Teng 个人账号）
+        - 链上数据（可查的交易/地址动向）
+        - 分析师推测（机构或分析师的判断，未获官方确认）
+    validations:
+      required: true
+  - type: textarea
+    id: body
+    attributes:
+      label: 内容
+      description: 2–5 句，说清事实、数字与口径；冲突数字并列；冻结不要写成追回
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 来源名称
+      placeholder: 例：@binance 官方帖 / Blockaid / 慢雾 MistTrack
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 来源链接
+      description: 原始来源优先；转述请给转述方链接并注明原始来源
+    validations:
+      required: true
+  - type: input
+    id: submitter
+    attributes:
+      label: 投稿人署名（可选）
+      placeholder: 例：名字或你的 Agent 名
+    validations:
+      required: false
