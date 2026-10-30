@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-10-30T18:50:00+08:00"
+  "updated_at": "2026-10-30T19:20:00+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -23,7 +23,7 @@
    "value": "官方未归因"
   },
   "coverage": {
-   "detail": "币安官方确认已动用 SAFU；用户资金安全；何一称年收入足以覆盖、暂不卖 SPCX 股份",
+   "detail": "币安官方确认已动用 SAFU；用户资金安全；19:01 更新：已预留逾 $63.4 亿公司资金（$50 亿已为同类代币、余下市场/OTC 补齐，不含约 $30 亿冻结资产），已开始恢复用户资产，最终以公开储备证明验证；何一称年收入足以覆盖、暂不卖 SPCX 股份",
    "label": "赔付",
    "value": "SAFU + 公司资金全额承担"
   },
@@ -59,6 +59,22 @@
   }
  },
  "updates": [
+  {
+   "body": "币安发帖称已开始为受影响用户恢复资产，并继续与执法部门、发行方、链上情报公司及行业伙伴合作追踪、冻结、追回更多资金。币安称已预留逾 $63.4 亿公司资金弥补本次损失，其中 $50 亿已持有与被盗资产同类的代币，余下部分正通过市场与 OTC 渠道补齐；因部分代币流动性低、OTC 结算需时，这一步可能较久。该笔拨备不含已冻结/受保护资产（约 $30 亿冻结口径不变，仍在与伙伴及执法部门推进追回）。币安称将继续动用公司资源弥补已确认缺口，最终所有用户资金将通过公开储备证明验证。提现仍在安全改造期间暂停，未提前恢复。另据路透引述消息人士（经 PANews/Odaily 转述），币安正与美国 FBI 及特勤局合作调查本案，此为消息人士口径、非币安官方具名确认。",
+   "category": "官方确认",
+   "source": "币安 @binance（经 PANews / Odaily / The Defiant 转述）",
+   "time": "2026-10-30T19:01:00+08:00",
+   "title": "币安：已预留逾 $63.4 亿公司资金补亏、开始恢复用户资产",
+   "url": "https://thedefiant.io/news/hacks/binance-says-it-has-reserved-over-6-34-billion-to-cover-hack-losses"
+  },
+  {
+   "body": "Synthetix protocolDAO 称已追回被盗的约 840.57 万枚 SNX（PANews 折合约 $155 万），目前存放在 protocolDAO 的 Safe 多签钱包中，已通知币安、待币安正式请求后归还。链上显示该笔 SNX 于北京时间 15:03（07:03 UTC）自标注为“Binance Hot Wallet Exploiter 2”的地址转入 DAO 多签；披露时间为北京时间 18:53（The Defiant）。这是冻结之外的首笔协议方实际追回并待归还的资产，金额小，不改变约 $30 亿冻结总额口径。",
+   "category": "链上数据",
+   "source": "Synthetix protocolDAO（经 PANews / The Defiant）",
+   "time": "2026-10-30T18:53:00+08:00",
+   "title": "Synthetix 追回约 840 万枚被盗 SNX，待币安请求后归还",
+   "url": "https://thedefiant.io/news/hacks/synthetix-recovers-8-4-million-snx-stolen-in-binance-hack"
+  },
   {
    "body": "USDT0 在 Polygon 冻结攻击者钱包 618 万 USDT0（约 $618 万），此前曾暂停 TRON-以太坊跨链通道、事后已恢复；Pundi X Labs 应币安请求冻结黑客钱包内 3,747,276 枚 PUNDIX（约 $37 万），未发现其他已知黑客钱包持有 PUNDIX。两笔合计约 $655 万，不改变币安核实约 $3B 的冻结总额口径。",
    "category": "链上数据",
