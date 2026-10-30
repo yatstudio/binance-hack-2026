@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-10-30T18:16:00+08:00"
+  "updated_at": "2026-10-30T18:47:00+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -228,9 +228,9 @@
    "url": "https://www.techflowpost.com/article/34982"
   },
   {
-   "body": "04:24:23，Binance 14 热钱包（0x28C6…1d60）单笔转出 167,464.25 ETH、16.15 亿 USDT 及 60 余种代币（约 $2.5B）至 0x5227…2f8c。04:20 一笔交易打包 50 份 EIP-7702 授权（nonce 18,914,775–18,914,824，命中 18,914,809），清扫合约 0x63e8…6fAe。此前后 Binance 16、Hot Wallet 34 及 BTC（18,270.2 枚）、波场等多链钱包相继流出。",
+   "body": "04:24:23，Binance 14 热钱包（0x28C6…1d60）单笔转出 167,464.25 ETH、16.15 亿 USDT 及 60 余种代币（约 $2.5B）至 0x5227…2f8c。04:20 一笔交易打包 50 份 EIP-7702 授权（nonce 18,914,775–18,914,824，命中 18,914,809），清扫合约 0x63e8…6fAe。其前后 Binance 16 自行签名转出约 28,006 ETH；Hot Wallet 34 因把 Binance 14 列为 operator，攻击者借道其 execute/executeBatch 分两笔转走共 8.23 亿 USDC（7.8 亿 + 0.43 亿）；BTC（18,270.2 枚）、波场等多链钱包亦相继流出。委托未撤销前，币安自身归集程序继续往 Binance 14 送入资金并被反复清扫，直至 08:10 委托撤销。",
    "category": "链上数据",
-   "source": "Blockaid / TechFlow / Odaily",
+   "source": "Blockaid / TechFlow / Odaily / drk.vc 技术分析",
    "time": "2026-10-30T04:24:00+08:00",
    "title": "总攻：Binance 14 一笔被扫约 $2.5B",
    "url": "https://blockaid.io/blog/binance-55b-hack-using-advanced-ai-models-blockaid-detects-the-biggest-theft-in-crypto-history"
