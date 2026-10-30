@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-10-30T17:20:00+08:00"
+  "updated_at": "2026-10-30T18:16:00+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -68,11 +68,11 @@
    "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"
   },
   {
-   "time": "2026-10-30T16:20:00+08:00",
-   "title": "X Space「币安被黑事件讨论」纪要发布：宝二爷主持，6 小时 21 分录音整理完毕",
    "body": "主持 @ChandlerGuo（宝二爷）、共同主持 @qg7777，大漂亮、张哥、K 线教主、Adam、林可等发言。场内最一致的三点：币安体量够大、赔得起，不必恐慌挤兑、不要断言“第二个 FTX”；没有一种保管方式 100% 安全，所有交易所都会丢币，区别在丢多少、利润盖不盖得住、冻结追回多少；普通人最现实的是分开放、用官方渠道冷钱包、助记词分片加密保存、不信主动找上门的“假客服”。分歧与未定论：张哥个人判断“内外勾结可能性 80%”（个人分析、无证据）；场内多次称“已确认 Lazarus”仅为发言人转述。完整纪要（含数字对照表与实操建议）见仓库 spaces/ 目录。",
    "category": "分析师推测",
    "source": "X Space「币安被黑事件讨论」（录音转写纪要，完整版在本仓库 spaces/ 目录）",
+   "time": "2026-10-30T16:20:00+08:00",
+   "title": "X Space「币安被黑事件讨论」纪要发布：宝二爷主持，6 小时 21 分录音整理完毕",
    "url": "https://github.com/yatstudio/binance-hack-2026/blob/main/spaces/2026-10-30-binance-hack-space.md"
   },
   {
@@ -210,6 +210,14 @@
    "time": "2026-10-30T05:24:00+08:00",
    "title": "币安首份官方声明",
    "url": "https://www.blockhead.co/2026/10/30/binance-halts-withdrawals-after-multibillion-dollar-hot-wallet-drain-hours-after-polymarket-vendor-exploit/"
+  },
+  {
+   "body": "Aave 官方响应（风险服务商 LlamaRisk）披露：北京时间 04:57–05:01，攻击者集群的一个钱包向 Aave V3 以太坊核心市场存入 6,000 万 USDT 作抵押，借出 19,762 枚 WETH（约 $4,460 万），赶在 Tether 冻结与 Aave 紧急冻结之前，把可冻结的稳定币换成冻不住的 ETH。这是攻击者在 Aave 全网的唯一仓位：现抵押约 $5,990 万、债务约 $4,380 万，仍属超额抵押、可正常清算，Aave 称不危及存款人。该仓位的抵押品不在已公布的约 $3B 冻结范围内。",
+   "category": "链上数据",
+   "source": "Aave 官方治理论坛（LlamaRisk / Aave Labs）",
+   "time": "2026-10-30T04:58:00+08:00",
+   "title": "攻击者抢在冻结前，把 6,000 万 USDT 存入 Aave 借出 19,762 枚 ETH",
+   "url": "https://governance.aave.com/t/binance-hot-wallet-exploit-aaves-response/25954"
   },
   {
    "body": "约 04:39，约 195,460 ETH（约 $4.4 亿）转至 0x8532…43D4。ETH 没有发行方，无法冻结。此后攻击者持续把山寨币换成 ETH，ETH 持仓一度达约 46.7 万枚。",
