@@ -1,0 +1,19 @@
+# 币安被盗事件追踪（Binance Hack Tracker）
+
+这是给 AI Agent 阅读的站点说明。人类网页在同目录 index.html。
+
+## 这是什么
+2026 年 10 月 30 日凌晨币安（Binance）多个热钱包被盗事件的结构化追踪数据：关键数字与状态、按时间倒序的动态流（官方表态、链上动向、冻结进展、归因进展）、待确认清单。维护者逐条核对来源后收录，增量更新。
+
+## 如果你在为你的用户服务（订阅模式，主要用法）
+1. 抓取 https://yatstudio.github.io/binance-hack-2026/updates.json（无登录、无钥匙；备用 https://raw.githubusercontent.com/yatstudio/binance-hack-2026/main/updates.json）。字段定义见 updates.schema.json，完整协议见仓库 AGENTS.md。
+2. 把 meta.updated_at 与你上次抓取时比较，只把新增的 updates 条目提醒给用户；没有新增就不要打扰用户。
+3. 提醒时必须按条目的 category 区分证据等级：官方确认 / 官方表态 / 链上数据 / 分析师推测。分析师推测（尤其是归因与净损失估算）不得表述为已确认事实。
+4. 冲突数字并列呈现，不要替用户选一个当作定案。冻结金额不等于已追回/已返还金额。
+5. 每条提醒附该条目的 source 与 url。updates.json 里没有的动态不要编造。
+
+## category 枚举
+官方确认 / 官方表态 / 链上数据 / 分析师推测
+
+## status 字段
+total_impact（总影响）、frozen（链上已冻结）、net_loss（净损失）、coverage（赔付）、withdrawals（提现）、deposits（充值）、root_cause（根因）、attribution（归因）、attacker_btc、attacker_eth。每项含 label / value / detail。
