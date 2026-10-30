@@ -1,1 +1,240 @@
-{"meta":{"incident_date":"2026-10-30","note":"时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。","timezone":"Asia/Shanghai","title":"币安被盗事件追踪 · Binance Hack Tracker","updated_at":"2026-10-30T16:20:00+08:00"},"status":{"attacker_btc":{"detail":"约 $1.4B；大额 BTC 洗钱渠道有限，短期砸盘概率低","label":"攻击者 BTC","value":"18,270 枚未动"},"attacker_eth":{"detail":"已开始小额试探转移（17,260 枚），尚未确认进入混币器；ETH 无发行方、无法冻结","label":"攻击者 ETH","value":"约 48 万枚"},"attribution":{"detail":"TRM Labs、Chainalysis 均以高信心指向朝鲜 TraderTraitor/Lazarus；属情报机构判断，非官方结论","label":"归因","value":"官方未归因"},"coverage":{"detail":"币安官方确认已动用 SAFU；用户资金安全","label":"赔付","value":"SAFU + 公司资金全额承担"},"deposits":{"detail":"官方初调称充提均暂停；何一称充值正常运作","label":"充值","value":"口径不一"},"frozen":{"detail":"Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC 等","label":"链上已冻结（官方核实）","value":"约 $3.0B"},"net_loss":{"detail":"三种口径并存：略超 $1B（CZ 转述估算）/ 最大约 $2.64B（江卓尔推算）/ 约 $3.43B（余烬口径）","label":"净损失","value":"未定案"},"root_cause":{"detail":"官方称攻击者进入服务容器提交未授权提现交易，未发现私钥泄露证据；与链上 EIP-7702 授权如何衔接，待技术复盘","label":"根因（初步）","value":"DevOps 工程师笔记本被入侵"},"total_impact":{"detail":"多链毛流出各家口径 $5.5B–$6.36B","label":"总影响（币安官方口径）","value":"约 $6.3B"},"withdrawals":{"detail":"何一称 48 小时内开始逐步恢复（约 11-01 中午起）；主账号尚未跟进确认","label":"提现","value":"暂停中"}},"updates":[{"body":"Teng 表态称攻击并非“单一工程师权限/一人一键操作”，而是更复杂的过程，调查现阶段未归因于任何个人；口径维持 DevOps 笔记本被入侵、无私钥泄露证据，SAFU+公司资金全额赔付，已撤销受影响地址授权，调查后发技术复盘并更新储备证明。","category":"官方确认","source":"Richard Teng（经 Cointelegraph 直播 / Lookonchain 转述）","time":"2026-10-30T15:47:00+08:00","title":"CEO Richard Teng 澄清：不是单一工程师一人操作","url":"https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"},{"body":"涉案地址转出 17,260 ETH（约 $3,882 万）至新钱包 0x03b…020ea，转后仍持有约 480,720 ETH（约 $10.8 亿）。OnchainLens 称意图经混币器清洗，Arkham 称是否流入 Tornado Cash 尚待观察，尚未确认已进入混币器。大头未动，BTC 仍未动。","category":"链上数据","source":"OnchainLens / Arkham（经 BlockBeats、Lookonchain）","time":"2026-10-30T13:36:00+08:00","title":"攻击者 ETH 开始小额试探转移","url":"https://www.tokenpost.com/news/technology/44305"},{"body":"慢雾 MistTrack 监测到被盗 TRX 经 Bitget Wallet 跨链桥转移，目标地址 0xCd684D22E8C3600E6eE93B5a57923c3b517f3396 此前出现在 Phemex 被盗案链条中（该案此前被认定涉朝鲜黑客）。共用目标地址不能证明同一行为人，仅为归因提供新的链上佐证。","category":"链上数据","source":"慢雾 MistTrack（经 ChainCatcher / The Defiant）","time":"2026-10-30T13:30:00+08:00","title":"被盗 TRX 进入洗钱环节，与 Phemex 案地址产生关联","url":"https://thedefiant.io/news/hacks/misttrack-links-binance-theft-route-to-phemex-connected-address"},{"body":"1inch 已在 dApp、钱包、API 屏蔽攻击相关地址（联合 ZeroShadow、SEAL 911、TRM Labs）。但被盗 1INCH 为标准 ERC-20、无冻结/黑名单功能，无法链上冻结，只能配合追索。属协议方动作，非新增冻结额。","category":"链上数据","source":"1inch 官方（经 Cointime / BlockBeats）","time":"2026-10-30T13:00:00+08:00","title":"1inch 屏蔽攻击相关地址，但 1INCH 本身冻不住","url":"https://www.cointime.ai/flash-news/1inch-blocks-addresses-related-to-binance-attack-16510"},{"body":"何一发布 Service Update：团队正在升级提现服务及相关地址管控，预计未来 48 小时内开始逐步恢复提现；并称充值服务未受影响、正常运作。这是事件后首个恢复时间表。但“充值正常”与币安凌晨“全部充提暂停”措辞有出入，主账号 @binance 尚未跟进确认。","category":"官方表态","source":"何一 @heyibinance（经 FinanceFeeds / TokenPost / The Defiant / 新浪财经转述）","time":"2026-10-30T12:17:00+08:00","title":"何一：预计 48 小时内开始逐步恢复提现","url":"https://financefeeds.com/binance-withdrawals-resume-48-hours/"},{"body":"TRM Labs 以“高信心”将事件归因朝鲜 TraderTraitor（Lazarus 旗下），其口径：10 链共 $6.36B、冻结约 $2.7B（截点 08:30，与官方 $3B 差异为时点/口径）。Chainalysis 发言人对 CNN 亦称高信心指向朝鲜，其被盗估算约 $59.12 亿；新加坡 Pangolin Intelligence 同向。币安官方仍未归因。","category":"分析师推测","source":"TRM Labs 博客 / CNN / CoinDesk","time":"2026-10-30T11:20:00+08:00","title":"TRM Labs、Chainalysis 相继高信心归因朝鲜","url":"https://www.trmlabs.com/resources/blog/north-korea-steals-usd-6-36-billion-from-binance-in-the-largest-hack-in-history"},{"body":"Onchain Lens 称攻击者把超 $1B 的 ETH 转至新钱包，疑为混币清洗做准备，并开始抛售 STRK（监测转述，未独立核实）。First Digital 冻结关联地址约 $340 万 FDUSD（Specter/TokenPost）。","category":"链上数据","source":"Onchain Lens（经 PANews）/ TokenPost","time":"2026-10-30T10:50:00+08:00","title":"攻击者转移超 $1B ETH 至新钱包；FDUSD 新增冻结约 $340 万","url":"https://www.panewslab.com/zh"},{"body":"币安公布初步根因：一名 DevOps 工程师笔记本被入侵，攻击者进入服务容器并提交未经授权的提现交易；未发现钱包私钥泄露证据。总影响约 $6.3B，链上已冻结约 $3B；用 SAFU 基金+公司资金承担全部损失，用户资金安全；充值与提现均暂停；已撤销受影响地址授权；补救完成后发布更新版储备证明。官方未做归因，详细技术复盘待调查完成后发布。","category":"官方确认","source":"@binance 官方帖 + 币安公告页","time":"2026-10-30T10:25:00+08:00","title":"币安官方初步调查：DevOps 笔记本被入侵，总影响约 $6.3B","url":"https://www.binance.com/en/support/announcement/detail/c5a8729a97ac486d963784d96c5642d7"},{"body":"神鱼（Cobo 联创）复盘称黑客急于把 USDT 换成 ETH 损耗约 $7,000 万；近 46 万 ETH 停在新地址、冻不住。其“授权是币安自己签的”与官方“无私钥泄露”不必然冲突：签名能力被滥用不等于密钥被偷。","category":"分析师推测","source":"神鱼（经 PANewsCN 转述）","time":"2026-10-30T09:12:00+08:00","title":"神鱼复盘：黑客急换 USDT→ETH 亏约 $7,000 万","url":"https://x.com/PANewsCN/status/2115974973303202014"},{"body":"币安更新冻结进度：经核实链上冻结总额约 $3B（前一口径为 $2.54B），继续追踪冻结中。冻结指黑客无法动用，不等于已追回返还。","category":"官方确认","source":"币安（经 PANews / FinanceFeeds / Reuters）","time":"2026-10-30T08:52:00+08:00","title":"币安更新：经核实冻结总额约 $3B","url":"https://financefeeds.com/binance-hack-3-billion-frozen/"},{"body":"攻击者抛压使 Uniswap 上 ETH 被买到 $2,560–$2,750，Aave 预言机价 $2,250–$2,290，价差 15–30% 持续约 1 小时；套利者经 Aave 借 ETH 高卖，第一名赚约 $347 万、前十合计约 $636 万。窗口随后关闭，Aave 已冻结主网 V3。此机会已结束、不可追。","category":"链上数据","source":"社区复盘（经 @0xNaiXi / ChainCatcher）","time":"2026-10-30T08:41:00+08:00","title":"Aave 套利复盘：价差窗口约 1 小时，第一名赚约 $347 万","url":"https://x.com/0xNaiXi/status/2115967318274789609"},{"body":"链上显示被盗的 Binance 14 热钱包已撤销 EIP-7702 授权。在此之前，委托持续生效期间曾发生补扫。","category":"链上数据","source":"链上记录（经 Odaily / ChainCatcher）","time":"2026-10-30T08:10:00+08:00","title":"Binance 14 的 EIP-7702 委托被撤销","url":"https://www.odaily.news/zh-TW/post/5213662"},{"body":"针对流传的 $1.8B 等数字，币安澄清经核实冻结总额为 $2.54B，称只公布确认数字、可能继续增加。","category":"官方确认","source":"币安（经 FinanceFeeds）","time":"2026-10-30T07:22:00+08:00","title":"币安澄清冻结总额 $2.54B","url":"https://financefeeds.com/binance-hack-3-billion-frozen/"},{"body":"工程师 Justin Kalland 观察：攻击者钱包 0xAa24…54a0 收到 1.75 亿 USDT、已有足够 gas 后，仍使用 MetaMask Gas Station（付 127.67 USDT，垫付 ETH 与后两笔 gas 上限精确到 wei 吻合），可能经 MetaMask Sentinel 留下含 IP 的链下记录。属个人观察+推测，未获 MetaMask 或官方确认。","category":"分析师推测","source":"Justin Kalland @justinkalland（PANewsCN 转述）","time":"2026-10-30T07:20:00+08:00","title":"线索：攻击者疑误用 MetaMask Gas Station，或留下 IP 记录","url":"https://x.com/justinkalland/status/2115946980665151955"},{"body":"币安暂停 Binance Alpha 交易（涉现货钱包买币、Alpha 即时交易、CEX 买预测市场）。","category":"官方确认","source":"币安（经 PANews）","time":"2026-10-30T07:06:00+08:00","title":"Binance Alpha 交易暂停","url":"https://www.panewslab.com/zh"},{"body":"币安暂停多网络提现，其后表述改为“安全检查完成、问题完全解决后恢复”。市场方面：BTC 一度跌至约 $77,054、ETH 约 $2,215、BNB 跌 8–9%；一小时全网爆仓约 $6.277 亿。","category":"官方确认","source":"币安发言人（经 TechCrunch）/ CoinDesk / Coinglass","time":"2026-10-30T06:15:00+08:00","title":"多网络提现暂停","url":"https://www.coindesk.com/business/2026/10/29/potential-multi-billion-binance-hack-hitting-crypto-markets"},{"body":"币安称注意到潜在安全问题、正在调查；措辞经多次编辑后为“用户资金完全安全”。此前约 05:15 CZ 首帖称用户资金安全、“看起来是币安被黑”。","category":"官方确认","source":"@binance / @cz_binance（经 Blockhead）","time":"2026-10-30T05:24:00+08:00","title":"币安首份官方声明","url":"https://www.blockhead.co/2026/10/30/binance-halts-withdrawals-after-multibillion-dollar-hot-wallet-drain-hours-after-polymarket-vendor-exploit/"},{"body":"约 04:39，约 195,460 ETH（约 $4.4 亿）转至 0x8532…43D4。ETH 没有发行方，无法冻结。此后攻击者持续把山寨币换成 ETH，ETH 持仓一度达约 46.7 万枚。","category":"链上数据","source":"TechFlow / PANews 链上追踪","time":"2026-10-30T04:39:00+08:00","title":"约 195,460 ETH 转入第二地址","url":"https://www.techflowpost.com/article/34982"},{"body":"04:24:23，Binance 14 热钱包（0x28C6…1d60）单笔转出 167,464.25 ETH、16.15 亿 USDT 及 60 余种代币（约 $2.5B）至 0x5227…2f8c。04:20 一笔交易打包 50 份 EIP-7702 授权（nonce 18,914,775–18,914,824，命中 18,914,809），清扫合约 0x63e8…6fAe。此前后 Binance 16、Hot Wallet 34 及 BTC（18,270.2 枚）、波场等多链钱包相继流出。","category":"链上数据","source":"Blockaid / TechFlow / Odaily","time":"2026-10-30T04:24:00+08:00","title":"总攻：Binance 14 一笔被扫约 $2.5B","url":"https://blockaid.io/blog/binance-55b-hack-using-advanced-ai-models-blockaid-detects-the-biggest-theft-in-crypto-history"},{"body":"10-28 起攻击者主钱包多次从 Tornado Cash 各取约 0.1 ETH 作 gas 并以自有钱包演练委托+清扫；10-29 23:59 部署最终清扫合约 0x63e842B054Bd624a465454D533C33F573e9c6fAe。发起地址 0x7C8601d4645b93cea45F71e118A729332e6B5CA0。","category":"链上数据","source":"TechFlow / Blockaid / 神鱼","time":"2026-10-29T23:59:00+08:00","title":"攻击准备：Tornado Cash 备 gas、演练、部署清扫合约","url":"https://www.techflowpost.com/article/34982"}],"watchlist":["币安详细技术复盘：DevOps 入口与 EIP-7702 的 50 份授权如何衔接","最终净损失定案与冻结资产返还进度（冻结≠返还）","提现实际开始恢复的时间与币种/网络顺序；充值口径统一","18,270 枚 BTC 是否开始转移；ETH 是否进入 Tornado Cash 等混币器","更新版储备证明（PoR）：被盗钱包储备是否已补回","MetaMask 是否回应 Gas Station / Sentinel 日志线索","官方或执法机构正式归因"]}
+{
+ "meta": {
+  "incident_date": "2026-10-30",
+  "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
+  "timezone": "Asia/Shanghai",
+  "title": "币安被盗事件追踪 · Binance Hack Tracker",
+  "updated_at": "2026-10-30T17:15:00+08:00"
+ },
+ "status": {
+  "attacker_btc": {
+   "detail": "约 $1.4B；大额 BTC 洗钱渠道有限，短期砸盘概率低",
+   "label": "攻击者 BTC",
+   "value": "18,270 枚未动"
+  },
+  "attacker_eth": {
+   "detail": "已开始小额试探转移（17,260 枚），尚未确认进入混币器；ETH 无发行方、无法冻结",
+   "label": "攻击者 ETH",
+   "value": "约 48 万枚"
+  },
+  "attribution": {
+   "detail": "TRM Labs、Chainalysis 均以高信心指向朝鲜 TraderTraitor/Lazarus；属情报机构判断，非官方结论",
+   "label": "归因",
+   "value": "官方未归因"
+  },
+  "coverage": {
+   "detail": "币安官方确认已动用 SAFU；用户资金安全",
+   "label": "赔付",
+   "value": "SAFU + 公司资金全额承担"
+  },
+  "deposits": {
+   "detail": "官方初调称充提均暂停；何一称充值正常运作",
+   "label": "充值",
+   "value": "口径不一"
+  },
+  "frozen": {
+   "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC 等",
+   "label": "链上已冻结（官方核实）",
+   "value": "约 $3.0B"
+  },
+  "net_loss": {
+   "detail": "三种口径并存：略超 $1B（CZ 转述估算）/ 最大约 $2.64B（江卓尔推算）/ 约 $3.43B（余烬口径）",
+   "label": "净损失",
+   "value": "未定案"
+  },
+  "root_cause": {
+   "detail": "官方称攻击者进入服务容器提交未授权提现交易，未发现私钥泄露证据；与链上 EIP-7702 授权如何衔接，待技术复盘",
+   "label": "根因（初步）",
+   "value": "DevOps 工程师笔记本被入侵"
+  },
+  "total_impact": {
+   "detail": "多链毛流出各家口径 $5.5B–$6.36B",
+   "label": "总影响（币安官方口径）",
+   "value": "约 $6.3B"
+  },
+  "withdrawals": {
+   "detail": "何一称 48 小时内开始逐步恢复（约 11-01 中午起）；主账号尚未跟进确认",
+   "label": "提现",
+   "value": "暂停中"
+  }
+ },
+ "updates": [
+  {
+   "time": "2026-10-30T16:20:00+08:00",
+   "title": "X Space「币安被黑事件讨论」纪要发布：宝二爷主持，6 小时 21 分录音整理完毕",
+   "body": "主持 @ChandlerGuo（宝二爷）、共同主持 @qg7777，大漂亮、张哥、K 线教主、Adam、林可等发言。场内最一致的三点：币安体量够大、赔得起，不必恐慌挤兑、不要断言“第二个 FTX”；没有一种保管方式 100% 安全，所有交易所都会丢币，区别在丢多少、利润盖不盖得住、冻结追回多少；普通人最现实的是分开放、用官方渠道冷钱包、助记词分片加密保存、不信主动找上门的“假客服”。分歧与未定论：张哥个人判断“内外勾结可能性 80%”（个人分析、无证据）；场内多次称“已确认 Lazarus”仅为发言人转述。完整纪要（含数字对照表与实操建议）见仓库 spaces/ 目录。",
+   "category": "分析师推测",
+   "source": "X Space「币安被黑事件讨论」（录音转写纪要，完整版在本仓库 spaces/ 目录）",
+   "url": "https://github.com/yatstudio/binance-hack-2026/blob/main/spaces/2026-10-30-binance-hack-space.md"
+  },
+  {
+   "body": "Teng 表态称攻击并非“单一工程师权限/一人一键操作”，而是更复杂的过程，调查现阶段未归因于任何个人；口径维持 DevOps 笔记本被入侵、无私钥泄露证据，SAFU+公司资金全额赔付，已撤销受影响地址授权，调查后发技术复盘并更新储备证明。",
+   "category": "官方确认",
+   "source": "Richard Teng（经 Cointelegraph 直播 / Lookonchain 转述）",
+   "time": "2026-10-30T15:47:00+08:00",
+   "title": "CEO Richard Teng 澄清：不是单一工程师一人操作",
+   "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"
+  },
+  {
+   "body": "涉案地址转出 17,260 ETH（约 $3,882 万）至新钱包 0x03b…020ea，转后仍持有约 480,720 ETH（约 $10.8 亿）。OnchainLens 称意图经混币器清洗，Arkham 称是否流入 Tornado Cash 尚待观察，尚未确认已进入混币器。大头未动，BTC 仍未动。",
+   "category": "链上数据",
+   "source": "OnchainLens / Arkham（经 BlockBeats、Lookonchain）",
+   "time": "2026-10-30T13:36:00+08:00",
+   "title": "攻击者 ETH 开始小额试探转移",
+   "url": "https://www.tokenpost.com/news/technology/44305"
+  },
+  {
+   "body": "慢雾 MistTrack 监测到被盗 TRX 经 Bitget Wallet 跨链桥转移，目标地址 0xCd684D22E8C3600E6eE93B5a57923c3b517f3396 此前出现在 Phemex 被盗案链条中（该案此前被认定涉朝鲜黑客）。共用目标地址不能证明同一行为人，仅为归因提供新的链上佐证。",
+   "category": "链上数据",
+   "source": "慢雾 MistTrack（经 ChainCatcher / The Defiant）",
+   "time": "2026-10-30T13:30:00+08:00",
+   "title": "被盗 TRX 进入洗钱环节，与 Phemex 案地址产生关联",
+   "url": "https://thedefiant.io/news/hacks/misttrack-links-binance-theft-route-to-phemex-connected-address"
+  },
+  {
+   "body": "1inch 已在 dApp、钱包、API 屏蔽攻击相关地址（联合 ZeroShadow、SEAL 911、TRM Labs）。但被盗 1INCH 为标准 ERC-20、无冻结/黑名单功能，无法链上冻结，只能配合追索。属协议方动作，非新增冻结额。",
+   "category": "链上数据",
+   "source": "1inch 官方（经 Cointime / BlockBeats）",
+   "time": "2026-10-30T13:00:00+08:00",
+   "title": "1inch 屏蔽攻击相关地址，但 1INCH 本身冻不住",
+   "url": "https://www.cointime.ai/flash-news/1inch-blocks-addresses-related-to-binance-attack-16510"
+  },
+  {
+   "body": "何一发布 Service Update：团队正在升级提现服务及相关地址管控，预计未来 48 小时内开始逐步恢复提现；并称充值服务未受影响、正常运作。这是事件后首个恢复时间表。但“充值正常”与币安凌晨“全部充提暂停”措辞有出入，主账号 @binance 尚未跟进确认。",
+   "category": "官方表态",
+   "source": "何一 @heyibinance（经 FinanceFeeds / TokenPost / The Defiant / 新浪财经转述）",
+   "time": "2026-10-30T12:17:00+08:00",
+   "title": "何一：预计 48 小时内开始逐步恢复提现",
+   "url": "https://financefeeds.com/binance-withdrawals-resume-48-hours/"
+  },
+  {
+   "body": "TRM Labs 以“高信心”将事件归因朝鲜 TraderTraitor（Lazarus 旗下），其口径：10 链共 $6.36B、冻结约 $2.7B（截点 08:30，与官方 $3B 差异为时点/口径）。Chainalysis 发言人对 CNN 亦称高信心指向朝鲜，其被盗估算约 $59.12 亿；新加坡 Pangolin Intelligence 同向。币安官方仍未归因。",
+   "category": "分析师推测",
+   "source": "TRM Labs 博客 / CNN / CoinDesk",
+   "time": "2026-10-30T11:20:00+08:00",
+   "title": "TRM Labs、Chainalysis 相继高信心归因朝鲜",
+   "url": "https://www.trmlabs.com/resources/blog/north-korea-steals-usd-6-36-billion-from-binance-in-the-largest-hack-in-history"
+  },
+  {
+   "body": "Onchain Lens 称攻击者把超 $1B 的 ETH 转至新钱包，疑为混币清洗做准备，并开始抛售 STRK（监测转述，未独立核实）。First Digital 冻结关联地址约 $340 万 FDUSD（Specter/TokenPost）。",
+   "category": "链上数据",
+   "source": "Onchain Lens（经 PANews）/ TokenPost",
+   "time": "2026-10-30T10:50:00+08:00",
+   "title": "攻击者转移超 $1B ETH 至新钱包；FDUSD 新增冻结约 $340 万",
+   "url": "https://www.panewslab.com/zh"
+  },
+  {
+   "body": "币安公布初步根因：一名 DevOps 工程师笔记本被入侵，攻击者进入服务容器并提交未经授权的提现交易；未发现钱包私钥泄露证据。总影响约 $6.3B，链上已冻结约 $3B；用 SAFU 基金+公司资金承担全部损失，用户资金安全；充值与提现均暂停；已撤销受影响地址授权；补救完成后发布更新版储备证明。官方未做归因，详细技术复盘待调查完成后发布。",
+   "category": "官方确认",
+   "source": "@binance 官方帖 + 币安公告页",
+   "time": "2026-10-30T10:25:00+08:00",
+   "title": "币安官方初步调查：DevOps 笔记本被入侵，总影响约 $6.3B",
+   "url": "https://www.binance.com/en/support/announcement/detail/c5a8729a97ac486d963784d96c5642d7"
+  },
+  {
+   "body": "神鱼（Cobo 联创）复盘称黑客急于把 USDT 换成 ETH 损耗约 $7,000 万；近 46 万 ETH 停在新地址、冻不住。其“授权是币安自己签的”与官方“无私钥泄露”不必然冲突：签名能力被滥用不等于密钥被偷。",
+   "category": "分析师推测",
+   "source": "神鱼（经 PANewsCN 转述）",
+   "time": "2026-10-30T09:12:00+08:00",
+   "title": "神鱼复盘：黑客急换 USDT→ETH 亏约 $7,000 万",
+   "url": "https://x.com/PANewsCN/status/2115974973303202014"
+  },
+  {
+   "body": "币安更新冻结进度：经核实链上冻结总额约 $3B（前一口径为 $2.54B），继续追踪冻结中。冻结指黑客无法动用，不等于已追回返还。",
+   "category": "官方确认",
+   "source": "币安（经 PANews / FinanceFeeds / Reuters）",
+   "time": "2026-10-30T08:52:00+08:00",
+   "title": "币安更新：经核实冻结总额约 $3B",
+   "url": "https://financefeeds.com/binance-hack-3-billion-frozen/"
+  },
+  {
+   "body": "攻击者抛压使 Uniswap 上 ETH 被买到 $2,560–$2,750，Aave 预言机价 $2,250–$2,290，价差 15–30% 持续约 1 小时；套利者经 Aave 借 ETH 高卖，第一名赚约 $347 万、前十合计约 $636 万。窗口随后关闭，Aave 已冻结主网 V3。此机会已结束、不可追。",
+   "category": "链上数据",
+   "source": "社区复盘（经 @0xNaiXi / ChainCatcher）",
+   "time": "2026-10-30T08:41:00+08:00",
+   "title": "Aave 套利复盘：价差窗口约 1 小时，第一名赚约 $347 万",
+   "url": "https://x.com/0xNaiXi/status/2115967318274789609"
+  },
+  {
+   "body": "链上显示被盗的 Binance 14 热钱包已撤销 EIP-7702 授权。在此之前，委托持续生效期间曾发生补扫。",
+   "category": "链上数据",
+   "source": "链上记录（经 Odaily / ChainCatcher）",
+   "time": "2026-10-30T08:10:00+08:00",
+   "title": "Binance 14 的 EIP-7702 委托被撤销",
+   "url": "https://www.odaily.news/zh-TW/post/5213662"
+  },
+  {
+   "body": "针对流传的 $1.8B 等数字，币安澄清经核实冻结总额为 $2.54B，称只公布确认数字、可能继续增加。",
+   "category": "官方确认",
+   "source": "币安（经 FinanceFeeds）",
+   "time": "2026-10-30T07:22:00+08:00",
+   "title": "币安澄清冻结总额 $2.54B",
+   "url": "https://financefeeds.com/binance-hack-3-billion-frozen/"
+  },
+  {
+   "body": "工程师 Justin Kalland 观察：攻击者钱包 0xAa24…54a0 收到 1.75 亿 USDT、已有足够 gas 后，仍使用 MetaMask Gas Station（付 127.67 USDT，垫付 ETH 与后两笔 gas 上限精确到 wei 吻合），可能经 MetaMask Sentinel 留下含 IP 的链下记录。属个人观察+推测，未获 MetaMask 或官方确认。",
+   "category": "分析师推测",
+   "source": "Justin Kalland @justinkalland（PANewsCN 转述）",
+   "time": "2026-10-30T07:20:00+08:00",
+   "title": "线索：攻击者疑误用 MetaMask Gas Station，或留下 IP 记录",
+   "url": "https://x.com/justinkalland/status/2115946980665151955"
+  },
+  {
+   "body": "币安暂停 Binance Alpha 交易（涉现货钱包买币、Alpha 即时交易、CEX 买预测市场）。",
+   "category": "官方确认",
+   "source": "币安（经 PANews）",
+   "time": "2026-10-30T07:06:00+08:00",
+   "title": "Binance Alpha 交易暂停",
+   "url": "https://www.panewslab.com/zh"
+  },
+  {
+   "body": "币安暂停多网络提现，其后表述改为“安全检查完成、问题完全解决后恢复”。市场方面：BTC 一度跌至约 $77,054、ETH 约 $2,215、BNB 跌 8–9%；一小时全网爆仓约 $6.277 亿。",
+   "category": "官方确认",
+   "source": "币安发言人（经 TechCrunch）/ CoinDesk / Coinglass",
+   "time": "2026-10-30T06:15:00+08:00",
+   "title": "多网络提现暂停",
+   "url": "https://www.coindesk.com/business/2026/10/29/potential-multi-billion-binance-hack-hitting-crypto-markets"
+  },
+  {
+   "body": "币安称注意到潜在安全问题、正在调查；措辞经多次编辑后为“用户资金完全安全”。此前约 05:15 CZ 首帖称用户资金安全、“看起来是币安被黑”。",
+   "category": "官方确认",
+   "source": "@binance / @cz_binance（经 Blockhead）",
+   "time": "2026-10-30T05:24:00+08:00",
+   "title": "币安首份官方声明",
+   "url": "https://www.blockhead.co/2026/10/30/binance-halts-withdrawals-after-multibillion-dollar-hot-wallet-drain-hours-after-polymarket-vendor-exploit/"
+  },
+  {
+   "body": "约 04:39，约 195,460 ETH（约 $4.4 亿）转至 0x8532…43D4。ETH 没有发行方，无法冻结。此后攻击者持续把山寨币换成 ETH，ETH 持仓一度达约 46.7 万枚。",
+   "category": "链上数据",
+   "source": "TechFlow / PANews 链上追踪",
+   "time": "2026-10-30T04:39:00+08:00",
+   "title": "约 195,460 ETH 转入第二地址",
+   "url": "https://www.techflowpost.com/article/34982"
+  },
+  {
+   "body": "04:24:23，Binance 14 热钱包（0x28C6…1d60）单笔转出 167,464.25 ETH、16.15 亿 USDT 及 60 余种代币（约 $2.5B）至 0x5227…2f8c。04:20 一笔交易打包 50 份 EIP-7702 授权（nonce 18,914,775–18,914,824，命中 18,914,809），清扫合约 0x63e8…6fAe。此前后 Binance 16、Hot Wallet 34 及 BTC（18,270.2 枚）、波场等多链钱包相继流出。",
+   "category": "链上数据",
+   "source": "Blockaid / TechFlow / Odaily",
+   "time": "2026-10-30T04:24:00+08:00",
+   "title": "总攻：Binance 14 一笔被扫约 $2.5B",
+   "url": "https://blockaid.io/blog/binance-55b-hack-using-advanced-ai-models-blockaid-detects-the-biggest-theft-in-crypto-history"
+  },
+  {
+   "body": "10-28 起攻击者主钱包多次从 Tornado Cash 各取约 0.1 ETH 作 gas 并以自有钱包演练委托+清扫；10-29 23:59 部署最终清扫合约 0x63e842B054Bd624a465454D533C33F573e9c6fAe。发起地址 0x7C8601d4645b93cea45F71e118A729332e6B5CA0。",
+   "category": "链上数据",
+   "source": "TechFlow / Blockaid / 神鱼",
+   "time": "2026-10-29T23:59:00+08:00",
+   "title": "攻击准备：Tornado Cash 备 gas、演练、部署清扫合约",
+   "url": "https://www.techflowpost.com/article/34982"
+  }
+ ],
+ "watchlist": [
+  "币安详细技术复盘：DevOps 入口与 EIP-7702 的 50 份授权如何衔接",
+  "最终净损失定案与冻结资产返还进度（冻结≠返还）",
+  "提现实际开始恢复的时间与币种/网络顺序；充值口径统一",
+  "18,270 枚 BTC 是否开始转移；ETH 是否进入 Tornado Cash 等混币器",
+  "更新版储备证明（PoR）：被盗钱包储备是否已补回",
+  "MetaMask 是否回应 Gas Station / Sentinel 日志线索",
+  "官方或执法机构正式归因"
+ ]
+}
