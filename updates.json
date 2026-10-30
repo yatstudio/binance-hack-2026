@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-10-30T18:47:00+08:00"
+  "updated_at": "2026-10-30T18:50:00+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -23,7 +23,7 @@
    "value": "官方未归因"
   },
   "coverage": {
-   "detail": "币安官方确认已动用 SAFU；用户资金安全",
+   "detail": "币安官方确认已动用 SAFU；用户资金安全；何一称年收入足以覆盖、暂不卖 SPCX 股份",
    "label": "赔付",
    "value": "SAFU + 公司资金全额承担"
   },
@@ -33,12 +33,12 @@
    "value": "口径不一"
   },
   "frozen": {
-   "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC 等",
+   "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC 等；另有 USDT0 约 $618 万、Pundi X 约 $37 万小额冻结，不改变总额口径",
    "label": "链上已冻结（官方核实）",
    "value": "约 $3.0B"
   },
   "net_loss": {
-   "detail": "三种口径并存：略超 $1B（CZ 转述估算）/ 最大约 $2.64B（江卓尔推算）/ 约 $3.43B（余烬口径）",
+   "detail": "四种口径并存：略超 $1B（CZ 转述 0xngmi 估算）/ 约 $2B 缺口（CZ 09:46 自算：逾 $6B -$3B 冻结 -$1B SAFU）/ 最大约 $2.64B（江卓尔推算）/ 约 $3.43B（余烬口径）",
    "label": "净损失",
    "value": "未定案"
   },
@@ -59,6 +59,30 @@
   }
  },
  "updates": [
+  {
+   "body": "USDT0 在 Polygon 冻结攻击者钱包 618 万 USDT0（约 $618 万），此前曾暂停 TRON-以太坊跨链通道、事后已恢复；Pundi X Labs 应币安请求冻结黑客钱包内 3,747,276 枚 PUNDIX（约 $37 万），未发现其他已知黑客钱包持有 PUNDIX。两笔合计约 $655 万，不改变币安核实约 $3B 的冻结总额口径。",
+   "category": "链上数据",
+   "source": "USDT0 / Pundi X Labs（经 The Defiant / TokenPost）",
+   "time": "2026-10-30T17:43:00+08:00",
+   "title": "新增小额冻结：USDT0 约 $618 万、Pundi X 约 $37 万",
+   "url": "https://thedefiant.io/news/hacks/usdt0-freezes-6-19-million-tokens-linked-to-binance-exploit"
+  },
+  {
+   "body": "何一称黑客在 Aave 存入的 $60M USDT 抵押不在完全冻结范围内，黑客实际借走约 $46M ETH；该抵押品经执法系统解冻后，或可额外追回约 $14M。此仓位此前已在追踪中（抵押 $60M、借出 19,762 ETH），不在币安公布的约 $3B 冻结总额内；解冻追回仍需执法流程，未成事实。",
+   "category": "官方表态",
+   "source": "何一 @heyibinance（经 PANews / BBX / 0xZX 转述）",
+   "time": "2026-10-30T10:30:00+08:00",
+   "title": "何一：Aave 上 $60M USDT 抵押未全冻，执法解冻后或多追回约 $14M",
+   "url": "https://0xzx.com/flash/374668"
+  },
+  {
+   "body": "CZ 自算：总影响逾 $60 亿，已冻结约 $30 亿，SAFU 约 $10 亿+，剩余缺口约 $20 亿；币安所持 SPCX 股份价值逾 $10 亿，剩余缺口“痛苦但可控”。何一补充：币安年收入足以覆盖损失，暂无需出售 SpaceX 股份。注意：这不是官方最终净损失定案，是 CZ/何一对赔付能力的表态；与此前 CZ 转述“略超 $1B”（基于 0xngmi 托管口径）口径不同，并列，不选一。",
+   "category": "官方表态",
+   "source": "CZ @cz_binance / 何一 @heyibinance（经 PANews / TechFlow / The Defiant 转述）",
+   "time": "2026-10-30T09:46:00+08:00",
+   "title": "CZ/何一：损失缺口约 $2B 在可控范围，暂不卖 SpaceX 股份",
+   "url": "https://lookonchain.com/feeds/79179"
+  },
   {
    "body": "币安调查更新称，在最初指向 DevOps 工程师笔记本被入侵之后，调查又发现了“更多入侵点”（additional points of breach）；币安称仍在配合执法部门核实事实，具体是哪些入侵点未披露。提现仍按计划推进：该更新称 45 小时内恢复（约 11-01 下午），与何一 48 小时口径基本一致；充值仍正常，暂停提现后平台外流已停止。",
    "category": "官方确认",
