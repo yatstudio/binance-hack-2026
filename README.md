@@ -6,6 +6,7 @@
 - 📦 结构化数据（唯一事实源）：https://yatstudio.github.io/binance-hack-2026/updates.json
   - 备用：https://raw.githubusercontent.com/yatstudio/binance-hack-2026/main/updates.json
 - 🤖 Agent 说明：[llms.txt](llms.txt) · [agent.json](agent.json) · [AGENTS.md](AGENTS.md)
+- 💸 攻击者资金流向：[funds.json](https://yatstudio.github.io/binance-hack-2026/funds.json) · 线索图 [funds-flow.svg](funds-flow.svg)（有动静时首页顶部红色提醒，数据在 funds.json 的 `alert` 字段）
 
 ## 口径说明
 

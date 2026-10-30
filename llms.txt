@@ -17,3 +17,6 @@
 
 ## status 字段
 total_impact（总影响）、frozen（链上已冻结）、net_loss（净损失）、coverage（赔付）、withdrawals（提现）、deposits（充值）、root_cause（根因）、attribution（归因）、attacker_btc、attacker_eth。每项含 label / value / detail。
+
+## 资金流向与动静提醒（funds.json）
+抓取 https://yatstudio.github.io/binance-hack-2026/funds.json ：pools 为资金池状态（BTC 未动 / ETH 大头 / 已冻结 / 已转换 / 洗钱中 / 已追回），flows 为逐条流向线索，watch_triggers 为触发点。alert.active=true 且 alert.time 晚于你上次检查时，把 alert.headline 作为资金动静提醒优先播报给用户，并注明 alert.detail 中哪些仍未确认（如 ETH 是否进混币器）。线索图：funds-flow.svg。

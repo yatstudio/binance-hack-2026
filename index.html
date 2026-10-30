@@ -61,6 +61,25 @@
   footer{color:var(--faint);font-size:12.5px;margin-top:34px;line-height:1.7}
   footer a{color:var(--dim)}
   #err{color:var(--red);font-size:14px;display:none}
+  .fundalert{display:none;border-radius:12px;padding:14px 16px;margin:18px 0 4px;font-size:14px;border:1px solid}
+  .fundalert.show{display:block}
+  .fundalert.move{background:linear-gradient(90deg,rgba(246,70,93,.22),rgba(246,70,93,.05));border-color:rgba(246,70,93,.55)}
+  .fundalert.quiet{background:rgba(14,203,129,.08);border-color:rgba(14,203,129,.35)}
+  .fundalert .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);margin-right:7px;animation:pl 1.2s infinite}
+  @keyframes pl{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
+  .fundalert b{color:#ff8296}
+  .fundalert .when{color:var(--dim);font-size:12.5px}
+  .pool .st{font-size:11.5px;font-weight:700;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+  .st-quiet{background:rgba(240,185,11,.16);color:var(--gold)}
+  .st-watch,.st-moved{background:rgba(77,163,255,.15);color:var(--blue)}
+  .st-frozen{background:rgba(147,161,181,.18);color:var(--dim)}
+  .st-active{background:rgba(246,70,93,.16);color:#ff8296}
+  .st-recovered{background:rgba(14,203,129,.15);color:var(--green)}
+  .flowimg{width:100%;border:1px solid var(--line);border-radius:12px;background:#fbf7ee}
+  .flows{list-style:none}
+  .flows li{color:var(--dim);font-size:13.5px;padding:7px 0;border-bottom:1px dashed var(--line)}
+  .flows li:last-child{border-bottom:0}
+  .flows b{color:var(--text);font-weight:600}
   @media(max-width:560px){h1{font-size:24px}.grid{grid-template-columns:1fr 1fr}.stat .value{font-size:16px}}
 </style>
 </head>
@@ -73,10 +92,18 @@
     <div class="updated">最近更新：<b id="updatedAt">加载中…</b>（北京时间）· 数据源 <a href="updates.json" style="color:var(--blue)">updates.json</a></div>
   </header>
 
+  <div class="fundalert" id="fundAlert"></div>
+
   <div class="alert"><b>当前状态：</b>提现暂停中，何一称 48 小时内开始逐步恢复（约 11 月 1 日中午）；SAFU + 公司资金全额赔付；官方尚未归因。</div>
 
   <h2>关键数字与状态</h2>
   <div class="grid" id="stats"></div>
+
+  <h2>攻击者资金流向</h2>
+  <p style="color:var(--dim);font-size:14px;margin-bottom:12px">钱从币安热钱包出来之后去了哪：哪些被冻住、哪些换成了冻不住的币、哪些还躺着未动、哪些已进洗钱环节。结构化数据：<a href="funds.json" style="color:var(--blue)">funds.json</a>（含 <code>alert</code> 字段）——有新动静时，本页顶部会出现红色提醒，订阅的 Agent 也应优先播报 <code>alert</code> 与资金动向类条目。</p>
+  <img class="flowimg" src="funds-flow.svg" alt="攻击者资金流向线索图">
+  <div class="grid" id="fundPools" style="margin-top:12px"></div>
+  <div class="watch" style="margin-top:12px"><div style="font-weight:700;margin-bottom:6px">流向线索（按时间）</div><ul class="flows" id="fundFlows"></ul></div>
 
   <h2>事件时间线</h2>
   <div class="filters" id="filters">
@@ -150,6 +177,35 @@ fetch("updates.json").then(r=>r.json()).then(d=>{
   d.watchlist.forEach(w=>{ const li=document.createElement("li"); li.textContent=w; wl.appendChild(li); });
   render();
 }).catch(()=>{ document.getElementById("err").style.display="block"; });
+fetch("funds.json").then(r=>r.json()).then(f=>{
+  const fa=document.getElementById("fundAlert");
+  if(f.alert && f.alert.active){
+    fa.className="fundalert show move";
+    fa.innerHTML=`<span class="dot"></span><b>资金动静提醒：</b><span id="faH"></span> <span class="when" id="faW"></span><br><span id="faD" style="color:var(--dim)"></span>`;
+    fa.querySelector("#faH").textContent=f.alert.headline;
+    fa.querySelector("#faW").textContent="· "+fmt(f.alert.time)+"（北京时间）";
+    fa.querySelector("#faD").textContent=f.alert.detail;
+  } else {
+    fa.className="fundalert show quiet";
+    fa.innerHTML=`<b style="color:var(--green)">资金暂无新动静：</b> BTC 与 ETH 大头仍在原地，监控中。`;
+  }
+  const pg=document.getElementById("fundPools");
+  (f.pools||[]).forEach(s=>{
+    const div=document.createElement("div"); div.className="stat pool";
+    div.innerHTML=`<div class="label"></div><div class="value" style="font-size:16px"></div><div class="detail"></div>`;
+    div.querySelector(".label").innerHTML=""; div.querySelector(".label").textContent=s.label;
+    const st=document.createElement("span"); st.className="st st-"+s.status; st.textContent=({"quiet":"未动","watch":"盯防中","frozen":"已冻结","moved":"已转移","active":"进行中","recovered":"已追回"})[s.status]||s.status; div.querySelector(".label").appendChild(st);
+    div.querySelector(".value").textContent=s.value; div.querySelector(".detail").textContent=s.detail;
+    pg.appendChild(div);
+  });
+  const fl=document.getElementById("fundFlows");
+  (f.flows||[]).forEach(x=>{
+    const li=document.createElement("li");
+    li.innerHTML=`<b></b> → <b></b>：<span></span>`;
+    const bs=li.querySelectorAll("b"); bs[0].textContent=x.from; bs[1].textContent=x.to; li.querySelector("span").textContent=x.amount;
+    fl.appendChild(li);
+  });
+}).catch(()=>{});
 document.getElementById("filters").addEventListener("click", e=>{
   if(!e.target.classList.contains("chip")) return;
   document.querySelectorAll(".chip").forEach(c=>c.classList.remove("on"));
