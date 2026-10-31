@@ -1,133 +1,161 @@
 {
- "meta": {
-  "title": "攻击者资金流向 · Funds Flow Watch",
-  "updated_at": "2026-10-30T20:24:00+08:00",
-  "timezone": "Asia/Shanghai",
-  "note": "冻结≠追回返还；未确认的动向标注为未确认，不当已发生。alert.active=true 表示最近一次被确认的资金动静，首页会置顶提醒。"
- },
  "alert": {
   "active": true,
   "level": "movement",
-  "time": "2026-10-30T18:09:00+08:00",
-  "headline": "资金有动静：被盗资金出现自动化循环流转（疑似自动化洗钱混淆）",
-  "detail": "Chainalysis 观察：短时间内数千笔交易、资金在地址间反复流转并有时回流旧钱包。同时确认：18,270 枚 BTC 仍未动；ETH 尚未确认进入 Tornado Cash 等混币器。",
-  "source": "Chainalysis（经 Cointelegraph / The Defiant）",
-  "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"
+  "time": "2026-10-31T09:27:00+08:00",
+  "headline": "资金有动静：黑客 Tron 池约 6.382 亿 TRX 拆分，1.2 亿枚再转手",
+  "detail": "Onchain Lens / Whale Alert（经 PANews / ChainCatcher / TokenPost / CryptoBriefing，10-31 早间披露）：约 6.382 亿枚 TRX 池（源自约 $2.34 亿 USDT 经 SunSwap 换汇）于 10-30 18:15–18:20 分拆为 4×1.2 亿枚 + 1.582 亿枚，其中一笔 1.2 亿枚（约 $3878 万）随即转手至已在追踪链中的地址并进一步分发。仍未确认：接收方身份未知、未显示卖出或套现、未确认进入交易所或混币器；18,270 枚 BTC 仍未动；ETH 仍无确认进入 Tornado Cash 等混币器的后续；冻结总额仍约 $30 亿；上一条动静（10-31 00:30 Allora 冻结 ALLO 正归还）见 flows。",
+  "source": "Onchain Lens / Whale Alert（经 PANews / ChainCatcher / TokenPost / CryptoBriefing）",
+  "url": "https://www.panewslab.com/zh/articles/01a18f91-463a-75c2-a9b9-7abe5ad30779"
+ },
+ "flows": [
+  {
+   "amount": "167,464 ETH + 16.15 亿 USDT + 60 余种代币 ≈ $25 亿",
+   "from": "Binance 14 热钱包 0x28C6…1d60",
+   "status": "confirmed",
+   "time": "2026-10-30T04:24:00+08:00",
+   "to": "攻击者主钱包 0x5227…2f8c"
+  },
+  {
+   "amount": "共 8.23 亿 USDC（7.8 亿 + 0.43 亿）",
+   "from": "Hot Wallet 34（Binance 14 为 operator）",
+   "status": "confirmed",
+   "time": "2026-10-30T04:24:00+08:00",
+   "to": "攻击者集群（借道 execute/executeBatch）"
+  },
+  {
+   "amount": "18,270.2 BTC、TRX 等，总影响约 $63 亿口径",
+   "from": "币安多链热钱包",
+   "status": "confirmed",
+   "time": "2026-10-30T04:24:00+08:00",
+   "to": "攻击者集群"
+  },
+  {
+   "amount": "195,460 ETH ≈ $4.4 亿",
+   "from": "攻击者主钱包",
+   "status": "confirmed",
+   "time": "2026-10-30T04:39:00+08:00",
+   "to": "第二钱包 0x8532…43D4"
+  },
+  {
+   "amount": "存 6,000 万 USDT，借 19,762 WETH",
+   "from": "攻击者钱包 0xAa24…54a0",
+   "status": "confirmed",
+   "time": "2026-10-30T04:58:00+08:00",
+   "to": "Aave V3（存抵押借币）"
+  },
+  {
+   "amount": "超 $10 亿 ETH（监测转述，细节未独立核实）",
+   "from": "攻击者集群",
+   "status": "reported",
+   "time": "2026-10-30T10:50:00+08:00",
+   "to": "新钱包群"
+  },
+  {
+   "amount": "17,260 ETH ≈ $3,882 万（试探转移）",
+   "from": "攻击者集群",
+   "status": "confirmed",
+   "time": "2026-10-30T13:36:00+08:00",
+   "to": "新钱包 0x03b…020ea"
+  },
+  {
+   "amount": "金额未披露；目标地址与 Phemex 案链条关联",
+   "from": "攻击者集群（TRX）",
+   "status": "confirmed",
+   "time": "2026-10-30T13:30:00+08:00",
+   "to": "0xCd68…3396（经 Bitget Wallet 跨链桥）"
+  },
+  {
+   "amount": "短时数千笔，疑似自动化混淆轨迹",
+   "from": "攻击者地址间",
+   "status": "moving",
+   "time": "2026-10-30T18:09:00+08:00",
+   "to": "反复循环流转（有时回流旧钱包）"
+  },
+  {
+   "amount": "尚未确认发生",
+   "from": "攻击者钱包",
+   "status": "unconfirmed",
+   "time": null,
+   "to": "Tornado Cash 等混币器"
+  },
+  {
+   "amount": "约 519 万枚 TRX ≈ $173 万",
+   "from": "攻击者 Tron 钱包（Arkham 归因）",
+   "status": "confirmed",
+   "time": "2026-10-30T23:37:00+08:00",
+   "to": "12 个地址"
+  },
+  {
+   "amount": "约 800 万枚 NEWT + 17 种代币，约 $350 万（Lookonchain 估约 $332 万）",
+   "from": "攻击者集群",
+   "status": "confirmed",
+   "time": "2026-10-30T20:58:00+08:00",
+   "to": "NEWT 代币合约地址（不可升级、无管理员）"
+  },
+  {
+   "amount": "金额未披露；被盗 ALLO 未卖出、未转出攻击者钱包",
+   "from": "攻击者钱包（被盗 ALLO）",
+   "status": "reported",
+   "time": "2026-10-31T00:30:00+08:00",
+   "to": "币安（经 Allora 合约紧急保护机制冻结后归还）"
+  },
+  {
+   "amount": "1.2 亿枚 TRX ≈ $3878 万（属约 6.382 亿 TRX 池内拆分转手，非新增被盗）",
+   "from": "攻击者 Tron 池（4 个各持 1.2 亿 TRX 地址之一）",
+   "status": "confirmed",
+   "time": "2026-10-30T18:20:00+08:00",
+   "to": "已在追踪链中的地址并进一步分发（CryptoBriefing / Whale Alert 口径称未知地址）"
+  }
+ ],
+ "meta": {
+  "note": "冻结≠追回返还；未确认的动向标注为未确认，不当已发生。alert.active=true 表示最近一次被确认的资金动静，首页会置顶提醒。",
+  "timezone": "Asia/Shanghai",
+  "title": "攻击者资金流向 · Funds Flow Watch",
+  "updated_at": "2026-10-31T09:47:00+08:00"
  },
  "pools": [
   {
+   "detail": "截至最新核查 0 转移。最大单笔盯防对象：一旦转移，首页 alert 立即更新。",
    "id": "btc_dormant",
    "label": "BTC · 躺着未动",
-   "value": "18,270 枚 · 约 $14 亿",
    "status": "quiet",
-   "detail": "截至最新核查 0 转移。最大单笔盯防对象：一旦转移，首页 alert 立即更新。"
+   "value": "18,270 枚 · 约 $14 亿"
   },
   {
+   "detail": "仅见 17,260 枚小额试探转至 0x03b…020ea；超 $10 亿 ETH 已转入新钱包群。未确认进入 Tornado Cash。无法冻结。",
    "id": "eth_bulk",
    "label": "ETH · 大头停放新地址",
-   "value": "约 48 万枚 · 约 $10.8 亿",
    "status": "watch",
-   "detail": "仅见 17,260 枚小额试探转至 0x03b…020ea；超 $10 亿 ETH 已转入新钱包群。未确认进入 Tornado Cash。无法冻结。"
+   "value": "约 48 万枚 · 约 $10.8 亿"
   },
   {
+   "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC，另有 FDUSD 约 $340 万、Arbitrum 约 $3,050 万、USDT0 约 $618 万、PUNDIX 约 $37 万等。冻结指动不了，不等于已返还。",
    "id": "frozen_stables",
    "label": "稳定币等 · 已冻结",
-   "value": "约 $30 亿",
    "status": "frozen",
-   "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC，另有 FDUSD 约 $340 万、Arbitrum 约 $3,050 万、USDT0 约 $618 万、PUNDIX 约 $37 万等。冻结指动不了，不等于已返还。"
+   "value": "约 $30 亿"
   },
   {
+   "detail": "DEX 砸 USDT 换 ETH 损耗约 $7,000 万；04:57–05:01 向 Aave 存 6,000 万 USDT 抵押、借出 19,762 枚 WETH（约 $4,460 万），仓位仍超额抵押，何一称执法解冻后或可多追回约 $14M。",
    "id": "converted_eth",
    "label": "已换成冻不住的 ETH",
-   "value": "Aave 借出 19,762 枚 WETH 等",
    "status": "moved",
-   "detail": "DEX 砸 USDT 换 ETH 损耗约 $7,000 万；04:57–05:01 向 Aave 存 6,000 万 USDT 抵押、借出 19,762 枚 WETH（约 $4,460 万），仓位仍超额抵押，何一称执法解冻后或可多追回约 $14M。"
+   "value": "Aave 借出 19,762 枚 WETH 等"
   },
   {
+   "detail": "被盗 TRX 经 Bitget Wallet 跨链桥转至 0xCd68…3396（Phemex 案关联地址）；18:09 起 ETH 等被盗资金出现千笔自动化循环流转；10-30 23:37 起 Tron 钱包再向 12 个地址拆分约 519 万枚 TRX（约 $173 万，去向未披露）；另有约 $350 万代币被攻击者误转入 NEWT 合约永久锁死（非冻结、非追回）。10-31 早披露：约 6.382 亿 TRX 池（约 $2.34 亿 USDT 经 SunSwap 换得）于 10-30 18:15–18:20 分拆为 4×1.2 亿枚 + 1.582 亿枚，其中一笔 1.2 亿枚（约 $3878 万）随即转手至已在追踪链中的地址并进一步分发；未确认套现/进交易所/混币器。",
    "id": "laundering",
    "label": "已进洗钱环节",
-   "value": "TRX 已跨链 · ETH 自动化循环流转",
    "status": "active",
-   "detail": "被盗 TRX 经 Bitget Wallet 跨链桥转至 0xCd68…3396（Phemex 案关联地址）；18:09 起 ETH 等被盗资金出现千笔自动化循环流转。"
+   "value": "TRX 已跨链 · ETH 自动化循环流转"
   },
   {
+   "detail": "Synthetix protocolDAO 已收回至其 Safe 多签，待币安正式请求后归还。金额小，不改变冻结总额口径。另：Allora 已冻结被盗 ALLO 并正全额归还币安（金额未披露、归还进行中）。",
    "id": "recovered",
    "label": "已追回待归还",
-   "value": "SNX 约 840 万枚 · 约 $155 万",
    "status": "recovered",
-   "detail": "Synthetix protocolDAO 已收回至其 Safe 多签，待币安正式请求后归还。金额小，不改变冻结总额口径。"
-  }
- ],
- "flows": [
-  {
-   "from": "Binance 14 热钱包 0x28C6…1d60",
-   "to": "攻击者主钱包 0x5227…2f8c",
-   "amount": "167,464 ETH + 16.15 亿 USDT + 60 余种代币 ≈ $25 亿",
-   "time": "2026-10-30T04:24:00+08:00",
-   "status": "confirmed"
-  },
-  {
-   "from": "Hot Wallet 34（Binance 14 为 operator）",
-   "to": "攻击者集群（借道 execute/executeBatch）",
-   "amount": "共 8.23 亿 USDC（7.8 亿 + 0.43 亿）",
-   "time": "2026-10-30T04:24:00+08:00",
-   "status": "confirmed"
-  },
-  {
-   "from": "币安多链热钱包",
-   "to": "攻击者集群",
-   "amount": "18,270.2 BTC、TRX 等，总影响约 $63 亿口径",
-   "time": "2026-10-30T04:24:00+08:00",
-   "status": "confirmed"
-  },
-  {
-   "from": "攻击者主钱包",
-   "to": "第二钱包 0x8532…43D4",
-   "amount": "195,460 ETH ≈ $4.4 亿",
-   "time": "2026-10-30T04:39:00+08:00",
-   "status": "confirmed"
-  },
-  {
-   "from": "攻击者钱包 0xAa24…54a0",
-   "to": "Aave V3（存抵押借币）",
-   "amount": "存 6,000 万 USDT，借 19,762 WETH",
-   "time": "2026-10-30T04:58:00+08:00",
-   "status": "confirmed"
-  },
-  {
-   "from": "攻击者集群",
-   "to": "新钱包群",
-   "amount": "超 $10 亿 ETH（监测转述，细节未独立核实）",
-   "time": "2026-10-30T10:50:00+08:00",
-   "status": "reported"
-  },
-  {
-   "from": "攻击者集群",
-   "to": "新钱包 0x03b…020ea",
-   "amount": "17,260 ETH ≈ $3,882 万（试探转移）",
-   "time": "2026-10-30T13:36:00+08:00",
-   "status": "confirmed"
-  },
-  {
-   "from": "攻击者集群（TRX）",
-   "to": "0xCd68…3396（经 Bitget Wallet 跨链桥）",
-   "amount": "金额未披露；目标地址与 Phemex 案链条关联",
-   "time": "2026-10-30T13:30:00+08:00",
-   "status": "confirmed"
-  },
-  {
-   "from": "攻击者地址间",
-   "to": "反复循环流转（有时回流旧钱包）",
-   "amount": "短时数千笔，疑似自动化混淆轨迹",
-   "time": "2026-10-30T18:09:00+08:00",
-   "status": "moving"
-  },
-  {
-   "from": "攻击者钱包",
-   "to": "Tornado Cash 等混币器",
-   "amount": "尚未确认发生",
-   "time": null,
-   "status": "unconfirmed"
+   "value": "SNX 约 840 万枚 · 约 $155 万 + ALLO（金额未披露，归还中）"
   }
  ],
  "watch_triggers": [
