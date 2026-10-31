@@ -2,11 +2,11 @@
  "alert": {
   "active": true,
   "level": "movement",
-  "time": "2026-10-31T09:27:00+08:00",
-  "headline": "资金有动静：黑客 Tron 池约 6.382 亿 TRX 拆分，1.2 亿枚再转手",
-  "detail": "Onchain Lens / Whale Alert（经 PANews / ChainCatcher / TokenPost / CryptoBriefing，10-31 早间披露）：约 6.382 亿枚 TRX 池（源自约 $2.34 亿 USDT 经 SunSwap 换汇）于 10-30 18:15–18:20 分拆为 4×1.2 亿枚 + 1.582 亿枚，其中一笔 1.2 亿枚（约 $3878 万）随即转手至已在追踪链中的地址并进一步分发。仍未确认：接收方身份未知、未显示卖出或套现、未确认进入交易所或混币器；18,270 枚 BTC 仍未动；ETH 仍无确认进入 Tornado Cash 等混币器的后续；冻结总额仍约 $30 亿；上一条动静（10-31 00:30 Allora 冻结 ALLO 正归还）见 flows。",
-  "source": "Onchain Lens / Whale Alert（经 PANews / ChainCatcher / TokenPost / CryptoBriefing）",
-  "url": "https://www.panewslab.com/zh/articles/01a18f91-463a-75c2-a9b9-7abe5ad30779"
+  "time": "2026-11-01T05:50:00+08:00",
+  "headline": "资金有动静：攻击者改走 Relay 桥，约 $1600 万 TRX/USDT 已换成 7,352 枚 ETH",
+  "detail": "Bitquery 全链调查（持仓截点 11-01 00:51 北京时间）：攻击者自 10-31 中午起新增 Relay 跨链桥洗钱腿——5700 万枚 TRX 经波场中转合约分至 9 个新钱包、在 SunSwap 换成 USDT，截至 11-01 00:01 其中 7 个钱包已向 Relay 发送约 $1600 万 USDT 与 TRX（Relay 退回几笔存款），Relay 在以太坊的付款经 8 个新钱包换成 ETH（多经 CoW Swap），大部转入 16 个新钱包（截点持有 7,352 枚 ETH，另 718 枚 ETH 仍在 Relay 钱包）。仍未确认：桥接在截点后仍在继续、余额可能已增加；THORChain 腿换得的 3,600 枚 ETH 为下限（只读了一个钱包备注）；未发现任何转入交易所充值地址或混币器的资金；18,270 枚 BTC 仍未动；冻结总额仍约 $30 亿；上一条动静（10-31 09:27 TRX 池拆分）见 flows。",
+  "source": "Bitquery 调查",
+  "url": "https://bitquery.io/investigations/binance-hack"
  },
  "flows": [
   {
@@ -101,18 +101,18 @@
    "to": "币安（经 Allora 合约紧急保护机制冻结后归还）"
   },
   {
-   "amount": "1.2 亿枚 TRX ≈ $3878 万（属约 6.382 亿 TRX 池内拆分转手，非新增被盗）",
-   "from": "攻击者 Tron 池（4 个各持 1.2 亿 TRX 地址之一）",
+   "amount": "约 $1600 万 USDT/TRX → 7,352 ETH（另 718 ETH 仍在 Relay 钱包，桥接在截点后仍继续）",
+   "from": "攻击者 Tron 资金池（5700 万 TRX 经中转合约分至 9 钱包、SunSwap 换 USDT 后走 Relay 桥）",
    "status": "confirmed",
-   "time": "2026-10-30T18:20:00+08:00",
-   "to": "已在追踪链中的地址并进一步分发（CryptoBriefing / Whale Alert 口径称未知地址）"
+   "time": "2026-11-01T00:01:00+08:00",
+   "to": "以太坊 8 个 Relay 付款钱包（多经 CoW Swap 换 ETH）→ 16 个新钱包"
   }
  ],
  "meta": {
   "note": "冻结≠追回返还；未确认的动向标注为未确认，不当已发生。alert.active=true 表示最近一次被确认的资金动静，首页会置顶提醒。",
   "timezone": "Asia/Shanghai",
   "title": "攻击者资金流向 · Funds Flow Watch",
-  "updated_at": "2026-10-31T09:47:00+08:00"
+  "updated_at": "2026-11-01T05:50:00+08:00"
  },
  "pools": [
   {
@@ -123,7 +123,7 @@
    "value": "18,270 枚 · 约 $14 亿"
   },
   {
-   "detail": "仅见 17,260 枚小额试探转至 0x03b…020ea；超 $10 亿 ETH 已转入新钱包群。未确认进入 Tornado Cash。无法冻结。",
+   "detail": "仅见 17,260 枚小额试探转至 0x03b…020ea；超 $10 亿 ETH 已转入新钱包群。未确认进入 Tornado Cash。无法冻结。Bitquery 11-01 00:51 全口径统计攻击者持有 525,201 枚 ETH（含用被盗稳定币/代币/TRX 换得的 ETH），高于此前约 48 万枚的主钱包口径，属统计范围差异。",
    "id": "eth_bulk",
    "label": "ETH · 大头停放新地址",
    "status": "watch",
@@ -144,7 +144,7 @@
    "value": "Aave 借出 19,762 枚 WETH 等"
   },
   {
-   "detail": "被盗 TRX 经 Bitget Wallet 跨链桥转至 0xCd68…3396（Phemex 案关联地址）；18:09 起 ETH 等被盗资金出现千笔自动化循环流转；10-30 23:37 起 Tron 钱包再向 12 个地址拆分约 519 万枚 TRX（约 $173 万，去向未披露）；另有约 $350 万代币被攻击者误转入 NEWT 合约永久锁死（非冻结、非追回）。10-31 早披露：约 6.382 亿 TRX 池（约 $2.34 亿 USDT 经 SunSwap 换得）于 10-30 18:15–18:20 分拆为 4×1.2 亿枚 + 1.582 亿枚，其中一笔 1.2 亿枚（约 $3878 万）随即转手至已在追踪链中的地址并进一步分发；未确认套现/进交易所/混币器。",
+   "detail": "被盗 TRX 经 Bitget Wallet 跨链桥转至 0xCd68…3396（Phemex 案关联地址）；18:09 起 ETH 等被盗资金出现千笔自动化循环流转；10-30 23:37 起 Tron 钱包再向 12 个地址拆分约 519 万枚 TRX（约 $173 万，去向未披露）；另有约 $350 万代币被攻击者误转入 NEWT 合约永久锁死（非冻结、非追回）。10-31 早披露：约 6.382 亿 TRX 池（约 $2.34 亿 USDT 经 SunSwap 换得）于 10-30 18:15–18:20 分拆为 4×1.2 亿枚 + 1.582 亿枚，其中一笔 1.2 亿枚（约 $3878 万）随即转手至已在追踪链中的地址并进一步分发；未确认套现/进交易所/混币器。Bitquery 11-01 00:51 截点新增：THORChain 腿 43 地址送 6400 万枚 TRX（退款后约 $2000 万）换得 3,600 枚 ETH（下限）分发至 35 新钱包；Relay 腿约 $1600 万 USDT/TRX 已换成 7,352 枚 ETH（另 718 枚 ETH 仍在 Relay 钱包，桥接截点后仍继续）；未发现转入交易所充值地址或混币器的资金。",
    "id": "laundering",
    "label": "已进洗钱环节",
    "status": "active",
