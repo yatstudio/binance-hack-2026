@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-11-01T07:52:00+08:00"
+  "updated_at": "2026-11-01T08:25:15+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -13,7 +13,7 @@
    "value": "18,270 枚未动"
   },
   "attacker_eth": {
-   "detail": "已开始小额试探转移（17,260 枚），尚未确认进入混币器；Chainalysis 18:09 观察到被盗资金出现自动化循环流转洗钱模式；ETH 无发行方、无法冻结；Bitquery 11-01 00:51 截点全口径统计攻击者持有 525,201 枚 ETH（含用被盗稳定币/代币/TRX 换得的 ETH），高于此前约 48 万枚的主钱包口径，属统计范围差异、非新增被盗",
+   "detail": "已开始小额试探转移（17,260 枚），尚未确认进入混币器；Chainalysis 18:09 观察到被盗资金出现自动化循环流转洗钱模式；ETH 无发行方、无法冻结；Bitquery 11-01 00:51 截点全口径统计攻击者持有 525,201 枚 ETH（含用被盗稳定币/代币/TRX 换得的 ETH），高于此前约 48 万枚的主钱包口径，属统计范围差异、非新增被盗；链上侦探 Specter 11-01 04:43 监测：约 7 小时内经 Relay 桥接约 $3800 万且仍在继续，Relay 自称的 KYT 未能拦截——Relay 腿规模较 Bitquery 截点（11-01 00:01）的约 $1600 万已发送量显著扩大，两家口径与截点不同、不直接相加；仍未见转入交易所充值地址或混币器的确认",
    "label": "攻击者 ETH",
    "value": "约 48 万枚"
   },
@@ -74,6 +74,14 @@
    "category": "链上数据",
    "source": "Bitquery 调查",
    "url": "https://bitquery.io/investigations/binance-hack"
+  },
+  {
+   "time": "2026-11-01T04:43:00+08:00",
+   "title": "补报：Specter 监测称攻击者 7 小时内经 Relay 桥接约 $3800 万且仍在继续，Relay 腿较 Bitquery 截点显著扩大",
+   "body": "链上侦探 Specter 监测（经 Odaily/BBX/KuCoin/TokenPost 转述，BBX 发布时间为北京时间 11-01 04:43）：攻击者约 7 小时内经跨链桥 Relay 桥接约 $3800 万，且仍在继续；Specter 指出 Relay 虽自称已启用 KYT 系统、仍未能拦截相关操作，并称经 THORChain 不可能在这么短时间内洗出这一规模、是 Relay 打开了通道。这是 05:50 轮次已报 Bitquery Relay 腿的后续扩大：Bitquery 截点为 11-01 00:01、当时 7 个钱包已向 Relay 发送约 $1600 万 USDT 与 TRX（另 718 枚 ETH 仍在 Relay 钱包），Specter 的 $3800 万为另一家在更晚截点的桥接量统计，两家口径与截点不同、不能直接相加，但方向一致——Relay 腿在 Bitquery 截点后仍在扩大，且 THORChain 换币暂停（12 链）仍未见恢复报道，攻击者洗钱主通道已转向 Relay。关键限定：$3800 万为单家侦探的监测口径、未经 Relay 或第二家链上公司复核；Specter 未称资金已进入交易所充值地址或混币器，Bitquery 截点“未发现转入交易所/混币器”的结论在本轮未被推翻；18,270 枚 BTC 仍未动，冻结总额仍约 $30 亿，提现截至本轮（11-01 早间）仍暂停、仍按公告#2/#3 的 11-01 分阶段恢复口径（约指向当天下午）、尚未实际恢复。",
+   "category": "链上数据",
+   "source": "链上侦探 Specter（经 Odaily / BBX / KuCoin / TokenPost 转述）",
+   "url": "https://www.kucoin.com/news/flash/38m-usd-bridged-via-relay-in-7-hours-chain-analyst-claims-dprk-still-transferring"
   },
   {
    "time": "2026-10-31T23:09:00+08:00",
