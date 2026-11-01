@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-11-01T08:25:15+08:00"
+  "updated_at": "2026-11-01T11:26:00+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -18,7 +18,7 @@
    "value": "约 48 万枚"
   },
   "attribution": {
-   "detail": "TRM Labs、Chainalysis 此前均以高信心指向朝鲜 TraderTraitor/Lazarus；2026-11-01 05:46 北京时间 FBI 发布正式通报，联合 USSS 与 IRS-CI 认定朝鲜 TraderTraitor 对逾 $60 亿被盗案负责，并公布数百个关联地址、呼吁业界拦截——为美国执法机构首次官方归因；币安自身仍未具名归因；拦截呼吁非制裁令/法院命令，不等于新增冻结",
+   "detail": "TRM Labs、Chainalysis 此前均以高信心指向朝鲜 TraderTraitor/Lazarus；2026-11-01 05:46 北京时间 FBI 发布正式通报，联合 USSS 与 IRS-CI 认定朝鲜 TraderTraitor 对逾 $60 亿被盗案负责，并公布约 628 个关联地址（ETH 约 608、BTC 19、SOL 1）、呼吁业界拦截——为美国执法机构首次官方归因；币安自身仍未具名归因；拦截呼吁非制裁令/法院命令，不等于新增冻结",
    "label": "归因",
    "value": "FBI 正式归因朝鲜 TraderTraitor（币安自身未归因）"
   },
@@ -62,7 +62,7 @@
   {
    "time": "2026-11-01T05:46:00+08:00",
    "title": "FBI 正式归因：朝鲜 TraderTraitor 对逾 $60 亿币安被盗案负责，公布数百个关联地址并呼吁拦截",
-   "body": "美国联邦调查局（FBI）于美国时间 10-31 发布网络安全通报（The Defiant 发布时间为 10-31 21:46 UTC，即北京时间 11-01 05:46）：正式认定朝鲜对币安约 10-29 发生的逾 $60 亿美元虚拟资产被盗案负责，所涉朝鲜恶意网络活动代号为 TraderTraitor——即此前 TRM Labs/Chainalysis 以高信心指向、ZachXBT 亦指向的同一组织，也是 FBI 此前认定的 2025 年 Bybit 约 $15 亿被盗案行为人。通报由 FBI 联合美国特勤局（USSS）与国税局刑事调查部门（IRS-CI）发出：观察到 TraderTraitor 正把被盗资产主要兑换成 ETH，预计随后经 DeFi 与即时兑换服务进一步转换、进入后续洗钱阶段；呼吁 THORNode 运营方、RPC 节点运营方、即时交易所、DeFi 服务、链上分析公司及其他虚拟资产服务商拦截与通报所列地址相关或衍生的交易，并公布了数百个 ETH/BTC/SOL 地址（称其持有或曾持有被盗资产、由 TraderTraitor 运营或密切相关），其中 ETH 地址 0x03b0…020ea 即此前已报的 17,260 ETH 试探转移接收方，属已有地址的官方确认、非新一笔转移。关键限定：这是美国执法机构的首次官方归因，币安自身仍未具名归因；FBI 的拦截呼吁是请求、非制裁令或法院命令，不等于新增冻结金额，冻结总额仍约 $30 亿；本条不触发 funds.json 的资金动静提醒（无 BTC 转出、无 ETH 入混币器/交易所的新确认、无新增冻结/追回），首页 alert 保持 11-01 05:50 的 Relay 桥动静记录不变；提现截至本轮仍暂停、仍按公告#2/#3 的 11-01 分阶段恢复口径（约指向当天下午），尚未实际恢复；PoR 完整证明仍待 11-03。",
+   "body": "美国联邦调查局（FBI）于美国时间 10-31 发布网络安全通报（The Defiant 发布时间为 10-31 21:46 UTC，即北京时间 11-01 05:46）：正式认定朝鲜对币安约 10-29 发生的逾 $60 亿美元虚拟资产被盗案负责，所涉朝鲜恶意网络活动代号为 TraderTraitor——即此前 TRM Labs/Chainalysis 以高信心指向、ZachXBT 亦指向的同一组织，也是 FBI 此前认定的 2025 年 Bybit 约 $15 亿被盗案行为人。通报由 FBI 联合美国特勤局（USSS）与国税局刑事调查部门（IRS-CI）发出：观察到 TraderTraitor 正把被盗资产主要兑换成 ETH，预计随后经 DeFi 与即时兑换服务进一步转换、进入后续洗钱阶段；呼吁 THORNode 运营方、RPC 节点运营方、即时交易所、DeFi 服务、链上分析公司及其他虚拟资产服务商拦截与通报所列地址相关或衍生的交易，并公布了约 628 个 ETH/BTC/SOL 地址（对 FBI 原页清单逐条清点：ETH 约 608 条、BTC 19 条、SOL 1 条）（称其持有或曾持有被盗资产、由 TraderTraitor 运营或密切相关），其中 ETH 地址 0x03b0…020ea 即此前已报的 17,260 ETH 试探转移接收方，属已有地址的官方确认、非新一笔转移。关键限定：这是美国执法机构的首次官方归因，币安自身仍未具名归因；FBI 的拦截呼吁是请求、非制裁令或法院命令，不等于新增冻结金额，冻结总额仍约 $30 亿；本条不触发 funds.json 的资金动静提醒（无 BTC 转出、无 ETH 入混币器/交易所的新确认、无新增冻结/追回），首页 alert 保持 11-01 05:50 的 Relay 桥动静记录不变；提现截至本轮仍暂停、仍按公告#2/#3 的 11-01 分阶段恢复口径（约指向当天下午），尚未实际恢复；PoR 完整证明仍待 11-03。",
    "category": "官方确认",
    "source": "FBI 网络安全通报（经 The Defiant / Arab News / CoinEdition 转述）",
    "url": "https://www.fbi.gov/investigate/cyber/alerts/2026/north-korea-responsible-for-6-billion-binance-attack"
