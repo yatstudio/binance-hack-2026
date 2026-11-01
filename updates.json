@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-11-01T18:17:00+08:00"
+  "updated_at": "2026-11-01T18:47:00+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -59,6 +59,14 @@
   }
  },
  "updates": [
+  {
+   "time": "2026-11-01T18:35:00+08:00",
+   "title": "攻击者正把被盗 SOL 换成 BTC：约 97.05 万枚 SOL（约 $9590 万）经 Relay 跨链",
+   "body": "Lookonchain 监测（经 Odaily 北京时间 11-01 18:35 转述）：标记为币安黑客的地址 AffzFDKZ...GigBEaU 正把被盗的 97.05 万枚 SOL（价值约 $9590 万）兑换为 BTC；过去一小时内已转移 48.7 万枚 SOL（约 $4640 万），目前正通过 Relay Protocol 将 SOL 兑换为 BTC。关键限定：这是 17:42 Arkham 所报 485,270 枚 SOL 转移的去向跟进——数量（48.7 万枚 vs 48.527 万枚）与时间窗口吻合，属同一笔转移的后续，不是第二笔约 48 万枚 SOL 转移，不能与 17:42 条相加；97.05 万枚是被盗 SOL 全量口径（Arkham 最初统计 970,522 枚），即攻击者疑似在把整个 SOL 池换成 BTC，但截至本轮尚未披露已实际换成多少 BTC、接收 BTC 地址为何，换币完成量与最终去向均未确认，不能报成 SOL 已全部换完或已套现；18,270 枚被盗 BTC 本身仍未动（本条是新增 BTC 换入方向、非被盗 BTC 转出）；冻结总额仍约 $30 亿；提现第一阶段截至本轮仍为 BTC、ETH、BSC、XRP、Base、DOGE、OP 已开放，其余 8 个首批网络/资产组合（TRX、SOL、ZEC、TON、MATIC、AVAXC、ARBITRUM、SUI）尚未见已开放的单独确认；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条命中 funds.json 的资金动向触发点，首页 alert 已同步更新为本笔 SOL→BTC 动静。",
+   "category": "链上数据",
+   "source": "Lookonchain（经 Odaily 转述）",
+   "url": "https://www.odaily.news/zh-CN/newsflash/529603"
+  },
   {
    "time": "2026-11-01T18:11:00+08:00",
    "title": "第四批提现开放：DOGE 与 OP（Optimism）网络已恢复",
