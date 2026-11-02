@@ -1,217 +1,224 @@
 {
- "alert": {
-  "active": true,
-  "level": "movement",
-  "time": "2026-11-01T18:35:00+08:00",
-  "headline": "资金有动静：攻击者正把被盗 SOL（约 97.05 万枚、约 $9590 万）经 Relay 换成 BTC",
-  "detail": "Lookonchain 监测（经 Odaily 北京时间 11-01 18:35 转述）：标记为币安黑客的地址 AffzFDKZ...GigBEaU 正把被盗的 97.05 万枚 SOL（约 $9590 万）兑换为 BTC，过去一小时内已转移 48.7 万枚 SOL（约 $4640 万），目前正通过 Relay Protocol 将 SOL 兑换为 BTC。仍未确认：已实际换成多少 BTC、接收 BTC 地址与最终去向均未披露；过去一小时的 48.7 万枚与 17:42 Arkham 所报 485,270 枚 SOL 为同一笔转移的后续、非第二笔转移，不能相加；18,270 枚被盗 BTC 本身仍未动；冻结总额仍约 $30 亿；上一条动静（17:42 SOL 转移至未披露地址）见 flows。",
-  "source": "Lookonchain（经 Odaily 转述）",
-  "url": "https://www.odaily.news/zh-CN/newsflash/529603"
- },
- "flows": [
-  {
-   "amount": "167,464 ETH + 16.15 亿 USDT + 60 余种代币 ≈ $25 亿",
-   "from": "Binance 14 热钱包 0x28C6…1d60",
-   "status": "confirmed",
-   "time": "2026-10-30T04:24:00+08:00",
-   "to": "攻击者主钱包 0x5227…2f8c"
+  "alert": {
+    "active": true,
+    "level": "movement",
+    "time": "2026-11-02T11:44:00+08:00",
+    "headline": "资金有动静：攻击者过去12小时内向 Gate 充值 25 万美元，Gate 已冻结两个相关账户",
+    "detail": "Gate 在 X 发文（经 Odaily 北京时间 11-02 11:44 转述）：已识别并冻结两个与币安黑客相关的账户，相关信息已进入尽职调查流程，并将全力配合执法部门及后续调查。此前 Lookonchain 监测：过去 12 小时内，币安黑客经 Tron 地址 TTraqh8FsoxuzguK1DocJW8AFpjsLW7Ybr 向 Gate 充值了 25 万美元。仍未确认：Gate 冻结的金额（未披露，不等于 25 万美元全额）、充值币种、账户内资金是否已被提走或仍可追回；冻结≠追回返还；18,270 枚被盗 BTC 本身仍未动；SOL→BTC 换币完成量与接收地址仍未披露；上一条动静（11-01 18:35 SOL→BTC）见 flows。",
+    "source": "Gate（经 Odaily 转述）/ Lookonchain（经 Odaily / TokenPost 转述）",
+    "url": "https://www.odaily.news/zh-CN/newsflash/529745"
   },
-  {
-   "amount": "共 8.23 亿 USDC（7.8 亿 + 0.43 亿）",
-   "from": "Hot Wallet 34（Binance 14 为 operator）",
-   "status": "confirmed",
-   "time": "2026-10-30T04:24:00+08:00",
-   "to": "攻击者集群（借道 execute/executeBatch）"
+  "flows": [
+    {
+      "amount": "167,464 ETH + 16.15 亿 USDT + 60 余种代币 ≈ $25 亿",
+      "from": "Binance 14 热钱包 0x28C6…1d60",
+      "status": "confirmed",
+      "time": "2026-10-30T04:24:00+08:00",
+      "to": "攻击者主钱包 0x5227…2f8c"
+    },
+    {
+      "amount": "共 8.23 亿 USDC（7.8 亿 + 0.43 亿）",
+      "from": "Hot Wallet 34（Binance 14 为 operator）",
+      "status": "confirmed",
+      "time": "2026-10-30T04:24:00+08:00",
+      "to": "攻击者集群（借道 execute/executeBatch）"
+    },
+    {
+      "amount": "18,270.2 BTC、TRX 等，总影响约 $63 亿口径",
+      "from": "币安多链热钱包",
+      "status": "confirmed",
+      "time": "2026-10-30T04:24:00+08:00",
+      "to": "攻击者集群"
+    },
+    {
+      "amount": "195,460 ETH ≈ $4.4 亿",
+      "from": "攻击者主钱包",
+      "status": "confirmed",
+      "time": "2026-10-30T04:39:00+08:00",
+      "to": "第二钱包 0x8532…43D4"
+    },
+    {
+      "amount": "存 6,000 万 USDT，借 19,762 WETH",
+      "from": "攻击者钱包 0xAa24…54a0",
+      "status": "confirmed",
+      "time": "2026-10-30T04:58:00+08:00",
+      "to": "Aave V3（存抵押借币）"
+    },
+    {
+      "amount": "超 $10 亿 ETH（监测转述，细节未独立核实）",
+      "from": "攻击者集群",
+      "status": "reported",
+      "time": "2026-10-30T10:50:00+08:00",
+      "to": "新钱包群"
+    },
+    {
+      "amount": "17,260 ETH ≈ $3,882 万（试探转移）",
+      "from": "攻击者集群",
+      "status": "confirmed",
+      "time": "2026-10-30T13:36:00+08:00",
+      "to": "新钱包 0x03b…020ea"
+    },
+    {
+      "amount": "金额未披露；目标地址与 Phemex 案链条关联",
+      "from": "攻击者集群（TRX）",
+      "status": "confirmed",
+      "time": "2026-10-30T13:30:00+08:00",
+      "to": "0xCd68…3396（经 Bitget Wallet 跨链桥）"
+    },
+    {
+      "amount": "短时数千笔，疑似自动化混淆轨迹",
+      "from": "攻击者地址间",
+      "status": "moving",
+      "time": "2026-10-30T18:09:00+08:00",
+      "to": "反复循环流转（有时回流旧钱包）"
+    },
+    {
+      "amount": "尚未确认发生",
+      "from": "攻击者钱包",
+      "status": "unconfirmed",
+      "time": null,
+      "to": "Tornado Cash 等混币器"
+    },
+    {
+      "amount": "约 519 万枚 TRX ≈ $173 万",
+      "from": "攻击者 Tron 钱包（Arkham 归因）",
+      "status": "confirmed",
+      "time": "2026-10-30T23:37:00+08:00",
+      "to": "12 个地址"
+    },
+    {
+      "amount": "约 800 万枚 NEWT + 17 种代币，约 $350 万（Lookonchain 估约 $332 万）",
+      "from": "攻击者集群",
+      "status": "confirmed",
+      "time": "2026-10-30T20:58:00+08:00",
+      "to": "NEWT 代币合约地址（不可升级、无管理员）"
+    },
+    {
+      "amount": "金额未披露；被盗 ALLO 未卖出、未转出攻击者钱包",
+      "from": "攻击者钱包（被盗 ALLO）",
+      "status": "reported",
+      "time": "2026-10-31T00:30:00+08:00",
+      "to": "币安（经 Allora 合约紧急保护机制冻结后归还）"
+    },
+    {
+      "amount": "约 $1600 万 USDT/TRX → 7,352 ETH（另 718 ETH 仍在 Relay 钱包，桥接在截点后仍继续）",
+      "from": "攻击者 Tron 资金池（5700 万 TRX 经中转合约分至 9 钱包、SunSwap 换 USDT 后走 Relay 桥）",
+      "status": "confirmed",
+      "time": "2026-11-01T00:01:00+08:00",
+      "to": "以太坊 8 个 Relay 付款钱包（多经 CoW Swap 换 ETH）→ 16 个新钱包"
+    },
+    {
+      "amount": "约 $3800 万（7 小时内桥接，仍在继续；与 Bitquery 截点约 $1600 万已发送量口径/截点不同，不直接相加）",
+      "from": "攻击者集群（经 Relay 桥）",
+      "status": "reported",
+      "time": "2026-11-01T04:43:00+08:00",
+      "to": "以太坊新钱包（换成 ETH）"
+    },
+    {
+      "amount": "约 90.88 万枚 PROM（名义约 $500 万）→ 仅 0.0316 ETH（约 $71）",
+      "from": "攻击者集群",
+      "status": "reported",
+      "time": "2026-11-01T12:17:00+08:00",
+      "to": "Uniswap V2 PROM 流动性池（近乎空池，极端滑点）"
+    },
+    {
+      "amount": "EVM 链累计：超 130 种山寨币 → 123,400 ETH（约 $2.7726 亿）+ 169 万 USDC，合计约 $2.79 亿",
+      "from": "攻击者集群（EVM 链）",
+      "status": "reported",
+      "time": "2026-11-01T15:10:00+08:00",
+      "to": "ETH/USDC（经 DEX 抛售累计换得，非本轮单笔新抛售）"
+    },
+    {
+      "amount": "485,270 枚 SOL ≈ $4623 万",
+      "from": "攻击者 Solana 地址（Arkham 标记为币安黑客）",
+      "status": "reported",
+      "time": "2026-11-01T17:42:00+08:00",
+      "to": "某未披露地址（去向未确认，非交易所/混币器确认）"
+    },
+    {
+      "amount": "过去一小时内 48.7 万枚 SOL ≈ $4640 万；目标全量 97.05 万枚 SOL ≈ $9590 万",
+      "from": "攻击者 Solana 地址 AffzFDKZ...GigBEaU（Lookonchain 标记为币安黑客）",
+      "status": "reported",
+      "time": "2026-11-01T18:35:00+08:00",
+      "to": "BTC（经 Relay Protocol 兑换，实际换成量与接收 BTC 地址未披露）"
+    },
+    {
+      "amount": "金额未披露；是否实际通过未披露（仅检测到转移尝试）",
+      "from": "攻击者集群（币安事件相关资金）",
+      "status": "reported",
+      "time": "2026-11-01T18:50:00+08:00",
+      "to": "Symbiosis 协议（跨链转移尝试，协议方称正设法拦截并已联系币安；此前 BlockSec 分析称部分被盗 TRX 已通过 Symbiosis 等渠道跨链至以太坊）"
+    },
+    {
+      "amount": "Tron 两天累计约 $2.42 亿（经桥/兑换约 $1.94 亿：Relay 约 $4800 万、THORChain 约 $4400 万、Chainflip 约 $3210 万、Symbiosis 约 $1600 万；Bitget Wallet 约 $4170 万去向未明；约 $2600 万仍在 Tron 链上、约 $2200 万为费用/滑点/价格变动）",
+      "from": "攻击者 Tron 资金池（约 $6.28 亿被盗 Tron 资产，Tether 冻结 3.787 亿 USDT 后约 $2.49 亿仍可转移）",
+      "status": "reported",
+      "time": "2026-11-02T02:54:00+08:00",
+      "to": "Relay / THORChain（付出 17,019 ETH 至 170 地址 + 53.25 BTC 至 20 地址）/ Chainflip（新通道，4947 万 USDT 存入、多笔失败退款重送）/ Symbiosis / Bitget Wallet（去向未明）"
+    },
+    {
+      "amount": "25 万美元（Lookonchain 监测；Gate 冻结金额未披露）",
+      "from": "攻击者 Tron 地址 TTraqh8FsoxuzguK1DocJW8AFpjsLW7Ybr",
+      "status": "reported",
+      "time": "2026-11-02T11:44:00+08:00",
+      "to": "Gate 交易所充值（Gate 称已冻结两个相关账户，配合执法调查）"
+    }
+  ],
+  "meta": {
+    "note": "冻结≠追回返还；未确认的动向标注为未确认，不当已发生。alert.active=true 表示最近一次被确认的资金动静，首页会置顶提醒。",
+    "timezone": "Asia/Shanghai",
+    "title": "攻击者资金流向 · Funds Flow Watch",
+    "updated_at": "2026-11-02T11:47:00+08:00"
   },
-  {
-   "amount": "18,270.2 BTC、TRX 等，总影响约 $63 亿口径",
-   "from": "币安多链热钱包",
-   "status": "confirmed",
-   "time": "2026-10-30T04:24:00+08:00",
-   "to": "攻击者集群"
-  },
-  {
-   "amount": "195,460 ETH ≈ $4.4 亿",
-   "from": "攻击者主钱包",
-   "status": "confirmed",
-   "time": "2026-10-30T04:39:00+08:00",
-   "to": "第二钱包 0x8532…43D4"
-  },
-  {
-   "amount": "存 6,000 万 USDT，借 19,762 WETH",
-   "from": "攻击者钱包 0xAa24…54a0",
-   "status": "confirmed",
-   "time": "2026-10-30T04:58:00+08:00",
-   "to": "Aave V3（存抵押借币）"
-  },
-  {
-   "amount": "超 $10 亿 ETH（监测转述，细节未独立核实）",
-   "from": "攻击者集群",
-   "status": "reported",
-   "time": "2026-10-30T10:50:00+08:00",
-   "to": "新钱包群"
-  },
-  {
-   "amount": "17,260 ETH ≈ $3,882 万（试探转移）",
-   "from": "攻击者集群",
-   "status": "confirmed",
-   "time": "2026-10-30T13:36:00+08:00",
-   "to": "新钱包 0x03b…020ea"
-  },
-  {
-   "amount": "金额未披露；目标地址与 Phemex 案链条关联",
-   "from": "攻击者集群（TRX）",
-   "status": "confirmed",
-   "time": "2026-10-30T13:30:00+08:00",
-   "to": "0xCd68…3396（经 Bitget Wallet 跨链桥）"
-  },
-  {
-   "amount": "短时数千笔，疑似自动化混淆轨迹",
-   "from": "攻击者地址间",
-   "status": "moving",
-   "time": "2026-10-30T18:09:00+08:00",
-   "to": "反复循环流转（有时回流旧钱包）"
-  },
-  {
-   "amount": "尚未确认发生",
-   "from": "攻击者钱包",
-   "status": "unconfirmed",
-   "time": null,
-   "to": "Tornado Cash 等混币器"
-  },
-  {
-   "amount": "约 519 万枚 TRX ≈ $173 万",
-   "from": "攻击者 Tron 钱包（Arkham 归因）",
-   "status": "confirmed",
-   "time": "2026-10-30T23:37:00+08:00",
-   "to": "12 个地址"
-  },
-  {
-   "amount": "约 800 万枚 NEWT + 17 种代币，约 $350 万（Lookonchain 估约 $332 万）",
-   "from": "攻击者集群",
-   "status": "confirmed",
-   "time": "2026-10-30T20:58:00+08:00",
-   "to": "NEWT 代币合约地址（不可升级、无管理员）"
-  },
-  {
-   "amount": "金额未披露；被盗 ALLO 未卖出、未转出攻击者钱包",
-   "from": "攻击者钱包（被盗 ALLO）",
-   "status": "reported",
-   "time": "2026-10-31T00:30:00+08:00",
-   "to": "币安（经 Allora 合约紧急保护机制冻结后归还）"
-  },
-  {
-   "amount": "约 $1600 万 USDT/TRX → 7,352 ETH（另 718 ETH 仍在 Relay 钱包，桥接在截点后仍继续）",
-   "from": "攻击者 Tron 资金池（5700 万 TRX 经中转合约分至 9 钱包、SunSwap 换 USDT 后走 Relay 桥）",
-   "status": "confirmed",
-   "time": "2026-11-01T00:01:00+08:00",
-   "to": "以太坊 8 个 Relay 付款钱包（多经 CoW Swap 换 ETH）→ 16 个新钱包"
-  },
-  {
-   "amount": "约 $3800 万（7 小时内桥接，仍在继续；与 Bitquery 截点约 $1600 万已发送量口径/截点不同，不直接相加）",
-   "from": "攻击者集群（经 Relay 桥）",
-   "status": "reported",
-   "time": "2026-11-01T04:43:00+08:00",
-   "to": "以太坊新钱包（换成 ETH）"
-  },
-  {
-   "amount": "约 90.88 万枚 PROM（名义约 $500 万）→ 仅 0.0316 ETH（约 $71）",
-   "from": "攻击者集群",
-   "status": "reported",
-   "time": "2026-11-01T12:17:00+08:00",
-   "to": "Uniswap V2 PROM 流动性池（近乎空池，极端滑点）"
-  },
-  {
-   "amount": "EVM 链累计：超 130 种山寨币 → 123,400 ETH（约 $2.7726 亿）+ 169 万 USDC，合计约 $2.79 亿",
-   "from": "攻击者集群（EVM 链）",
-   "status": "reported",
-   "time": "2026-11-01T15:10:00+08:00",
-   "to": "ETH/USDC（经 DEX 抛售累计换得，非本轮单笔新抛售）"
-  },
-  {
-   "amount": "485,270 枚 SOL ≈ $4623 万",
-   "from": "攻击者 Solana 地址（Arkham 标记为币安黑客）",
-   "status": "reported",
-   "time": "2026-11-01T17:42:00+08:00",
-   "to": "某未披露地址（去向未确认，非交易所/混币器确认）"
-  },
-  {
-   "amount": "过去一小时内 48.7 万枚 SOL ≈ $4640 万；目标全量 97.05 万枚 SOL ≈ $9590 万",
-   "from": "攻击者 Solana 地址 AffzFDKZ...GigBEaU（Lookonchain 标记为币安黑客）",
-   "status": "reported",
-   "time": "2026-11-01T18:35:00+08:00",
-   "to": "BTC（经 Relay Protocol 兑换，实际换成量与接收 BTC 地址未披露）"
-  },
-  {
-   "amount": "金额未披露；是否实际通过未披露（仅检测到转移尝试）",
-   "from": "攻击者集群（币安事件相关资金）",
-   "status": "reported",
-   "time": "2026-11-01T18:50:00+08:00",
-   "to": "Symbiosis 协议（跨链转移尝试，协议方称正设法拦截并已联系币安；此前 BlockSec 分析称部分被盗 TRX 已通过 Symbiosis 等渠道跨链至以太坊）"
-  },
-  {
-   "amount": "Tron 两天累计约 $2.42 亿（经桥/兑换约 $1.94 亿：Relay 约 $4800 万、THORChain 约 $4400 万、Chainflip 约 $3210 万、Symbiosis 约 $1600 万；Bitget Wallet 约 $4170 万去向未明；约 $2600 万仍在 Tron 链上、约 $2200 万为费用/滑点/价格变动）",
-   "from": "攻击者 Tron 资金池（约 $6.28 亿被盗 Tron 资产，Tether 冻结 3.787 亿 USDT 后约 $2.49 亿仍可转移）",
-   "status": "reported",
-   "time": "2026-11-02T02:54:00+08:00",
-   "to": "Relay / THORChain（付出 17,019 ETH 至 170 地址 + 53.25 BTC 至 20 地址）/ Chainflip（新通道，4947 万 USDT 存入、多笔失败退款重送）/ Symbiosis / Bitget Wallet（去向未明）"
-  }
- ],
- "meta": {
-  "note": "冻结≠追回返还；未确认的动向标注为未确认，不当已发生。alert.active=true 表示最近一次被确认的资金动静，首页会置顶提醒。",
-  "timezone": "Asia/Shanghai",
-  "title": "攻击者资金流向 · Funds Flow Watch",
-  "updated_at": "2026-11-02T04:13:00+08:00"
- },
- "pools": [
-  {
-   "detail": "截至最新核查 0 转移。最大单笔盯防对象：一旦转移，首页 alert 立即更新。注意：11-01 18:35 Lookonchain 称攻击者正经 Relay 把被盗 SOL 换成 BTC，属新增 BTC 换入方向，被盗 18,270 枚 BTC 本身仍未动，两者不混淆。",
-   "id": "btc_dormant",
-   "label": "BTC · 躺着未动",
-   "status": "quiet",
-   "value": "18,270 枚 · 约 $14 亿"
-  },
-  {
-   "detail": "仅见 17,260 枚小额试探转至 0x03b…020ea；超 $10 亿 ETH 已转入新钱包群。未确认进入 Tornado Cash。无法冻结。Bitquery 11-01 00:51 全口径统计攻击者持有 525,201 枚 ETH（含用被盗稳定币/代币/TRX 换得的 ETH），高于此前约 48 万枚的主钱包口径，属统计范围差异。",
-   "id": "eth_bulk",
-   "label": "ETH · 大头停放新地址",
-   "status": "watch",
-   "value": "约 48 万枚 · 约 $10.8 亿"
-  },
-  {
-   "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC，另有 FDUSD 约 $340 万、Arbitrum 约 $3,050 万、USDT0 约 $618 万、PUNDIX 约 $37 万等。冻结指动不了，不等于已返还。",
-   "id": "frozen_stables",
-   "label": "稳定币等 · 已冻结",
-   "status": "frozen",
-   "value": "约 $30 亿"
-  },
-  {
-   "detail": "DEX 砸 USDT 换 ETH 损耗约 $7,000 万；04:57–05:01 向 Aave 存 6,000 万 USDT 抵押、借出 19,762 枚 WETH（约 $4,460 万），仓位仍超额抵押，何一称执法解冻后或可多追回约 $14M。",
-   "id": "converted_eth",
-   "label": "已换成冻不住的 ETH",
-   "status": "moved",
-   "value": "Aave 借出 19,762 枚 WETH 等"
-  },
-  {
-   "detail": "被盗 TRX 经 Bitget Wallet 跨链桥转至 0xCd68…3396（Phemex 案关联地址）；18:09 起 ETH 等被盗资金出现千笔自动化循环流转；10-30 23:37 起 Tron 钱包再向 12 个地址拆分约 519 万枚 TRX（约 $173 万，去向未披露）；另有约 $350 万代币被攻击者误转入 NEWT 合约永久锁死（非冻结、非追回）。10-31 早披露：约 6.382 亿 TRX 池（约 $2.34 亿 USDT 经 SunSwap 换得）于 10-30 18:15–18:20 分拆为 4×1.2 亿枚 + 1.582 亿枚，其中一笔 1.2 亿枚（约 $3878 万）随即转手至已在追踪链中的地址并进一步分发；未确认套现/进交易所/混币器。Bitquery 11-01 00:51 截点新增：THORChain 腿 43 地址送 6400 万枚 TRX（退款后约 $2000 万）换得 3,600 枚 ETH（下限）分发至 35 新钱包；Relay 腿约 $1600 万 USDT/TRX 已换成 7,352 枚 ETH（另 718 枚 ETH 仍在 Relay 钱包，桥接截点后仍继续）；未发现转入交易所充值地址或混币器的资金。；Specter 11-01 04:43 监测：约 7 小时内经 Relay 桥接约 $3800 万且仍在继续，Relay 自称的 KYT 未能拦截（与 Bitquery 截点约 $1600 万已发送量口径/截点不同，不直接相加）；仍未见转入交易所充值地址或混币器的确认。；Lookonchain 11-01 12:17 监测：攻击者把约 90.88 万枚 PROM（名义约 $500 万）卖入近乎空池的 Uniswap V2 池，仅得 0.0316 ETH（约 $71），属批量抛售山寨币换 ETH 模式的极端滑点个例、实际变现可忽略，未确认进入交易所/混币器。；Lookonchain 11-01 15:10 统计：攻击者仅在 EVM 链已抛售超 130 种山寨币，累计换得 123,400 枚 ETH（约 $2.7726 亿）+ 169 万枚 USDC，合计约 $2.79 亿（累计口径，含此前 7 种币 $1.58 亿子集，不直接相加；未确认进入交易所/混币器）。；Arkham 11-01 17:42 监测：攻击者 Solana 地址转移 485,270 枚 SOL（约 $4623 万）至某未披露地址，约占被盗 SOL（约 970,522 枚）的半数，为被盗 SOL 池首次大额异动（此前 Bitquery 11-01 00:51 截点称 SOL 未动）；接收方与后续去向未披露，未确认进入交易所/混币器或已抛售。；Lookonchain 11-01 18:35 监测：攻击者正经 Relay Protocol 把被盗 SOL（全量约 97.05 万枚、约 $9590 万）兑换为 BTC，过去一小时内已转移 48.7 万枚 SOL（约 $4640 万，与 17:42 Arkham 所报 485,270 枚为同一笔后续、非新增一笔）；实际换成 BTC 的数量与接收地址未披露。；Symbiosis 11-01 18:50 称检测到币安事件相关资金试图经其协议转移、正设法拦截并已联系币安（金额、地址与是否实际通过均未披露；此前 BlockSec 分析称部分被盗 TRX 已通过 Symbiosis 等渠道跨链至以太坊）。；SomaXBT 11-02 02:54 Tron 两天全账（累计口径，与此前各腿重叠、不直接相加）：约 $2.42 亿经 Tron 洗出，其中 Relay 约 $4800 万、THORChain 约 $4400 万、Chainflip 约 $3210 万（新通道，此前未收录）、Symbiosis 约 $1600 万，Bitget Wallet 约 $4170 万去向未明；Tether 冻结 3.787 亿 USDT 后 Tron 上仍约 $2.49 亿可转移；THORChain 截至美东周日 13:20 仍有 10/13 条链暂停交易，FBI 地址清单中无 Tron 地址；18,270 枚 BTC 仍未动（本条为累计统计，不更换首页 alert，仍为 11-01 18:35 SOL→BTC 动静）。",
-   "id": "laundering",
-   "label": "已进洗钱环节",
-   "status": "active",
-   "value": "TRX 已跨链 · ETH 自动化循环流转"
-  },
-  {
-   "detail": "Synthetix protocolDAO 已收回至其 Safe 多签，待币安正式请求后归还。金额小，不改变冻结总额口径。另：Allora 已冻结被盗 ALLO 并正全额归还币安（金额未披露、归还进行中）。",
-   "id": "recovered",
-   "label": "已追回待归还",
-   "status": "recovered",
-   "value": "SNX 约 840 万枚 · 约 $155 万 + ALLO（金额未披露，归还中）"
-  }
- ],
- "watch_triggers": [
-  "18,270 枚 BTC 出现任何转出",
-  "ETH 大额转入 Tornado Cash 等混币器或中心化交易所",
-  "新增冻结、解冻、追回或返还",
-  "Aave 仓位被清算、偿还或抵押品被解冻追回",
-  "被盗资金转入已知交易所充值地址"
- ]
+  "pools": [
+    {
+      "detail": "截至最新核查 0 转移。最大单笔盯防对象：一旦转移，首页 alert 立即更新。注意：11-01 18:35 Lookonchain 称攻击者正经 Relay 把被盗 SOL 换成 BTC，属新增 BTC 换入方向，被盗 18,270 枚 BTC 本身仍未动，两者不混淆。",
+      "id": "btc_dormant",
+      "label": "BTC · 躺着未动",
+      "status": "quiet",
+      "value": "18,270 枚 · 约 $14 亿"
+    },
+    {
+      "detail": "仅见 17,260 枚小额试探转至 0x03b…020ea；超 $10 亿 ETH 已转入新钱包群。未确认进入 Tornado Cash。无法冻结。Bitquery 11-01 00:51 全口径统计攻击者持有 525,201 枚 ETH（含用被盗稳定币/代币/TRX 换得的 ETH），高于此前约 48 万枚的主钱包口径，属统计范围差异。",
+      "id": "eth_bulk",
+      "label": "ETH · 大头停放新地址",
+      "status": "watch",
+      "value": "约 48 万枚 · 约 $10.8 亿"
+    },
+    {
+      "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC，另有 FDUSD 约 $340 万、Arbitrum 约 $3,050 万、USDT0 约 $618 万、PUNDIX 约 $37 万等。冻结指动不了，不等于已返还。",
+      "id": "frozen_stables",
+      "label": "稳定币等 · 已冻结",
+      "status": "frozen",
+      "value": "约 $30 亿"
+    },
+    {
+      "detail": "DEX 砸 USDT 换 ETH 损耗约 $7,000 万；04:57–05:01 向 Aave 存 6,000 万 USDT 抵押、借出 19,762 枚 WETH（约 $4,460 万），仓位仍超额抵押，何一称执法解冻后或可多追回约 $14M。",
+      "id": "converted_eth",
+      "label": "已换成冻不住的 ETH",
+      "status": "moved",
+      "value": "Aave 借出 19,762 枚 WETH 等"
+    },
+    {
+      "detail": "被盗 TRX 经 Bitget Wallet 跨链桥转至 0xCd68…3396（Phemex 案关联地址）；18:09 起 ETH 等被盗资金出现千笔自动化循环流转；10-30 23:37 起 Tron 钱包再向 12 个地址拆分约 519 万枚 TRX（约 $173 万，去向未披露）；另有约 $350 万代币被攻击者误转入 NEWT 合约永久锁死（非冻结、非追回）。10-31 早披露：约 6.382 亿 TRX 池（约 $2.34 亿 USDT 经 SunSwap 换得）于 10-30 18:15–18:20 分拆为 4×1.2 亿枚 + 1.582 亿枚，其中一笔 1.2 亿枚（约 $3878 万）随即转手至已在追踪链中的地址并进一步分发；未确认套现/进交易所/混币器。Bitquery 11-01 00:51 截点新增：THORChain 腿 43 地址送 6400 万枚 TRX（退款后约 $2000 万）换得 3,600 枚 ETH（下限）分发至 35 新钱包；Relay 腿约 $1600 万 USDT/TRX 已换成 7,352 枚 ETH（另 718 枚 ETH 仍在 Relay 钱包，桥接截点后仍继续）；未发现转入交易所充值地址或混币器的资金。；Specter 11-01 04:43 监测：约 7 小时内经 Relay 桥接约 $3800 万且仍在继续，Relay 自称的 KYT 未能拦截（与 Bitquery 截点约 $1600 万已发送量口径/截点不同，不直接相加）；仍未见转入交易所充值地址或混币器的确认。；Lookonchain 11-01 12:17 监测：攻击者把约 90.88 万枚 PROM（名义约 $500 万）卖入近乎空池的 Uniswap V2 池，仅得 0.0316 ETH（约 $71），属批量抛售山寨币换 ETH 模式的极端滑点个例、实际变现可忽略，未确认进入交易所/混币器。；Lookonchain 11-01 15:10 统计：攻击者仅在 EVM 链已抛售超 130 种山寨币，累计换得 123,400 枚 ETH（约 $2.7726 亿）+ 169 万枚 USDC，合计约 $2.79 亿（累计口径，含此前 7 种币 $1.58 亿子集，不直接相加；未确认进入交易所/混币器）。；Arkham 11-01 17:42 监测：攻击者 Solana 地址转移 485,270 枚 SOL（约 $4623 万）至某未披露地址，约占被盗 SOL（约 970,522 枚）的半数，为被盗 SOL 池首次大额异动（此前 Bitquery 11-01 00:51 截点称 SOL 未动）；接收方与后续去向未披露，未确认进入交易所/混币器或已抛售。；Lookonchain 11-01 18:35 监测：攻击者正经 Relay Protocol 把被盗 SOL（全量约 97.05 万枚、约 $9590 万）兑换为 BTC，过去一小时内已转移 48.7 万枚 SOL（约 $4640 万，与 17:42 Arkham 所报 485,270 枚为同一笔后续、非新增一笔）；实际换成 BTC 的数量与接收地址未披露。；Symbiosis 11-01 18:50 称检测到币安事件相关资金试图经其协议转移、正设法拦截并已联系币安（金额、地址与是否实际通过均未披露；此前 BlockSec 分析称部分被盗 TRX 已通过 Symbiosis 等渠道跨链至以太坊）。；SomaXBT 11-02 02:54 Tron 两天全账（累计口径，与此前各腿重叠、不直接相加）：约 $2.42 亿经 Tron 洗出，其中 Relay 约 $4800 万、THORChain 约 $4400 万、Chainflip 约 $3210 万（新通道，此前未收录）、Symbiosis 约 $1600 万，Bitget Wallet 约 $4170 万去向未明；Tether 冻结 3.787 亿 USDT 后 Tron 上仍约 $2.49 亿可转移；THORChain 截至美东周日 13:20 仍有 10/13 条链暂停交易，FBI 地址清单中无 Tron 地址；18,270 枚 BTC 仍未动（本条为累计统计，不更换首页 alert，仍为 11-01 18:35 SOL→BTC 动静）。；Gate 11-02 11:44 称已冻结两个币安黑客相关账户（此前 Lookonchain 监测过去 12 小时内黑客经 Tron 地址向 Gate 充值 25 万美元；冻结金额与币种未披露，不等于已追回返还；为此前 Bitquery 称未见交易所充值地址后的首个交易所触点）。",
+      "id": "laundering",
+      "label": "已进洗钱环节",
+      "status": "active",
+      "value": "TRX 已跨链 · ETH 自动化循环流转"
+    },
+    {
+      "detail": "Synthetix protocolDAO 已收回至其 Safe 多签，待币安正式请求后归还。金额小，不改变冻结总额口径。另：Allora 已冻结被盗 ALLO 并正全额归还币安（金额未披露、归还进行中）。",
+      "id": "recovered",
+      "label": "已追回待归还",
+      "status": "recovered",
+      "value": "SNX 约 840 万枚 · 约 $155 万 + ALLO（金额未披露，归还中）"
+    }
+  ],
+  "watch_triggers": [
+    "18,270 枚 BTC 出现任何转出",
+    "ETH 大额转入 Tornado Cash 等混币器或中心化交易所",
+    "新增冻结、解冻、追回或返还",
+    "Aave 仓位被清算、偿还或抵押品被解冻追回",
+    "被盗资金转入已知交易所充值地址"
+  ]
 }
