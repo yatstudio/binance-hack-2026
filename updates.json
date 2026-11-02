@@ -1,584 +1,616 @@
 {
- "meta": {
-  "incident_date": "2026-10-30",
-  "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
-  "timezone": "Asia/Shanghai",
-  "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-11-01T20:47:00+08:00"
- },
- "status": {
-  "attacker_btc": {
-   "detail": "约 $1.4B；大额 BTC 洗钱渠道有限，短期砸盘概率低",
-   "label": "攻击者 BTC",
-   "value": "18,270 枚未动"
-  },
-  "attacker_eth": {
-   "detail": "已开始小额试探转移（17,260 枚），尚未确认进入混币器；Chainalysis 18:09 观察到被盗资金出现自动化循环流转洗钱模式；ETH 无发行方、无法冻结；Bitquery 11-01 00:51 截点全口径统计攻击者持有 525,201 枚 ETH（含用被盗稳定币/代币/TRX 换得的 ETH），高于此前约 48 万枚的主钱包口径，属统计范围差异、非新增被盗；链上侦探 Specter 11-01 04:43 监测：约 7 小时内经 Relay 桥接约 $3800 万且仍在继续，Relay 自称的 KYT 未能拦截——Relay 腿规模较 Bitquery 截点（11-01 00:01）的约 $1600 万已发送量显著扩大，两家口径与截点不同、不直接相加；仍未见转入交易所充值地址或混币器的确认；Lookonchain 11-01 12:17 监测：攻击者把约 90.88 万枚 PROM（名义约 $500 万）卖入近乎空池的 Uniswap V2 池，仅得 0.0316 ETH（约 $71），属批量抛售山寨币换 ETH 模式的极端滑点个例、实际变现可忽略，仍未见转入交易所充值地址或混币器的确认。；Lookonchain 11-01 15:10 统计：攻击者仅在 EVM 链已抛售超 130 种山寨币，累计换得 123,400 枚 ETH（约 $2.7726 亿）+ 169 万枚 USDC，合计约 $2.79 亿（累计口径，含此前已报的 7 种币 $1.58 亿子集，不等于本轮新增抛售；仍未见转入交易所充值地址或混币器的确认）。",
-   "label": "攻击者 ETH",
-   "value": "约 48 万枚"
-  },
-  "attribution": {
-   "detail": "TRM Labs、Chainalysis 此前均以高信心指向朝鲜 TraderTraitor/Lazarus；2026-11-01 05:46 北京时间 FBI 发布正式通报，联合 USSS 与 IRS-CI 认定朝鲜 TraderTraitor 对逾 $60 亿被盗案负责，并公布约 628 个关联地址（ETH 约 608、BTC 19、SOL 1）、呼吁业界拦截——为美国执法机构首次官方归因；币安自身仍未具名归因；拦截呼吁非制裁令/法院命令，不等于新增冻结",
-   "label": "归因",
-   "value": "FBI 正式归因朝鲜 TraderTraitor（币安自身未归因）"
-  },
-  "coverage": {
-   "detail": "币安官方确认已动用 SAFU；用户资金安全；19:01 更新：已预留逾 $63.4 亿公司资金（$50 亿已为同类代币、余下市场/OTC 补齐，不含约 $30 亿冻结资产），已开始恢复用户资产，最终以公开储备证明验证；何一称年收入足以覆盖、暂不卖 SPCX 股份；10-31 03:33 公告#2：$50 多亿对应代币已到位、即已填回约 80%，剩余正通过市场及 OTC 购买；10-31 11:31 Lookonchain/余烬披露约 1.286 亿枚 ENA（约 $2400 万，约占被盗 2.175 亿枚 ENA 的 59%）存入币安，疑为 OTC 买回进展，但币安与 Ethena 均未确认用途，不直接等同已买回；10-31 22:27 公告#3：补回进度升至约 90%（前十大资产 BTC/ETH/USDT/BNB/SOL/USDC/XRP/USD1/RLUSD/ZEC 已 100% 储备支持），剩余约 10% 低流动性代币仍在市场/OTC 买回中，资金新增 SAFU 部分动用（24 小时内完成、事后补回至约 $10 亿）+ 合约保险基金超额部分 + 公司资金；PoR 快照已于 10-31 08:00 北京时间完成，完整零知识证明预计 11-03 生成（此前“11-02 前公布结果”口径以此为准调整）。；10-31 22:51 Arkham 数据：币安 SAFU 钱包向新地址转出约 7,499 枚 BTC（约 $5.81 亿），币安确认转账完成，转出后该 SAFU 地址仍持约 7,500 枚 BTC——为公告#3 所称 SAFU 部分动用的当晚链上执行证据（属币安自有资金调拨，非攻击者动向）。；公告#4（11-01）：补回升至约 95%（高于公告#3 的约 90%），剩余约 5% 为十大代币以外的低流动性币种，仍在市场/OTC 购入中，前十大仍 100% 储备。",
-   "label": "赔付",
-   "value": "SAFU + 公司资金全额承担"
-  },
-  "deposits": {
-   "detail": "官方初调称充提均暂停；何一称充值正常运作",
-   "label": "充值",
-   "value": "口径不一"
-  },
-  "frozen": {
-   "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC 等；另有 USDT0 约 $618 万、Pundi X 约 $37 万小额冻结，不改变总额口径；Allora 另冻结被盗 ALLO 并正全额归还币安（金额未披露、归还进行中），亦不改变约 $30 亿口径",
-   "label": "链上已冻结（官方核实）",
-   "value": "约 $3.0B"
-  },
-  "net_loss": {
-   "detail": "四种口径并存：略超 $1B（CZ 转述 0xngmi 估算）/ 约 $2B 缺口（CZ 09:46 自算：逾 $6B -$3B 冻结 -$1B SAFU）/ 最大约 $2.64B（江卓尔推算）/ 约 $3.43B（余烬口径）",
-   "label": "净损失",
-   "value": "未定案"
-  },
-  "root_cause": {
-   "detail": "官方称攻击者进入服务容器提交未授权提现交易，未发现私钥泄露证据；16:37 更新称调查又发现“更多入侵点”，不再只有笔记本一个入口，仍在配合执法部门核实事实，与链上 EIP-7702 授权如何衔接，待技术复盘；22:34 Teng 补充：攻击者用了自毁机制销毁工具与痕迹，EIP-7702 委托未经过正常审批控制",
-   "label": "根因（初步）",
-   "value": "DevOps 笔记本 + 更多入侵点"
-  },
-  "total_impact": {
-   "detail": "多链毛流出各家口径 $5.5B–$6.36B",
-   "label": "总影响（币安官方口径）",
-   "value": "约 $6.3B"
-  },
-  "withdrawals": {
-   "detail": "公告#4（11-01）：计划今日 14:00–17:00 恢复第一阶段提现，首批 15 个网络/资产组合（BTC、ETH、BSC、TRX、SOL、XRP、ZEC、DOGE、TON、MATIC、AVAXC、ARBITRUM、BASE、OP、SUI），按过去一周用户需求定优先顺序、每组合须通过稳定性与安全性检查后开放，初期流量大或有延迟，其他网络/资产随后陆续开放；14:10 Odaily 转述币安官方消息：分阶段恢复的首批网络为比特币网络，即 BTC 网络已实际开放、第一阶段从计划进入执行；其余 14 个首批网络/资产组合截至本轮 14:20 尚未见已开放的确认，仍在 14:00–17:00 窗口内陆续开放；充值保持开放；Alpha 仍无恢复消息（仍为 10-30 07:06 暂停口径）。此前：何一称 48 小时内开始逐步恢复（约 11-01 中午起）；16:37 币安更新称仍按计划、45 小时内恢复（约 11-01 下午），与 48 小时口径基本一致；22:34 Teng 新目标：40 小时内恢复（赶在周日截止前）、周一发布完整储备证明（先给初步快照）；主账号已确认 48 小时口径；10-31 03:33 公告#2：约 34 小时内按代币分阶段恢复（约指向 11-01 下午，须通过安全检查、非已恢复），12 小时内首次储备证明快照、结果 11-02 前公布，约 48 小时内公布进一步技术调查结果；14:55 币安更新 PoR 地址列表、后续所有提现改由新生成钱包处理；链新闻 14:50 App 实测：BTC 已可提、USDT/USDC 仍暂停，其余 14 个首批网络截至本轮 15:17 仍在 14:00–17:00 窗口内陆续开放、未见已开放确认；15:56 币安华语确认 ETH 网络（ETH/USDT/USDC）与 BSC 网络（BNB/USDT/USDC）已恢复提现，为第二批实际开放；截至本轮 16:17，其余 12 个首批网络/资产组合尚未见已开放的单独确认，仍在 14:00–17:00 窗口内陆续开放。；17:43 币安最新进展确认第三批开放：XRP 网络（XRP）与 Base 网络（ETH、USDC）已恢复，BTC/ETH/BSC 组合为重申；该批已超出公告#4 原定的 14:00–17:00 窗口，说明分阶段放行在窗口结束后仍在继续；截至本轮 17:47，其余 10 个首批网络/资产组合（TRX、SOL、ZEC、DOGE、TON、MATIC、AVAXC、ARBITRUM、OP、SUI）尚未见已开放的单独确认。；18:11 币安最新进展确认第四批开放：DOGE 网络（DOGE）与 OP 网络（ETH、USDT、USDC）已恢复，BTC/ETH/BSC/XRP/Base 组合为重申；截至本轮 18:17，其余 8 个首批网络/资产组合（TRX、SOL、ZEC、TON、MATIC、AVAXC、ARBITRUM、SUI）尚未见已开放的单独确认。；18:53 币安最新进展确认第五批开放：TRX 网络（TRX、USDT）与 Arbitrum 网络（ARB、ETH、USDT、USDC）已恢复，BTC/ETH/BSC/XRP/Base/DOGE/OP 组合为重申；截至本轮 19:17，其余 6 个首批网络/资产组合（SOL、ZEC、TON、MATIC、AVAXC、SUI）尚未见已开放的单独确认。；19:19 币安新增恢复 Solana 网络 SOL、USDT、USDC；19:33 新增恢复 Polygon 网络 POL、USDT、USDC 与 Avalanche C 链 AVAX、USDT、USDC；截至本轮 19:47，其余 3 个首批网络/资产组合（ZEC、TON、SUI）尚未见已开放的单独确认；截至本轮 20:17，ABMedia 20:10 更新仍只列 12 条链开放，其余 3 个首批网络/资产组合（ZEC、TON、SUI）尚未见已开放的单独确认。；20:38 币安新增恢复 ZEC 网络 ZEC、TON 网络 USDT 与 GRAM、SUI 网络 SUI，至此公告#4 首批 15 个网络/资产组合全部确认开放，第一阶段完成；第二阶段（其他网络/资产）仍无确切时间表，何一称其余钱包仍在反复安全审计、排序看市值、锁仓与用户数。",
-   "label": "提现",
-   "value": "第一阶段全部完成：首批 15 个网络均已开放（BTC 14:10 至 ZEC/TON/SUI 20:38）"
-  }
- },
- "updates": [
-  {
-   "time": "2026-11-01T20:38:00+08:00",
-   "title": "第一阶段提现全部完成：ZEC、TON、SUI 网络已恢复，首批 15 个网络全部开放",
-   "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 20:38 转述官方公告）：已恢复 ZEC 网络的 ZEC、TON 网络的 USDT 和 GRAM，以及 SUI 网络的 SUI 提现。至此公告#4 首批 15 个网络/资产组合全部确认开放：BTC（14:10）、ETH/BSC（15:56）、XRP/Base（17:43）、DOGE/OP（18:11）、TRX/Arbitrum（18:53）、SOL（19:19）、Polygon/AVAX（19:33）、ZEC/TON/SUI（20:38）。关键限定：这是第一阶段（首批 15 个网络）的完成，不等于全部网络/资产恢复——公告#4 原称其他网络及资产将在具备恢复条件后陆续开放，第二阶段目前仍无确切时间表（何一称其余钱包仍在反复安全审计，排序看市值、锁仓与用户数）；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
-   "category": "官方确认",
-   "source": "币安官方公告（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529618"
-  },
-  {
-   "time": "2026-11-01T20:10:00+08:00",
-   "title": "何一提醒：网传“150 美元提币暂停补偿”系诈骗，币安目前无现金券活动",
-   "body": "币安联合 CEO 何一晚间提醒（经链新闻 ABMedia 北京时间 11-01 20:10 更新转述）：网络上有人宣称币安发放 150 美元的提币暂停补偿，何一表示币安的社群奖励活动需要监管机构核准，预计主管机关隔天上班审核通过后才上线，目前没有任何现金券活动，用户要小心各种钓鱼与诈骗链接。关键限定：这是针对冒充币安补偿活动的防骗提醒，不是新的赔付方案——币安承担损失的口径仍为 SAFU + 公司资金全额承担（补回约 95%、前十大 100% 储备），不存在用户申请领取 150 美元补偿的流程，任何索要账户资料或要求连接钱包的“领补偿”链接都应先当诈骗；本条不改变提现状态（截至本轮 20:17，首批 15 个网络仍只确认 12 条链已开放，ZEC、TON、SUI 尚未见已开放的单独确认，不能报成首批已全部开放）、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）；本条是官方表态、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
-   "category": "官方表态",
-   "source": "币安联合 CEO 何一（经链新闻 ABMedia 转述）",
-   "url": "https://abmedia.io/binance-hot-wallet-hack-tether-circle-freeze"
-  },
-  {
-   "time": "2026-11-01T19:54:00+08:00",
-   "title": "补报：提现重开后约 3 小时流出约 $20 亿，首日 24 小时净流出约 $12.6 亿，未见恐慌抛售",
-   "body": "媒体统计（蕃新闻北京时间 11-01 19:54 综合外电，援引 BeInCrypto 经 Yahoo 转载与韩国 TokenPost）：币安 11-01 下午 14:00 分阶段恢复提现后，约 3 小时内约 $20 亿的 BTC、ETH 与稳定币流出平台，Whale Alert 标记的大额转出包括 1 万枚 BTC（约 $7.79 亿）、近 $10 亿 USDT、约 $2 亿 USDC 与 3 万枚 ETH（约 $6800 万）；TokenPost 统计币安当日 24 小时净流出约 $12.6 亿（若把 10-29 至 10-30 被盗期间一并计入，过去 7 天净流出约 $80.1 亿），同期 OKX、Bybit 呈小幅净流入。关键限定：这是用户侧提现资金流动、不是攻击者资金动向（攻击者 18,270 枚 BTC 仍未动、SOL→BTC 换币腿见 18:35 条）；净流出为流出扣除流入后的数字，不等于总提领金额，24 小时统计窗口的起止定义在转述中未完全披露；BTC 价格在 11-01 傍晚维持约 $7.8 万附近、未见明显抛压。补回仍约 95%、冻结总额仍约 $30 亿、Alpha 仍无恢复消息均未变。本条不触发 funds.json 的资金动静提醒。",
-   "category": "链上数据",
-   "source": "BeInCrypto（经 Yahoo 转载）/ TokenPost（经蕃新闻综合转述）",
-   "url": "https://n.yam.com/Article/20261101994763"
-  },
-  {
-   "time": "2026-11-01T19:33:00+08:00",
-   "title": "第七批提现开放：Polygon 与 Avalanche C 链已恢复",
-   "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 19:33 转述官方公告）：已恢复 Polygon 网络的 POL、USDT 和 USDC 提现，以及 Avalanche C 链的 AVAX、USDT 和 USDC 提现。此前已开放的 Solana 网络组合在本条中是重申、非新增。关键限定：截至本轮 19:47，尚未见 ZEC、TON、SUI 等其余 3 个首批网络/资产组合已开放的单独确认——它们仍在陆续开放中，不能报成首批 15 个网络已全部开放；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
-   "category": "官方确认",
-   "source": "币安官方公告（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529612"
-  },
-  {
-   "time": "2026-11-01T19:19:00+08:00",
-   "title": "第六批提现开放：Solana 网络已恢复",
-   "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 19:19 转述官方公告）：已恢复 Solana 网络的 SOL、USDT 和 USDC 提现。关键限定：这是用户提现恢复、与同日 17:42–18:35 攻击者转移/兑换被盗 SOL 的资金动向是两回事，不能混淆——本条是币安用户侧 Solana 提现通道重开，不是攻击者 SOL 已套现；截至本轮 19:47，尚未见 ZEC、TON、MATIC、AVAXC、SUI 等其余 5 个首批网络/资产组合已开放的单独确认（19:33 的 Polygon/AVAX 开放见本轮另条）；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条本身不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
-   "category": "官方确认",
-   "source": "币安官方公告（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529610"
-  },
-  {
-   "time": "2026-11-01T19:12:00+08:00",
-   "title": "何一：预测市场模块独立、与主站钱包的安全审计仍在进行，优先级靠后",
-   "body": "币安联合 CEO 何一表示（经 Odaily 北京时间 11-01 19:12 转述）：预测市场是独立模块，其与币安主站钱包之间的安全审计仍在进行，优先级会排得稍后一点，请耐心等待。关键限定：这不是 Alpha 交易恢复消息——Alpha 仍无恢复消息（仍为 10-30 07:06 暂停口径）；何一未给出预测市场恢复的具体时间，只说明审计未完成且优先级靠后，不能报成预测市场即将恢复或已恢复；提现第一阶段截至本轮为 BTC、ETH、BSC、XRP、Base、DOGE、OP、TRX、Arbitrum 已开放（见本轮另条），补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变。本条是官方表态、非攻击者资金动向，不触发 funds.json 的资金动静提醒。",
-   "category": "官方表态",
-   "source": "币安联合 CEO 何一（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529609"
-  },
-  {
-   "time": "2026-11-01T18:53:00+08:00",
-   "title": "第五批提现开放：TRX 与 Arbitrum 网络已恢复",
-   "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 18:53 转述官方公告）：已恢复 Arbitrum 网络的 ARB、ETH、USDT、USDC 提现，以及 TRX 网络的 TRX、USDT 提现。此前已开放的 BTC、ETH、BSC、XRP、Base、DOGE、OP 组合在本条中是重申、非新增。链新闻 19:06 更新佐证：目前共 9 条链开放，晚间 19:00 App 实测 USDT 已可经 Tron（TRC20）、BSC、以太坊、Arbitrum 与 Optimism 提领（TRC20 手续费约 4 USDT、最低 10 USDT，开放前 App 显示为 1.5 USDT，币安未说明调整原因）。关键限定：截至本轮 19:17，尚未见 SOL、ZEC、TON、MATIC、AVAXC、SUI 等其余 6 个首批网络/资产组合已开放的单独确认——它们仍在陆续开放中，不能报成首批 15 个网络已全部开放；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
-   "category": "官方确认",
-   "source": "币安官方公告（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529606"
-  },
-  {
-   "time": "2026-11-01T18:50:00+08:00",
-   "title": "Symbiosis 称检测到币安事件相关资金试图经其协议转移，正设法拦截并已联系币安",
-   "body": "跨链协议 Symbiosis 表示（经 Odaily 北京时间 11-01 18:50 转述）：其团队检测到有人试图把与币安近期安全事件相关的资金经 Symbiosis 协议转移，目前正尽力阻止并已联系币安；作为去中心化协议，其筛查机制主要针对常规资金流，难以追踪快速复杂的转移行为，部分机制存在漏洞、团队正逐一修复；用户资金如处于待处理或被误退回状态可联系团队处理。此前 BlockSec 的分析称部分被盗 TRX 已通过 Symbiosis 等渠道跨链至以太坊。关键限定：Symbiosis 未披露涉及金额、地址与是否已有资金实际通过——这是协议方对转移尝试的检测声明，不是已确认的定额资金移动，不能报成新增一笔定额洗钱或已拦截/已冻结；与已报的 Relay 桥接腿（约 $3800 万级，仍在继续）与 THORChain 腿属不同协议的并行线索，不直接相加；18,270 枚 BTC 仍未动，冻结总额仍约 $30 亿。本条不更换 funds.json 首页 alert（无确认的定额移动、无混币器/交易所新去向），仅在 flows 与洗钱池中增记一笔“尝试检测、金额与是否通过均未披露”的记录。",
-   "category": "链上数据",
-   "source": "Symbiosis（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529605"
-  },
-  {
-   "time": "2026-11-01T18:35:00+08:00",
-   "title": "攻击者正把被盗 SOL 换成 BTC：约 97.05 万枚 SOL（约 $9590 万）经 Relay 跨链",
-   "body": "Lookonchain 监测（经 Odaily 北京时间 11-01 18:35 转述）：标记为币安黑客的地址 AffzFDKZ...GigBEaU 正把被盗的 97.05 万枚 SOL（价值约 $9590 万）兑换为 BTC；过去一小时内已转移 48.7 万枚 SOL（约 $4640 万），目前正通过 Relay Protocol 将 SOL 兑换为 BTC。关键限定：这是 17:42 Arkham 所报 485,270 枚 SOL 转移的去向跟进——数量（48.7 万枚 vs 48.527 万枚）与时间窗口吻合，属同一笔转移的后续，不是第二笔约 48 万枚 SOL 转移，不能与 17:42 条相加；97.05 万枚是被盗 SOL 全量口径（Arkham 最初统计 970,522 枚），即攻击者疑似在把整个 SOL 池换成 BTC，但截至本轮尚未披露已实际换成多少 BTC、接收 BTC 地址为何，换币完成量与最终去向均未确认，不能报成 SOL 已全部换完或已套现；18,270 枚被盗 BTC 本身仍未动（本条是新增 BTC 换入方向、非被盗 BTC 转出）；冻结总额仍约 $30 亿；提现第一阶段截至本轮仍为 BTC、ETH、BSC、XRP、Base、DOGE、OP 已开放，其余 8 个首批网络/资产组合（TRX、SOL、ZEC、TON、MATIC、AVAXC、ARBITRUM、SUI）尚未见已开放的单独确认；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条命中 funds.json 的资金动向触发点，首页 alert 已同步更新为本笔 SOL→BTC 动静。",
-   "category": "链上数据",
-   "source": "Lookonchain（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529603"
-  },
-  {
-   "time": "2026-11-01T18:11:00+08:00",
-   "title": "第四批提现开放：DOGE 与 OP（Optimism）网络已恢复",
-   "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 18:11 转述官方公告）：已恢复 DOGE 网络的 DOGE 提现，以及 OP（Optimism）网络的 ETH、USDT、USDC 提现。此前已开放的 BTC、ETH、BSC、XRP、Base 组合在本条中是重申、非新增。关键限定：截至本轮 18:17，尚未见 TRX、SOL、ZEC、TON、MATIC、AVAXC、ARBITRUM、SUI 等其余 8 个首批网络/资产组合已开放的单独确认——它们仍在陆续开放中，不能报成首批 15 个网络已全部开放；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 17:42 的 SOL 转移动静记录不变。",
-   "category": "官方确认",
-   "source": "币安官方公告（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529598"
-  },
-  {
-   "time": "2026-11-01T17:43:00+08:00",
-   "title": "第三批提现开放：XRP 与 Base 网络已恢复",
-   "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 17:43 转述）：已重新开放 BTC 网络的 BTC；ETH 网络的 ETH、USDT、USDC；BSC 网络的 BNB、USDT、USDC；XRP 网络的 XRP；Base 网络的 ETH、USDC。相对上一批（15:56 的 ETH/BSC 开放）新增的是 XRP 网络与 Base 网络：此前已开放的 BTC、ETH、BSC 组合在本条中是重申、非新增。关键限定：17:43 已超出公告#4 原定的 14:00–17:00 第一阶段窗口，说明分阶段放行在窗口结束后仍在继续，不能报成窗口内全部完成；截至本轮 17:47，尚未见 TRX、SOL、ZEC、DOGE、TON、MATIC、AVAXC、ARBITRUM、OP、SUI 等其余 10 个首批网络/资产组合已开放的单独确认——它们仍在陆续开放中，不能报成首批 15 个网络已全部开放；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条本身是用户提现恢复、非攻击者资金动向；本轮资金动静提醒由下一条 SOL 转移触发，见 funds.json。",
-   "category": "官方确认",
-   "source": "币安官方进展（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529592"
-  },
-  {
-   "time": "2026-11-01T17:42:00+08:00",
-   "title": "攻击者转移约 48.53 万枚 SOL（约 $4623 万），被盗 SOL 约半数首次异动",
-   "body": "Arkham 监测（经 Odaily 北京时间 11-01 17:42 转述，转移发生在报道约 1 分钟前）：标记为币安黑客的地址向某地址转移 485,270 枚 SOL，价值约合 $4623 万。这是被盗 SOL 池的首次大额异动：Bitquery 11-01 00:51 截点仍称 SOL（约 97 万枚）未动，Arkham 最初统计被盗 SOL 为 970,522 枚——本笔 485,270 枚约占被盗 SOL 的一半。关键限定：Odaily 只披露了转移数量与约值，未披露接收地址归属与后续去向，未确认进入交易所充值地址、混币器或已抛售，不能报成已洗钱或已套现；18,270 枚 BTC 仍未动，冻结总额仍约 $30 亿，提现第一阶段仍在陆续开放（截至本轮 BTC、ETH、BSC、XRP、Base 已确认开放）、Alpha 仍无恢复消息。本条命中 funds.json 的资金动向触发点（被可靠来源确认的资金移动），首页 alert 已同步更新为本笔 SOL 动静。",
-   "category": "链上数据",
-   "source": "Arkham（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529591"
-  },
-  {
-   "time": "2026-11-01T15:56:00+08:00",
-   "title": "第二批提现开放：ETH 与 BSC 网络已恢复",
-   "body": "币安华语发文（经 0xZX 北京时间 11-01 15:56 转述）：目前已恢复以太坊网络 USDC、USDT、ETH，以及 BNB 智能链（BSC）USDC、USDT、BNB 的提现服务；平台将继续进行安全检查，并在完成相关检查后分阶段恢复更多资产及网络的提现服务，后续进展将通过官方渠道更新。这是第一阶段提现恢复的第二批实际开放：此前 14:10 仅 BTC 网络确认已开放，14:50 链新闻 App 实测当时 USDT/USDC 仍暂停——15:56 的 ETH/BSC 开放意味着 ETH 与 BSC 上的 USDT/USDC 也已从暂停转为可提。关键限定：截至本轮 16:17，尚未见 TRX、SOL、XRP、ZEC、DOGE、TON、MATIC、AVAXC、ARBITRUM、BASE、OP、SUI 等其余 12 个首批网络/资产组合已开放的单独确认——它们仍在公告#4 的 14:00–17:00 窗口内陆续开放，窗口关闭前仍可能继续放行，不能报成首批 15 个网络已全部开放；何一 15:57 称目前提现整体运行平稳、大量请求时可能短暂拥堵、稍后恢复顺畅，属公告#4 已含的分阶段/初期延迟口径的用户指引，不单独成条；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、ETH 仍无确认进入混币器的后续均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 04:43 的 Relay 约 $3800 万桥接动静记录不变。",
-   "category": "官方确认",
-   "source": "币安华语（经 0xZX 转述）",
-   "url": "https://0xzx.com/flash/374872"
-  },
-  {
-   "time": "2026-11-01T15:10:00+08:00",
-   "title": "Lookonchain：攻击者仅在 EVM 链已抛售超 130 种山寨币，累计换得约 12.34 万枚 ETH",
-   "body": "Lookonchain 监测（经 Odaily 北京时间 11-01 15:10 转述）：币安攻击者仅在 EVM 兼容链上就已抛售超过 130 种山寨币，累计获得 123,400 枚 ETH（约 $2.7726 亿）和 169 万枚 USDC，合计约 $2.79 亿。关键限定：这是截至 11-01 下午的累计口径，不是本轮 30 分钟内的一笔新抛售；它包含此前已报的 7 种山寨币共 $1.58 亿换 70,480 ETH 的子集（以及 PROM 极端滑点等个例），不能与此前数字直接相加、也不能报成新增 $2.79 亿抛售；该统计只覆盖 EVM 链，未计入 Tron 等其他链的换币腿；仍未见资金转入交易所充值地址或混币器的确认。冻结总额仍约 $30 亿，18,270 枚 BTC 仍未动，提现第一阶段仍在 14:00–17:00 窗口内陆续开放（截至本轮仅 BTC 网络确认已开放），Alpha 仍无恢复消息。本条不触发 funds.json 首页 alert 的更换（无混币器/交易所新去向），仅在 flows 与洗钱池中增记累计口径。",
-   "category": "链上数据",
-   "source": "Lookonchain（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529568"
-  },
-  {
-   "time": "2026-11-01T14:55:00+08:00",
-   "title": "币安更新 PoR 地址列表：后续所有提现改由新生成钱包处理",
-   "body": "币安在 X 发文（经 Odaily 北京时间 11-01 14:55、TokenPost 转述）：作为持续安全响应工作的一部分，已更新储备证明（PoR）地址列表，纳入新生成的钱包地址；后续所有提现交易都将通过这些新钱包地址处理。这是第一阶段提现恢复进行中的配套安全动作：提现路由从受影响的旧热钱包地址切换到新地址，PoR 地址清单同步更新以便核对。关键限定：这不是一份新的完整 PoR（完整零知识证明仍待 11-03）；链新闻 14:50 App 实测显示当时 BTC 已可提、USDT 与 USDC 仍暂停，说明截至本轮其余 14 个首批网络/资产组合仍在 14:00–17:00 窗口内陆续开放、尚未见已开放确认，不能报成首批 15 个网络已全部开放；补回约 95%、前十大 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变。本条是币安自有提现基础设施的调整、非攻击者资金动向，不触发 funds.json 的资金动静提醒。",
-   "category": "官方确认",
-   "source": "币安官方（经 Odaily / TokenPost 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529566"
-  },
-  {
-   "time": "2026-11-01T14:10:00+08:00",
-   "title": "第一阶段提现开始执行：BTC 网络已开放",
-   "body": "Odaily 于北京时间 11-01 14:10 转述币安官方消息：分阶段恢复提现的首批网络为比特币网络，即 BTC 网络提现已实际开放。这是公告#4（11-01 12:16 已报）的计划落地：公告#4 原定今日 14:00–17:00 期间恢复第一阶段提现，首批 15 个网络/资产组合按过去一周用户需求定优先顺序、每组合须通过稳定性与安全性检查后开放；14:10 的 BTC 网络开放意味着第一阶段已从“计划”进入“执行”，不再是全部待恢复状态。关键限定：截至本轮 14:20，仅见 BTC 网络已开放的确认，尚未见 ETH、BSC、TRX、SOL 等其余 14 个首批网络/资产组合已开放的确认——它们仍在 14:00–17:00 窗口内陆续开放，初期流量大或有延迟、失败稍后重试仍属公告#4 所述的正常现象；补回约 95%、前十大 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、ETH 仍无确认进入混币器的后续均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 04:43 的 Relay 约 $3800 万桥接动静记录不变。",
-   "category": "官方确认",
-   "source": "币安官方消息（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-CN/newsflash/529562"
-  },
-  {
-   "time": "2026-11-01T12:17:00+08:00",
-   "title": "攻击者把约 90.88 万枚 PROM 卖入近乎空池，仅得约 $71",
-   "body": "Lookonchain 监测（经 Odaily 北京时间 11-01 12:17 转述）：币安攻击者把价值约 $500 万的 90.8793 万枚 PROM 卖入流动性几乎为空的 Uniswap V2 流动性池，仅收到 0.0316 枚 ETH，价值约 $71。关键限定：这不是一笔进入交易所充值地址或混币器的转移，而是攻击者在 DEX 上抛售剩余山寨币仓位时遭遇的极端滑点个例——名义 $500 万、实际变现约 $71，经济意义可忽略；属此前已报“批量抛售山寨币换 ETH”模式的延续（Lookonchain 此前统计 7 种山寨币共 $1.58 亿换 70,480 ETH），不改变大局：18,270 枚 BTC 仍未动，冻结总额仍约 $30 亿，ETH 仍无确认进入混币器的后续；PROM 抛售本身不触发 funds.json 首页 alert 的更换（实际变现仅约 $71、无混币器/交易所去向，首页仍保留进行中的 Relay 约 $3800 万桥接动静），仅在 funds.json 的 flows 与洗钱池中增记一笔。",
-   "category": "链上数据",
-   "source": "Lookonchain（经 Odaily 转述）",
-   "url": "https://www.odaily.news/zh-TW/newsflash/529548"
-  },
-  {
-   "time": "2026-11-01T12:16:00+08:00",
-   "title": "币安公告#4：今日 14:00–17:00 恢复第一阶段提现，补回升至约 95%",
-   "body": "币安发布安全事件恢复进展公告#4（官网原文，Odaily 于北京时间 11-01 12:16 转述）：计划于今日 14:00 至 17:00（东八区时间）期间恢复第一阶段提现服务。首批逐步开放 15 个网络及资产组合：BTC 链 BTC；ETH 链 ETH、USDT、USDC；BSC 链 BNB、USDT、USDC；TRX 链 TRX、USDT；SOL 链 SOL、USDT、USDC；XRP 链 XRP；ZEC 链 ZEC；DOGE 链 DOGE；TON 链 USDT、GRAM；MATIC（Polygon）链 POL、USDT、USDC；AVAXC 链 AVAX、USDT、USDC；ARBITRUM 链 ETH、USDT、USDC、ARB；BASE 链 ETH、USDC；OP 链 ETH、USDT、USDC；SUI 链 SUI。币安称将根据过去一周用户需求数据确定各代币恢复优先顺序，每个网络与资产组合均须完成稳定性与安全性检查后才审慎开放；恢复初期因流量较大、部分提现可能出现暂时延迟或较长处理时间，失败后稍后重试属分阶段恢复期间的正常现象；其他网络及资产将在具备恢复条件后陆续开放；充值服务保持开放。补回进度同步更新：受影响资产回填已从公告#3 的约 90% 升至约 95%，剩余约 5% 为十大代币以外的低流动性币种，仍需经市场/OTC 购足；BTC、ETH、USDT、BNB、SOL、USDC、XRP、USD1、RLUSD、ZEC 仍为 100% 足额储备支持，用户可通过储备金证明页面核实快照（完整零知识证明仍待 11-03）。关键限定：截至本轮 12:17，提现尚未实际恢复，本条是恢复计划与时间窗口、非已恢复；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）；95% 与前十大 100% 均为币安自述，可验证证明尚未公开；冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、ETH 仍无确认进入混币器的后续，均未变。",
-   "category": "官方确认",
-   "source": "币安安全事件恢复进展公告#4（官网原文，经 Odaily 转述）",
-   "url": "https://www.binance.com/zh-CN/support/announcement/detail/73911fb819b240f88b88256bdd318eda"
-  },
-  {
-   "time": "2026-11-01T05:46:00+08:00",
-   "title": "FBI 正式归因：朝鲜 TraderTraitor 对逾 $60 亿币安被盗案负责，公布数百个关联地址并呼吁拦截",
-   "body": "美国联邦调查局（FBI）于美国时间 10-31 发布网络安全通报（The Defiant 发布时间为 10-31 21:46 UTC，即北京时间 11-01 05:46）：正式认定朝鲜对币安约 10-29 发生的逾 $60 亿美元虚拟资产被盗案负责，所涉朝鲜恶意网络活动代号为 TraderTraitor——即此前 TRM Labs/Chainalysis 以高信心指向、ZachXBT 亦指向的同一组织，也是 FBI 此前认定的 2025 年 Bybit 约 $15 亿被盗案行为人。通报由 FBI 联合美国特勤局（USSS）与国税局刑事调查部门（IRS-CI）发出：观察到 TraderTraitor 正把被盗资产主要兑换成 ETH，预计随后经 DeFi 与即时兑换服务进一步转换、进入后续洗钱阶段；呼吁 THORNode 运营方、RPC 节点运营方、即时交易所、DeFi 服务、链上分析公司及其他虚拟资产服务商拦截与通报所列地址相关或衍生的交易，并公布了约 628 个 ETH/BTC/SOL 地址（对 FBI 原页清单逐条清点：ETH 约 608 条、BTC 19 条、SOL 1 条）（称其持有或曾持有被盗资产、由 TraderTraitor 运营或密切相关），其中 ETH 地址 0x03b0…020ea 即此前已报的 17,260 ETH 试探转移接收方，属已有地址的官方确认、非新一笔转移。关键限定：这是美国执法机构的首次官方归因，币安自身仍未具名归因；FBI 的拦截呼吁是请求、非制裁令或法院命令，不等于新增冻结金额，冻结总额仍约 $30 亿；本条不触发 funds.json 的资金动静提醒（无 BTC 转出、无 ETH 入混币器/交易所的新确认、无新增冻结/追回），首页 alert 保持 11-01 05:50 的 Relay 桥动静记录不变；提现截至本轮仍暂停、仍按公告#2/#3 的 11-01 分阶段恢复口径（约指向当天下午），尚未实际恢复；PoR 完整证明仍待 11-03。",
-   "category": "官方确认",
-   "source": "FBI 网络安全通报（经 The Defiant / Arab News / CoinEdition 转述）",
-   "url": "https://www.fbi.gov/investigate/cyber/alerts/2026/north-korea-responsible-for-6-billion-binance-attack"
-  },
-  {
-   "time": "2026-11-01T05:50:00+08:00",
-   "title": "Bitquery 全链复盘：攻击者 10-31 起改走 Relay 桥，约 $1600 万 TRX/USDT 已换成 7,352 枚 ETH",
-   "body": "链上数据公司 Bitquery 发布币安被盗事件全链调查（链上持仓截点为 10-31 16:51 UTC，即北京时间 11-01 00:51；转移追踪截至 10-31 16:01 UTC）：攻击者自 10-31 中午起新增一条洗钱腿——改走跨链桥 Relay。链上时间线：10-31 12:27 UTC（北京时间 20:27）之后，攻击者此前付款的 5 个 THORChain 金库不再接收任何人的 TRX（与此前已报的 THORChain 因以太坊重组误发双倍退款而紧急暂停换币时间吻合，但暂停本身是协议自保、非针对被盗资金的定向拦截）；一个分发地址把 5700 万枚 TRX 投入一个波场中转合约、取出大部至 9 个新钱包，在 SunSwap 换成 USDT；截至 16:01 UTC（北京时间 11-01 00:01），其中 7 个钱包已向 Relay 发送约 $1600 万的 USDT 与 TRX（Relay 退回了其中几笔存款）；Relay 的付款落在以太坊 8 个新钱包，这些钱包把 USDT 换成 ETH（多经 CoW Swap），大部再转入 16 个新钱包——截点时这 16 个钱包持有 7,352 枚 ETH、另有 718 枚 ETH 仍在一个 Relay 钱包中，且桥接在截点后仍在继续，故余额可能已进一步增加。同一调查还量化了 THORChain 腿：10-30 至 10-31，43 个地址向 THORChain 发送 6400 万枚 TRX（退款后约 $2000 万），换得的 3,600 枚 ETH 落入 2 个地址并分发至 35 个新钱包（Bitquery 注明只读了一个钱包的换币备注，故 3,600 枚为下限）。全口径持仓：截点时攻击者仍持有约 $31 亿，其中 ETH 达 525,201 枚（为被盗 ETH 的 2.6 倍，含用被盗稳定币/代币/TRX 换得的部分），高于此前约 48 万枚的主钱包口径，属统计范围差异；BTC 18,270 枚自 10-29 20:48 UTC 后未动，XRP（2.335 亿枚）与 SOL（约 97 万枚）亦未动；Bitquery 未发现任何一笔转入交易所充值地址或混币器的资金（其冻结统计约 $27 亿为链上可查冻结口径，与币安核实约 $30 亿为统计方法与截点差异）。大局未变：提现仍按公告#2/#3 的 11-01 分阶段恢复口径、截至本轮尚未实际恢复；冻结总额仍约 $30 亿；PoR 完整证明仍待 11-03。",
-   "category": "链上数据",
-   "source": "Bitquery 调查",
-   "url": "https://bitquery.io/investigations/binance-hack"
-  },
-  {
-   "time": "2026-11-01T04:43:00+08:00",
-   "title": "补报：Specter 监测称攻击者 7 小时内经 Relay 桥接约 $3800 万且仍在继续，Relay 腿较 Bitquery 截点显著扩大",
-   "body": "链上侦探 Specter 监测（经 Odaily/BBX/KuCoin/TokenPost 转述，BBX 发布时间为北京时间 11-01 04:43）：攻击者约 7 小时内经跨链桥 Relay 桥接约 $3800 万，且仍在继续；Specter 指出 Relay 虽自称已启用 KYT 系统、仍未能拦截相关操作，并称经 THORChain 不可能在这么短时间内洗出这一规模、是 Relay 打开了通道。这是 05:50 轮次已报 Bitquery Relay 腿的后续扩大：Bitquery 截点为 11-01 00:01、当时 7 个钱包已向 Relay 发送约 $1600 万 USDT 与 TRX（另 718 枚 ETH 仍在 Relay 钱包），Specter 的 $3800 万为另一家在更晚截点的桥接量统计，两家口径与截点不同、不能直接相加，但方向一致——Relay 腿在 Bitquery 截点后仍在扩大，且 THORChain 换币暂停（12 链）仍未见恢复报道，攻击者洗钱主通道已转向 Relay。关键限定：$3800 万为单家侦探的监测口径、未经 Relay 或第二家链上公司复核；Specter 未称资金已进入交易所充值地址或混币器，Bitquery 截点“未发现转入交易所/混币器”的结论在本轮未被推翻；18,270 枚 BTC 仍未动，冻结总额仍约 $30 亿，提现截至本轮（11-01 早间）仍暂停、仍按公告#2/#3 的 11-01 分阶段恢复口径（约指向当天下午）、尚未实际恢复。",
-   "category": "链上数据",
-   "source": "链上侦探 Specter（经 Odaily / BBX / KuCoin / TokenPost 转述）",
-   "url": "https://www.kucoin.com/news/flash/38m-usd-bridged-via-relay-in-7-hours-chain-analyst-claims-dprk-still-transferring"
-  },
-  {
-   "time": "2026-10-31T23:09:00+08:00",
-   "title": "THORChain 因以太坊重组误发双倍退款紧急暂停 12 条链换币，Chainalysis 称意外延缓被盗资金洗钱",
-   "body": "跨链协议 THORChain 于北京时间 10-31 晚间触发紧急暂停：以太坊发生链重组（reorg）后，协议误将一笔 10 枚 ETH 的存款退款发了两次，触发紧急制动，12 条链（共 13 条）的换币交易暂停；多数受影响链上的出账签名仍保持开启，付款仍可发出、只是新换币被堵住。这是此前各轮漏报的补报：BBX 于 23:09 北京时间首报状态接口显示 12/13 链暂停，The Defiant 与 TokenPost 于 11-01 01:43–01:44 北京时间确认换币仍暂停、暂无恢复报道，截至本轮（11-01 05:17）亦未见恢复报道。关键限定：暂停并非针对被盗资金的定向拦截，而是重组导致误退款触发的协议自保；Chainalysis 把这次中断与币安被盗资金的洗钱活动联系起来（归因为朝鲜相关行为人），称暂停使经 THORChain 的洗钱被迫等待、给追踪留出时间，但未给出经此路线被堵的具体金额与地址。这不是一笔新的攻击者资金转移、不是新增冻结或追回，故不触发 funds.json 的资金动静提醒，首页 alert 保持 10-31 09:27 的 TRX 池拆分记录不变；大局未变：18,270 枚 BTC 仍未动，ETH 仍无确认进入 Tornado Cash 等混币器的后续，冻结总额仍约 $30 亿，提现仍按公告#2/#3 的 11-01 分阶段恢复口径、截至本轮尚未实际恢复。",
-   "category": "链上数据",
-   "source": "Chainalysis（经 CryptoBriefing / TokenPost / The Defiant / BBX 转述）+ THORChain 状态接口",
-   "url": "https://cryptobriefing.com/thorchain-pauses-ethereum-reorg-double-refund/"
-  },
-  {
-   "time": "2026-10-31T22:51:00+08:00",
-   "title": "币安 SAFU 钱包转出约 7,499 枚 BTC（约 $5.81 亿），SAFU 部分动用落地",
-   "body": "Arkham 链上数据显示，北京时间 10-31 22:51（美东时间 10:51），币安 SAFU 钱包 1BAuq 向新地址 165Eur…SMmee 转出 7,499 枚 BTC（约 $5.81 亿），币安随后确认该笔 SAFU 转账已完成；转出后 SAFU 该地址仍持有约 7,500 枚 BTC。链上分析师 Ai 姨（@ai_9684xtpa）与 Lookonchain 亦监测到同一规模的 SAFU 转出，PANews/TokenPost 转述称或与受影响资产的储备补足有关。这是公告#3（22:27）所称“SAFU 部分动用、24 小时内完成”在当晚的链上执行证据，与公告#3 的约 90% 补回、前十大资产 100% 储备口径相互印证，但不等同于 90% 本身：7,499 BTC 约 $5.81 亿只是 SAFU 动用的一部分，补回总额仍以币安公告为准。关键限定：这是币安自有资金的内部调拨，不是攻击者资金动向，不触发 funds.json 的资金动静提醒；7,500 与 7,499 之差为各家四舍五入/口径差异；接收地址后续去向未披露。提现仍按公告#2/#3 的 11-01 分阶段恢复口径，截至本轮（11-01 01:47）尚未实际恢复；冻结总额仍约 $30 亿，18,270 枚 BTC 仍未动，ETH 仍无确认进入混币器的后续。",
-   "category": "链上数据",
-   "source": "Arkham（经 WuBlockchain / CryptoPanic 转述）+ Ai 姨 @ai_9684xtpa / Lookonchain（经 PANews / TokenPost）",
-   "url": "https://www.tokenpost.com/news/technology/45570"
-  },
-  {
-   "time": "2026-10-31T22:27:00+08:00",
-   "title": "币安公告#3：已补回约 90% 被盗资产，前十大资产 100% 储备、PoR 快照已完成",
-   "body": "币安第三次安全事件进展公告（经路透/TokenPost/BBX/CryptoBriefing 转述，BBX 发布时间 22:27 北京时间）：被盗资产补回进度由公告#2 的约 80% 升至约 90%；BTC、ETH、USDT、BNB、SOL、USDC、XRP、USD1、RLUSD、ZEC 这前十大用户资产已达 100% 储备支持。剩余约 10% 为流动性较低的其他代币，仍需经市场及 OTC 渠道继续买回、耗时更久。资金来源新增口径：SAFU 基金部分动用（预计 24 小时内完成划拨，事后 SAFU 将补回至约 $10 亿规模）+ 合约保险基金中超出风控最低要求的部分 + 公司自有资金，此前 $63.4 亿拨备总额口径未变。储备证明进展：新一轮 PoR 快照已于 10-31 08:00 北京时间（00:00 UTC）完成，完整零知识证明（zk-SNARK/Merkle）预计 11-03 生成（BBX 称 11-03 08:00 北京时间，TokenPost 称 11-03 UTC，日期一致、时刻表述有别，以币安原文为准）；此前公告#2 称“结果 11-02 前公布”，现以 11-03 完整证明为准，11-02 前是否先出快照结果待核实。提现仍按原定时间表、11-01 分阶段恢复，尚未实际恢复。关键限定：90% 与前十大 100% 均为币安自述，快照数据尚未经外部可验证证明公开，不能等同最终 PoR 结果；冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、ETH 仍无确认进入混币器的后续，均未变。",
-   "category": "官方确认",
-   "source": "币安安全事件进展公告#3（经路透/TokenPost/BBX/CryptoBriefing 转述）",
-   "url": "https://www.tokenpost.com/news/technology/45530"
-  },
-  {
-   "time": "2026-10-31T20:39:00+08:00",
-   "title": "Chainalysis 新披露 Tron 洗钱路径：稳定币经 DeFi 存款凭证绕冻结、再跨链换 ETH",
-   "body": "Chainalysis 于北京时间 10-31 20:39（12:39 UTC）发文（经 ChainCatcher 转述）：币安被盗资金相关地址正试图赶在稳定币冻结前转移资产，其正在追踪的一种方式是——先在波场链上把 TRX 换成稳定币，再存入 DeFi 借贷协议换取存托凭证类代币（凭证代币本身不能被发行方冻结，但可兑换回所代表的稳定币），随后转入未被关联的新钱包换回稳定币，再经跨链桥换成以太坊上的 ETH。关键限定：该方法自约 64 亿美元攻击发生后的早期起即已出现在波场链上，本次是 Chainalysis 10-31 的公开路径披露，不是今天新发生的一笔定额转移——文中未给出这条路径对应的币安资金金额与地址，文中所举 TraderTraitor 转移 50 万美元的例子是该组织在其他案件中的类似手法，不是本案金额；Chainalysis 同时称 Circle 与 Tether 迄今已参与冻结约 28 亿美元（与币安核实约 30 亿美元为统计时点与口径差异，不构成新增冻结），并称把稳定币换成 ETH 并不能使攻击者免于追踪、其调查人员正实时监测相关链上模式。这与 10-30 18:09 已报的自动化拆分—回流—再分发模式同属洗钱环节的不同侧面：此前报的是拆分形态，本次补的是绕冻结的具体机制。大局未变：18,270 枚 BTC 仍未动，ETH 仍无确认进入 Tornado Cash 等混币器的后续，冻结总额仍约 30 亿美元，提现仍按公告#2 的约 34 小时分阶段口径（约 11-01 下午）、尚未恢复，PoR 快照结果仍待 11-02 前公布；因本条是路径披露而非离散新转移，funds.json 的首页 alert 保持 10-31 09:27 的 TRX 池拆分动静记录不变。",
-   "category": "链上数据",
-   "source": "Chainalysis（经 ChainCatcher 转述）",
-   "url": "https://www.chaincatcher.com/article/2300660"
-  },
-  {
-   "time": "2026-10-31T11:31:00+08:00",
-   "title": "Ethena 约 1.286 亿枚 ENA 存入币安，疑为买回被盗 ENA 的 OTC 进展（用途未确认）",
-   "body": "Lookonchain 于北京时间 10-31 11:31 发帖（经 CryptoTimes / TokenPost / Coinfomania 转述；余烬 @EmberCN 更早于约 08:21 前后窗口已先行提示同一笔转账）：一个被识别为 Ethena 的钱包在约 8 小时内向币安存入约 1.2863 亿枚 ENA（约 $2400 万），约占攻击者 10-29 盗走的 2.175 亿枚 ENA 的 59%，剩余约 8887 万枚 ENA 仍待补齐。关键限定：转账本身是链上事实，但币安与 Ethena 均未确认这笔存入就是买回被盗资产的 OTC 交易——项目方钱包向交易所转账也可能用于做市、财库管理或 OTC 结算，不能直接报成“币安已买回 59% 的 ENA”；攻击者此前已把全部 2.175 亿枚 ENA 以约 $3393 万抛售换 ETH（属已报的 7 种山寨币共 $1.58 亿换 70480 ETH 的一部分），这笔存入与攻击者资金无关、不是攻击者动向，故不触发 funds.json 的资金动静提醒。这是公告#2“剩余部分正通过市场及 OTC 购买”之后，首个代币级别的买回进展链上证据：何一 10-30 已称将按被盗数量原币种全额买回山寨币备更新版 PoR；最终 ENA 是否回到足额储备，仍以 11-02 前公布的首次 PoR 快照结果为准。冻结总额仍约 $30 亿，提现仍按公告#2 的约 34 小时分阶段口径（约 11-01 下午）、尚未恢复，18,270 枚 BTC 仍未动，ETH 仍无确认进入混币器的后续。",
-   "category": "链上数据",
-   "source": "Lookonchain / @EmberCN（经 CryptoTimes / TokenPost / Coinfomania）",
-   "url": "https://www.cryptotimes.io/2026/10/31/binance-buys-back-stolen-assets-via-otc-deals-after-6-3b-hack-as-ethena-sends-24m/"
-  },
-  {
-   "time": "2026-10-31T09:27:00+08:00",
-   "title": "黑客 Tron 池拆分：约 6.382 亿 TRX 分 5 址，其中 1.2 亿枚 TRX 再转手",
-   "body": "Onchain Lens 监测、Whale Alert 亦报（经 PANews / ChainCatcher / TokenPost / CryptoBriefing 于 10-31 早间披露）：攻击者 Tron 资金池出现新一轮自动化拆分转手。链上时间实为 10-30 18:15–18:20（北京时间）：约 6.382 亿枚 TRX 池在 5 分钟内分拆为 5 个新地址——4 个各得 1.2 亿枚、1 个得 1.582 亿枚；其中一个 1.2 亿枚接收方于 18:20 随即将全额（约 $3878 万）转手至一个已在追踪链中的地址，随后又进一步分发。关键限定：这不是新增被盗——该池源自攻击者此前用约 $2.34 亿 USDT 经 SunSwap 换得的约 6.38 亿 TRX；TokenPost 明确指出，此次交易未指明地址控制人、也未显示卖出或套现；CryptoBriefing / Whale Alert 口径称转入“未知地址”，与 TokenPost“已在追踪链中”并不冲突（未知身份、但在追踪范围内），均未确认进入交易所或混币器。模式与 10-30 18:09 Chainalysis 已报的自动化拆分—回流—再分发洗钱模式一致。18,270 枚 BTC 仍未动，ETH 仍无确认进入 Tornado Cash 等混币器的后续，冻结总额仍约 $30 亿，提现仍按公告#2 的约 34 小时分阶段口径、尚未恢复。",
-   "category": "链上数据",
-   "source": "Onchain Lens / Whale Alert（经 PANews / ChainCatcher / TokenPost / CryptoBriefing）",
-   "url": "https://www.panewslab.com/zh/articles/01a18f91-463a-75c2-a9b9-7abe5ad30779"
-  },
-  {
-   "body": "币安发布安全事件进展公告#2：已准备逾 $63.4 亿公司资金，其中 $50 多亿等值 USDC、USDT、BTC、ETH、BNB 等对应代币已到位，即已填回约 80% 被盗资金，剩余部分正通过市场及 OTC 渠道购买——这是 10-30 19:01 已报 $63.4 亿拨备（$50 亿已持同类代币）的进度表述，非新增拨备额。链上冻结仍约 $30 亿，现阶段仍未发现钱包私钥泄露证据。时间表首次细化：约 34 小时内按代币分阶段恢复提现（自公告约 03:33 起算，约指向 11-01 下午，仍须通过安全检查、非已恢复）；12 小时内进行首次储备证明快照、结果于 11-02（周一）前公布；约 48 小时内公布进一步技术调查结果。此前 Teng 40 小时目标与何一 42 小时口径同属约 11-01 周末恢复区间，34 小时为更具体的分阶段版本。",
-   "category": "官方确认",
-   "source": "币安安全事件进展公告#2（经 PANews / CryptoBriefing 转述）",
-   "time": "2026-10-31T03:33:00+08:00",
-   "title": "币安公告#2：已填回约 80% 被盗资金，约 34 小时内分阶段恢复提现",
-   "url": "https://www.panewslab.com/zh/articles/01a18e5f-d62b-74bb-b55c-a2cae7755753"
-  },
-  {
-   "body": "Allora 在 X 发帖称：Allora 网络及 ALLO 代币合约安全，币安以外持有的 ALLO 未受影响；部分存放于币安的 ALLO 在本次被盗事件中被盗，团队发现后已执行 ALLO 代币合约内置的紧急保护机制，攻击者已无法转移、出售或使用这部分 ALLO，被盗 ALLO 均未被卖出或转出攻击者钱包；目前正将被盗 ALLO 全额归还币安，ALLO 总供应量不变。金额未披露，不改变币安核实约 $30 亿冻结总额口径；归还进行中、尚未确认到账。这是冻结之外又一笔协议方实际追回待归还的资产（此前 Synthetix SNX 约 $155 万为首笔）。",
-   "category": "链上数据",
-   "source": "Allora @AlloraNetwork（经 PANews 转述）",
-   "time": "2026-10-31T00:30:00+08:00",
-   "title": "Allora 已冻结被盗 ALLO，正全额归还币安（金额未披露）",
-   "url": "https://www.panewslab.com/zh/articles/01a18da5-e5f3-70b4-922e-7eb7c3d18b68"
-  },
-  {
-   "body": "Decrypt 引述 Arkham 数据：北京时间 10-30 23:37–约 00:12（美东时间周五 11:37–12:12），一个被 Arkham 归因为攻击者的 Tron 钱包向 12 个地址转出约 519 万枚 TRX（约 $173 万）。这是 10-30 白天慢雾已报的 TRX 跨链洗钱腿之后的又一次 Tron 链上拆分动向，金额小，不改变大局：18,270 枚 BTC 仍未动，ETH 仍无确认进入 Tornado Cash 等混币器的后续，冻结总额仍约 $30 亿。注意：12 个接收地址的归属与后续去向未披露，是否进入交易所/混币器未确认。",
-   "category": "链上数据",
-   "source": "Arkham（经 Decrypt）",
-   "time": "2026-10-30T23:37:00+08:00",
-   "title": "攻击者 Tron 钱包再拆分约 519 万枚 TRX 至 12 个地址",
-   "url": "https://decrypt.co/382237/binance-sets-aside-6-34b-to-cover-hack-losses-ceo-says-your-assets-are-safe"
-  },
-  {
-   "body": "币安联合 CEO Richard Teng 发帖称，目标在 40 小时内恢复提现（希望赶在周日截止前恢复），并于下周一发布完整储备证明报告、在此之前先给初步储备快照。Teng 还披露：攻击者作案期间用了“自毁机制”销毁工具与痕迹，加大了调查难度；涉案 EIP-7702 委托“未经过正常审批控制”。注意：40 小时是目标/希望、不是已恢复；与此前 45–48 小时口径相比窗口进一步收紧，实质仍指向约 11-01 周末恢复；周一完整 PoR 时间表为首次明确，11-01 当天是否先出快照待核实。冻结总额仍约 $3B，18,270 BTC 仍未动，ETH 仍无确认入混币器后续。",
-   "category": "官方表态",
-   "source": "Richard Teng @_RichardTeng（经 Cointelegraph 直播 / The Defiant / Lookonchain 转述）",
-   "time": "2026-10-30T22:34:00+08:00",
-   "title": "Teng：目标 40 小时内恢复提现、周一发布完整储备证明",
-   "url": "https://thedefiant.io/news/hacks/binance-s-teng-targets-sunday-withdrawal-restart-after-hack"
-  },
-  {
-   "body": "Aave 官方 X 更新：因币安事件预防性冻结的 V3、V4 全部市场已解冻，新存款与新借款恢复；冻结期间提款与还款一直正常；Aave 合约未受事件影响、仓位仍超额抵押。持续预防：USDT、USDC、USDT0、POL、WAVAX、sAVAX、XAUT、PAXG、OP 九项资产 LTV 暂维持 0，暂不能作新借款抵押品。此前 LlamaRisk 已提议在分阶段解冻前削减约 $38 亿未用借款额度，防攻击者用剩余代币开大仓位。注意：解冻不等于攻击者资金移动——攻击者 Aave 仓位本身未变（存 6000 万 USDT 抵押、借 19762 WETH，仍超额抵押；何一所称执法解冻后或多追回约 $14M 仍未成事实），18,270 BTC 仍未动，ETH 仍无确认入混币器后续。",
-   "category": "链上数据",
-   "source": "Aave 官方（经 Cointelegraph 直播 / Blocktempo 转述）",
-   "time": "2026-10-30T21:57:00+08:00",
-   "title": "Aave 解除 V3/V4 预防性冻结，9 项资产 LTV 暂置 0 防攻击者再抵押",
-   "url": "https://www.blocktempo.com/aave-v3-v4-markets-unfrozen-ltv0-binance-incident/"
-  },
-  {
-   "body": "Newton Foundation 发帖称，攻击者疑似误操作，把约 800 万枚 NEWT 及另外 17 种代币（ANIME、ANKR、ARPA、BARD、CELR、DENT、DOLO、FTT、GLM、HIGH、HOT、KNC、LQTY、RARE、RESOLV、SIGN、WOO）直接转入 NEWT 代币合约地址，合计时价约 $350 万（Lookonchain 估约 $332 万，估值时点差异）。该合约不可升级、无所有者/管理员（管理权已于 2025 年在链上放弃），任何人包括基金会都无法取回，代币永久锁死、攻击者也卖不掉，NEWT 合约本身未被黑。这是此前各轮漏报的补报：金额小，不改变约 $30 亿冻结总额与总影响约 $63 亿口径，也不是发行方冻结或追回返还。",
-   "category": "链上数据",
-   "source": "Newton Foundation（经 PANews / Lookonchain）",
-   "time": "2026-10-30T20:58:00+08:00",
-   "title": "攻击者误把约 $350 万代币转入 NEWT 合约，永久锁死",
-   "url": "https://www.panews.io/articles/01a18cf2-5ea1-7557-aa43-4f36d3c13e92"
-  },
-  {
-   "time": "2026-10-30T20:45:00+08:00",
-   "title": "Elliptic 分链统计：11 条链共被盗约 $64.3 亿、已冻结约 $28.4 亿",
-   "body": "链上分析公司 Elliptic 按 11 条区块链统计（价格为盗取时点、冻结数为 10-30 12:45 UTC 截点）：总被盗约 $64.3 亿，已冻结约 $28.4 亿。分链看：以太坊约 $37.98 亿、冻结约 64%；比特币约 $14.76 亿、零冻结；Tron 约 $6.27 亿、冻结约 $3.79 亿；XRP Ledger 约 $3 亿、零冻结；Solana 约 $9,700 万、NEAR 约 $5,400 万均零冻结；Arbitrum 约 $3,200 万中冻结约 96%。其总影响口径与 TRM 的约 $63.6 亿接近、为各机构中最高；冻结数略低于币安自称的约 $30 亿，属截点与统计方法差异，并列呈现。",
-   "category": "链上数据",
-   "source": "Elliptic（经 @giantcutie666 文章引用其图表）",
-   "url": "https://x.com/giantcutie666/status/2116305216366657781"
-  },
-  {
-   "body": "Chainalysis 称其调查人员观察到被盗资金出现“前所未见的洗钱模式”：短时间内数千笔交易，疑似攻击者用自动化手段混淆资金轨迹；资金在地址间反复流转，有时回流到此前用过的钱包。The Defiant 同日报道亦称 Chainalysis 报告描述了显示自动化洗钱的交易模式，并将其冻结口径计为约 $28 亿（与币安核实约 $30 亿为时点/口径差异）。这不是已确认进入 Tornado Cash 等混币器的证据：此前 17,260 ETH 试探转移后仍无确认入混币器的后续，18,270 BTC 仍未动。",
-   "category": "链上数据",
-   "source": "Chainalysis（经 Cointelegraph 直播 / The Defiant）",
-   "time": "2026-10-30T18:09:00+08:00",
-   "title": "Chainalysis：攻击者疑用自动化手段洗钱，出现前所未见的循环流转模式",
-   "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"
-  },
-  {
-   "body": "币安发帖称已开始为受影响用户恢复资产，并继续与执法部门、发行方、链上情报公司及行业伙伴合作追踪、冻结、追回更多资金。币安称已预留逾 $63.4 亿公司资金弥补本次损失，其中 $50 亿已持有与被盗资产同类的代币，余下部分正通过市场与 OTC 渠道补齐；因部分代币流动性低、OTC 结算需时，这一步可能较久。该笔拨备不含已冻结/受保护资产（约 $30 亿冻结口径不变，仍在与伙伴及执法部门推进追回）。币安称将继续动用公司资源弥补已确认缺口，最终所有用户资金将通过公开储备证明验证。提现仍在安全改造期间暂停，未提前恢复。另据路透引述消息人士（经 PANews/Odaily 转述），币安正与美国 FBI 及特勤局合作调查本案，此为消息人士口径、非币安官方具名确认。",
-   "category": "官方确认",
-   "source": "币安 @binance（经 PANews / Odaily / The Defiant 转述）",
-   "time": "2026-10-30T19:01:00+08:00",
-   "title": "币安：已预留逾 $63.4 亿公司资金补亏、开始恢复用户资产",
-   "url": "https://thedefiant.io/news/hacks/binance-says-it-has-reserved-over-6-34-billion-to-cover-hack-losses"
-  },
-  {
-   "body": "Synthetix protocolDAO 称已追回被盗的约 840.57 万枚 SNX（PANews 折合约 $155 万），目前存放在 protocolDAO 的 Safe 多签钱包中，已通知币安、待币安正式请求后归还。链上显示该笔 SNX 于北京时间 15:03（07:03 UTC）自标注为“Binance Hot Wallet Exploiter 2”的地址转入 DAO 多签；披露时间为北京时间 18:53（The Defiant）。这是冻结之外的首笔协议方实际追回并待归还的资产，金额小，不改变约 $30 亿冻结总额口径。",
-   "category": "链上数据",
-   "source": "Synthetix protocolDAO（经 PANews / The Defiant）",
-   "time": "2026-10-30T18:53:00+08:00",
-   "title": "Synthetix 追回约 840 万枚被盗 SNX，待币安请求后归还",
-   "url": "https://thedefiant.io/news/hacks/synthetix-recovers-8-4-million-snx-stolen-in-binance-hack"
-  },
-  {
-   "body": "USDT0 在 Polygon 冻结攻击者钱包 618 万 USDT0（约 $618 万），此前曾暂停 TRON-以太坊跨链通道、事后已恢复；Pundi X Labs 应币安请求冻结黑客钱包内 3,747,276 枚 PUNDIX（约 $37 万），未发现其他已知黑客钱包持有 PUNDIX。两笔合计约 $655 万，不改变币安核实约 $3B 的冻结总额口径。",
-   "category": "链上数据",
-   "source": "USDT0 / Pundi X Labs（经 The Defiant / TokenPost）",
-   "time": "2026-10-30T17:43:00+08:00",
-   "title": "新增小额冻结：USDT0 约 $618 万、Pundi X 约 $37 万",
-   "url": "https://thedefiant.io/news/hacks/usdt0-freezes-6-19-million-tokens-linked-to-binance-exploit"
-  },
-  {
-   "time": "2026-10-30T17:18:00+08:00",
-   "title": "清扫合约逆向分析：扫 ETH 写死留 1 枚、单币失败不回滚整批",
-   "body": "研究者 CyberSatoshi（@XBToshi）公布对清扫合约 0x63e842…6fAe 的字节码重构：原生 ETH 只转出 bal − 1 ether（余额大于 1 枚才执行），ERC-20 用 staticcall 查余额后全额转出，单币失败只抛自定义错误 SweepItemFailed 并继续，避免整批交易回滚；合约另含 callExecute 函数，可冒充 Binance 14 调用外部金库，与 Hot Wallet 34 借道转出 8.23 亿 USDC 的已核实机制吻合。对“为何留 1 ETH”解释不一：源帖称是避免币安自动热钱包队列因 gas 报错触发警报，转述者 @fishjar 称是避免余额归零触发熔断，评论区亦有“仅为预留 gas”的解释。属单一研究者的反编译结果，未获官方或第二家机构复核，动机部分为推测。",
-   "category": "分析师推测",
-   "source": "CyberSatoshi @XBToshi（经 @fishjar 转述）",
-   "url": "https://x.com/XBToshi/status/2116097368705937613"
-  },
-  {
-   "body": "何一称黑客在 Aave 存入的 $60M USDT 抵押不在完全冻结范围内，黑客实际借走约 $46M ETH；该抵押品经执法系统解冻后，或可额外追回约 $14M。此仓位此前已在追踪中（抵押 $60M、借出 19,762 ETH），不在币安公布的约 $3B 冻结总额内；解冻追回仍需执法流程，未成事实。",
-   "category": "官方表态",
-   "source": "何一 @heyibinance（经 PANews / BBX / 0xZX 转述）",
-   "time": "2026-10-30T10:30:00+08:00",
-   "title": "何一：Aave 上 $60M USDT 抵押未全冻，执法解冻后或多追回约 $14M",
-   "url": "https://0xzx.com/flash/374668"
-  },
-  {
-   "body": "CZ 自算：总影响逾 $60 亿，已冻结约 $30 亿，SAFU 约 $10 亿+，剩余缺口约 $20 亿；币安所持 SPCX 股份价值逾 $10 亿，剩余缺口“痛苦但可控”。何一补充：币安年收入足以覆盖损失，暂无需出售 SpaceX 股份。注意：这不是官方最终净损失定案，是 CZ/何一对赔付能力的表态；与此前 CZ 转述“略超 $1B”（基于 0xngmi 托管口径）口径不同，并列，不选一。",
-   "category": "官方表态",
-   "source": "CZ @cz_binance / 何一 @heyibinance（经 PANews / TechFlow / The Defiant 转述）",
-   "time": "2026-10-30T09:46:00+08:00",
-   "title": "CZ/何一：损失缺口约 $2B 在可控范围，暂不卖 SpaceX 股份",
-   "url": "https://lookonchain.com/feeds/79179"
-  },
-  {
-   "body": "币安调查更新称，在最初指向 DevOps 工程师笔记本被入侵之后，调查又发现了“更多入侵点”（additional points of breach）；币安称仍在配合执法部门核实事实，具体是哪些入侵点未披露。提现仍按计划推进：该更新称 45 小时内恢复（约 11-01 下午），与何一 48 小时口径基本一致；充值仍正常，暂停提现后平台外流已停止。",
-   "category": "官方确认",
-   "source": "币安调查更新（经 Cointelegraph 直播转述，另有转载标题佐证）",
-   "time": "2026-10-30T16:37:00+08:00",
-   "title": "币安：调查发现更多入侵点，不止笔记本一个入口",
-   "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"
-  },
-  {
-   "body": "主持 @ChandlerGuo（宝二爷）、共同主持 @qg7777，大漂亮、张哥、K 线教主、Adam、林可等发言。场内最一致的三点：币安体量够大、赔得起，不必恐慌挤兑、不要断言“第二个 FTX”；没有一种保管方式 100% 安全，所有交易所都会丢币，区别在丢多少、利润盖不盖得住、冻结追回多少；普通人最现实的是分开放、用官方渠道冷钱包、助记词分片加密保存、不信主动找上门的“假客服”。分歧与未定论：张哥个人判断“内外勾结可能性 80%”（个人分析、无证据）；场内多次称“已确认 Lazarus”仅为发言人转述。完整纪要（含数字对照表与实操建议）见仓库 spaces/ 目录。",
-   "category": "分析师推测",
-   "source": "X Space「币安被黑事件讨论」（录音转写纪要，完整版在本仓库 spaces/ 目录）",
-   "time": "2026-10-30T16:20:00+08:00",
-   "title": "X Space「币安被黑事件讨论」纪要发布：宝二爷主持，6 小时 21 分录音整理完毕",
-   "url": "https://github.com/yatstudio/binance-hack-2026/blob/main/spaces/2026-10-30-binance-hack-space.md"
-  },
-  {
-   "body": "Teng 表态称攻击并非“单一工程师权限/一人一键操作”，而是更复杂的过程，调查现阶段未归因于任何个人；口径维持 DevOps 笔记本被入侵、无私钥泄露证据，SAFU+公司资金全额赔付，已撤销受影响地址授权，调查后发技术复盘并更新储备证明。",
-   "category": "官方确认",
-   "source": "Richard Teng（经 Cointelegraph 直播 / Lookonchain 转述）",
-   "time": "2026-10-30T15:47:00+08:00",
-   "title": "CEO Richard Teng 澄清：不是单一工程师一人操作",
-   "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"
-  },
-  {
-   "body": "涉案地址转出 17,260 ETH（约 $3,882 万）至新钱包 0x03b…020ea，转后仍持有约 480,720 ETH（约 $10.8 亿）。OnchainLens 称意图经混币器清洗，Arkham 称是否流入 Tornado Cash 尚待观察，尚未确认已进入混币器。大头未动，BTC 仍未动。",
-   "category": "链上数据",
-   "source": "OnchainLens / Arkham（经 BlockBeats、Lookonchain）",
-   "time": "2026-10-30T13:36:00+08:00",
-   "title": "攻击者 ETH 开始小额试探转移",
-   "url": "https://www.tokenpost.com/news/technology/44305"
-  },
-  {
-   "body": "慢雾 MistTrack 监测到被盗 TRX 经 Bitget Wallet 跨链桥转移，目标地址 0xCd684D22E8C3600E6eE93B5a57923c3b517f3396 此前出现在 Phemex 被盗案链条中（该案此前被认定涉朝鲜黑客）。共用目标地址不能证明同一行为人，仅为归因提供新的链上佐证。",
-   "category": "链上数据",
-   "source": "慢雾 MistTrack（经 ChainCatcher / The Defiant）",
-   "time": "2026-10-30T13:30:00+08:00",
-   "title": "被盗 TRX 进入洗钱环节，与 Phemex 案地址产生关联",
-   "url": "https://thedefiant.io/news/hacks/misttrack-links-binance-theft-route-to-phemex-connected-address"
-  },
-  {
-   "body": "1inch 已在 dApp、钱包、API 屏蔽攻击相关地址（联合 ZeroShadow、SEAL 911、TRM Labs）。但被盗 1INCH 为标准 ERC-20、无冻结/黑名单功能，无法链上冻结，只能配合追索。属协议方动作，非新增冻结额。",
-   "category": "链上数据",
-   "source": "1inch 官方（经 Cointime / BlockBeats）",
-   "time": "2026-10-30T13:00:00+08:00",
-   "title": "1inch 屏蔽攻击相关地址，但 1INCH 本身冻不住",
-   "url": "https://www.cointime.ai/flash-news/1inch-blocks-addresses-related-to-binance-attack-16510"
-  },
-  {
-   "body": "何一发布 Service Update：团队正在升级提现服务及相关地址管控，预计未来 48 小时内开始逐步恢复提现；并称充值服务未受影响、正常运作。这是事件后首个恢复时间表。但“充值正常”与币安凌晨“全部充提暂停”措辞有出入，主账号 @binance 尚未跟进确认。",
-   "category": "官方表态",
-   "source": "何一 @heyibinance（经 FinanceFeeds / TokenPost / The Defiant / 新浪财经转述）",
-   "time": "2026-10-30T12:17:00+08:00",
-   "title": "何一：预计 48 小时内开始逐步恢复提现",
-   "url": "https://financefeeds.com/binance-withdrawals-resume-48-hours/"
-  },
-  {
-   "body": "TRM Labs 以“高信心”将事件归因朝鲜 TraderTraitor（Lazarus 旗下），其口径：10 链共 $6.36B、冻结约 $2.7B（截点 08:30，与官方 $3B 差异为时点/口径）。Chainalysis 发言人对 CNN 亦称高信心指向朝鲜，其被盗估算约 $59.12 亿；新加坡 Pangolin Intelligence 同向。币安官方仍未归因。",
-   "category": "分析师推测",
-   "source": "TRM Labs 博客 / CNN / CoinDesk",
-   "time": "2026-10-30T11:20:00+08:00",
-   "title": "TRM Labs、Chainalysis 相继高信心归因朝鲜",
-   "url": "https://www.trmlabs.com/resources/blog/north-korea-steals-usd-6-36-billion-from-binance-in-the-largest-hack-in-history"
-  },
-  {
-   "body": "Onchain Lens 称攻击者把超 $1B 的 ETH 转至新钱包，疑为混币清洗做准备，并开始抛售 STRK（监测转述，未独立核实）。First Digital 冻结关联地址约 $340 万 FDUSD（Specter/TokenPost）。",
-   "category": "链上数据",
-   "source": "Onchain Lens（经 PANews）/ TokenPost",
-   "time": "2026-10-30T10:50:00+08:00",
-   "title": "攻击者转移超 $1B ETH 至新钱包；FDUSD 新增冻结约 $340 万",
-   "url": "https://www.panewslab.com/zh"
-  },
-  {
-   "body": "币安公布初步根因：一名 DevOps 工程师笔记本被入侵，攻击者进入服务容器并提交未经授权的提现交易；未发现钱包私钥泄露证据。总影响约 $6.3B，链上已冻结约 $3B；用 SAFU 基金+公司资金承担全部损失，用户资金安全；充值与提现均暂停；已撤销受影响地址授权；补救完成后发布更新版储备证明。官方未做归因，详细技术复盘待调查完成后发布。",
-   "category": "官方确认",
-   "source": "@binance 官方帖 + 币安公告页",
-   "time": "2026-10-30T10:25:00+08:00",
-   "title": "币安官方初步调查：DevOps 笔记本被入侵，总影响约 $6.3B",
-   "url": "https://www.binance.com/en/support/announcement/detail/c5a8729a97ac486d963784d96c5642d7"
-  },
-  {
-   "body": "神鱼（Cobo 联创）复盘称黑客急于把 USDT 换成 ETH 损耗约 $7,000 万；近 46 万 ETH 停在新地址、冻不住。其“授权是币安自己签的”与官方“无私钥泄露”不必然冲突：签名能力被滥用不等于密钥被偷。",
-   "category": "分析师推测",
-   "source": "神鱼（经 PANewsCN 转述）",
-   "time": "2026-10-30T09:12:00+08:00",
-   "title": "神鱼复盘：黑客急换 USDT→ETH 亏约 $7,000 万",
-   "url": "https://x.com/PANewsCN/status/2115974973303202014"
-  },
-  {
-   "body": "币安更新冻结进度：经核实链上冻结总额约 $3B（前一口径为 $2.54B），继续追踪冻结中。冻结指黑客无法动用，不等于已追回返还。",
-   "category": "官方确认",
-   "source": "币安（经 PANews / FinanceFeeds / Reuters）",
-   "time": "2026-10-30T08:52:00+08:00",
-   "title": "币安更新：经核实冻结总额约 $3B",
-   "url": "https://financefeeds.com/binance-hack-3-billion-frozen/"
-  },
-  {
-   "body": "攻击者抛压使 Uniswap 上 ETH 被买到 $2,560–$2,750，Aave 预言机价 $2,250–$2,290，价差 15–30% 持续约 1 小时；套利者经 Aave 借 ETH 高卖，第一名赚约 $347 万、前十合计约 $636 万。窗口随后关闭，Aave 已冻结主网 V3。此机会已结束、不可追。",
-   "category": "链上数据",
-   "source": "社区复盘（经 @0xNaiXi / ChainCatcher）",
-   "time": "2026-10-30T08:41:00+08:00",
-   "title": "Aave 套利复盘：价差窗口约 1 小时，第一名赚约 $347 万",
-   "url": "https://x.com/0xNaiXi/status/2115967318274789609"
-  },
-  {
-   "body": "链上显示被盗的 Binance 14 热钱包已撤销 EIP-7702 授权。在此之前，委托持续生效期间曾发生补扫。",
-   "category": "链上数据",
-   "source": "链上记录（经 Odaily / ChainCatcher）",
-   "time": "2026-10-30T08:10:00+08:00",
-   "title": "Binance 14 的 EIP-7702 委托被撤销",
-   "url": "https://www.odaily.news/zh-TW/post/5213662"
-  },
-  {
-   "body": "针对流传的 $1.8B 等数字，币安澄清经核实冻结总额为 $2.54B，称只公布确认数字、可能继续增加。",
-   "category": "官方确认",
-   "source": "币安（经 FinanceFeeds）",
-   "time": "2026-10-30T07:22:00+08:00",
-   "title": "币安澄清冻结总额 $2.54B",
-   "url": "https://financefeeds.com/binance-hack-3-billion-frozen/"
-  },
-  {
-   "body": "工程师 Justin Kalland 观察：攻击者钱包 0xAa24…54a0 收到 1.75 亿 USDT、已有足够 gas 后，仍使用 MetaMask Gas Station（付 127.67 USDT，垫付 ETH 与后两笔 gas 上限精确到 wei 吻合），可能经 MetaMask Sentinel 留下含 IP 的链下记录。属个人观察+推测，未获 MetaMask 或官方确认。",
-   "category": "分析师推测",
-   "source": "Justin Kalland @justinkalland（PANewsCN 转述）",
-   "time": "2026-10-30T07:20:00+08:00",
-   "title": "线索：攻击者疑误用 MetaMask Gas Station，或留下 IP 记录",
-   "url": "https://x.com/justinkalland/status/2115946980665151955"
-  },
-  {
-   "body": "币安暂停 Binance Alpha 交易（涉现货钱包买币、Alpha 即时交易、CEX 买预测市场）。",
-   "category": "官方确认",
-   "source": "币安（经 PANews）",
-   "time": "2026-10-30T07:06:00+08:00",
-   "title": "Binance Alpha 交易暂停",
-   "url": "https://www.panewslab.com/zh"
-  },
-  {
-   "body": "币安暂停多网络提现，其后表述改为“安全检查完成、问题完全解决后恢复”。市场方面：BTC 一度跌至约 $77,054、ETH 约 $2,215、BNB 跌 8–9%；一小时全网爆仓约 $6.277 亿。",
-   "category": "官方确认",
-   "source": "币安发言人（经 TechCrunch）/ CoinDesk / Coinglass",
-   "time": "2026-10-30T06:15:00+08:00",
-   "title": "多网络提现暂停",
-   "url": "https://www.coindesk.com/business/2026/10/29/potential-multi-billion-binance-hack-hitting-crypto-markets"
-  },
-  {
-   "body": "币安称注意到潜在安全问题、正在调查；措辞经多次编辑后为“用户资金完全安全”。此前约 05:15 CZ 首帖称用户资金安全、“看起来是币安被黑”。",
-   "category": "官方确认",
-   "source": "@binance / @cz_binance（经 Blockhead）",
-   "time": "2026-10-30T05:24:00+08:00",
-   "title": "币安首份官方声明",
-   "url": "https://www.blockhead.co/2026/10/30/binance-halts-withdrawals-after-multibillion-dollar-hot-wallet-drain-hours-after-polymarket-vendor-exploit/"
-  },
-  {
-   "body": "Aave 官方响应（风险服务商 LlamaRisk）披露：北京时间 04:57–05:01，攻击者集群的一个钱包向 Aave V3 以太坊核心市场存入 6,000 万 USDT 作抵押，借出 19,762 枚 WETH（约 $4,460 万），赶在 Tether 冻结与 Aave 紧急冻结之前，把可冻结的稳定币换成冻不住的 ETH。这是攻击者在 Aave 全网的唯一仓位：现抵押约 $5,990 万、债务约 $4,380 万，仍属超额抵押、可正常清算，Aave 称不危及存款人。该仓位的抵押品不在已公布的约 $3B 冻结范围内。",
-   "category": "链上数据",
-   "source": "Aave 官方治理论坛（LlamaRisk / Aave Labs）",
-   "time": "2026-10-30T04:58:00+08:00",
-   "title": "攻击者抢在冻结前，把 6,000 万 USDT 存入 Aave 借出 19,762 枚 ETH",
-   "url": "https://governance.aave.com/t/binance-hot-wallet-exploit-aaves-response/25954"
-  },
-  {
-   "body": "约 04:39，约 195,460 ETH（约 $4.4 亿）转至 0x8532…43D4。ETH 没有发行方，无法冻结。此后攻击者持续把山寨币换成 ETH，ETH 持仓一度达约 46.7 万枚。",
-   "category": "链上数据",
-   "source": "TechFlow / PANews 链上追踪",
-   "time": "2026-10-30T04:39:00+08:00",
-   "title": "约 195,460 ETH 转入第二地址",
-   "url": "https://www.techflowpost.com/article/34982"
-  },
-  {
-   "body": "04:24:23，Binance 14 热钱包（0x28C6…1d60）单笔转出 167,464.25 ETH、16.15 亿 USDT 及 60 余种代币（约 $2.5B）至 0x5227…2f8c。04:20 一笔交易打包 50 份 EIP-7702 授权（nonce 18,914,775–18,914,824，命中 18,914,809），清扫合约 0x63e8…6fAe。其前后 Binance 16 自行签名转出约 28,006 ETH；Hot Wallet 34 因把 Binance 14 列为 operator，攻击者借道其 execute/executeBatch 分两笔转走共 8.23 亿 USDC（7.8 亿 + 0.43 亿）；BTC（18,270.2 枚）、波场等多链钱包亦相继流出。委托未撤销前，币安自身归集程序继续往 Binance 14 送入资金并被反复清扫，直至 08:10 委托撤销。补扫与 Binance 16 细节（投机实验室 @LabSpeculation 逐笔核对，与 CertiK 工程师 Dickson 经 ChainCatcher 的复盘交叉一致）：Binance 16 在主扫后约 24 秒起自行签名 9 笔转账，除约 28,006 ETH 外还转出约 5,570 万 USDT 及 RLUSD、WBTC 等；Binance 14 在委托撤销前被反复补扫，05:04 与 05:44 两次共扫走约 2,070 ETH 与 2.043 亿 USDT（其中约 2 亿 USDT 为币安自身钱包刚补入、入账约 72 秒即被扫走，随后被 Tether 冻结），06:39 最后一次清扫 128.5 ETH 与 122 种小币至新钱包。",
-   "category": "链上数据",
-   "source": "Blockaid / TechFlow / Odaily / drk.vc 技术分析 / 投机实验室 @LabSpeculation / CertiK（经 ChainCatcher）",
-   "time": "2026-10-30T04:24:00+08:00",
-   "title": "总攻：Binance 14 一笔被扫约 $2.5B",
-   "url": "https://blockaid.io/blog/binance-55b-hack-using-advanced-ai-models-blockaid-detects-the-biggest-theft-in-crypto-history"
-  },
-  {
-   "body": "10-28 起攻击者主钱包多次从 Tornado Cash 各取约 0.1 ETH 作 gas 并以自有钱包演练委托+清扫；10-29 23:59 部署最终清扫合约 0x63e842B054Bd624a465454D533C33F573e9c6fAe。发起地址 0x7C8601d4645b93cea45F71e118A729332e6B5CA0。",
-   "category": "链上数据",
-   "source": "TechFlow / Blockaid / 神鱼",
-   "time": "2026-10-29T23:59:00+08:00",
-   "title": "攻击准备：Tornado Cash 备 gas、演练、部署清扫合约",
-   "url": "https://www.techflowpost.com/article/34982"
-  }
- ],
- "watchlist": [
-  "币安详细技术复盘：DevOps 入口与 EIP-7702 的 50 份授权如何衔接",
-  "最终净损失定案与冻结资产返还进度（冻结≠返还）",
-  "提现实际开始恢复的时间与币种/网络顺序；充值口径统一",
-  "18,270 枚 BTC 是否开始转移；ETH 是否进入 Tornado Cash 等混币器",
-  "更新版储备证明（PoR）：被盗钱包储备是否已补回",
-  "MetaMask 是否回应 Gas Station / Sentinel 日志线索",
-  "官方或执法机构正式归因"
- ]
+  "meta": {
+    "incident_date": "2026-10-30",
+    "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
+    "timezone": "Asia/Shanghai",
+    "title": "币安被盗事件追踪 · Binance Hack Tracker",
+    "updated_at": "2026-11-02T08:03:00+08:00"
+  },
+  "status": {
+    "attacker_btc": {
+      "detail": "约 $1.4B；大额 BTC 洗钱渠道有限，短期砸盘概率低",
+      "label": "攻击者 BTC",
+      "value": "18,270 枚未动"
+    },
+    "attacker_eth": {
+      "detail": "已开始小额试探转移（17,260 枚），尚未确认进入混币器；Chainalysis 18:09 观察到被盗资金出现自动化循环流转洗钱模式；ETH 无发行方、无法冻结；Bitquery 11-01 00:51 截点全口径统计攻击者持有 525,201 枚 ETH（含用被盗稳定币/代币/TRX 换得的 ETH），高于此前约 48 万枚的主钱包口径，属统计范围差异、非新增被盗；链上侦探 Specter 11-01 04:43 监测：约 7 小时内经 Relay 桥接约 $3800 万且仍在继续，Relay 自称的 KYT 未能拦截——Relay 腿规模较 Bitquery 截点（11-01 00:01）的约 $1600 万已发送量显著扩大，两家口径与截点不同、不直接相加；仍未见转入交易所充值地址或混币器的确认；Lookonchain 11-01 12:17 监测：攻击者把约 90.88 万枚 PROM（名义约 $500 万）卖入近乎空池的 Uniswap V2 池，仅得 0.0316 ETH（约 $71），属批量抛售山寨币换 ETH 模式的极端滑点个例、实际变现可忽略，仍未见转入交易所充值地址或混币器的确认。；Lookonchain 11-01 15:10 统计：攻击者仅在 EVM 链已抛售超 130 种山寨币，累计换得 123,400 枚 ETH（约 $2.7726 亿）+ 169 万枚 USDC，合计约 $2.79 亿（累计口径，含此前已报的 7 种币 $1.58 亿子集，不等于本轮新增抛售；仍未见转入交易所充值地址或混币器的确认）。",
+      "label": "攻击者 ETH",
+      "value": "约 48 万枚"
+    },
+    "attribution": {
+      "detail": "TRM Labs、Chainalysis 此前均以高信心指向朝鲜 TraderTraitor/Lazarus；2026-11-01 05:46 北京时间 FBI 发布正式通报，联合 USSS 与 IRS-CI 认定朝鲜 TraderTraitor 对逾 $60 亿被盗案负责，并公布约 628 个关联地址（ETH 约 608、BTC 19、SOL 1）、呼吁业界拦截——为美国执法机构首次官方归因；币安自身仍未具名归因；拦截呼吁非制裁令/法院命令，不等于新增冻结",
+      "label": "归因",
+      "value": "FBI 正式归因朝鲜 TraderTraitor（币安自身未归因）"
+    },
+    "coverage": {
+      "detail": "币安官方确认已动用 SAFU；用户资金安全；19:01 更新：已预留逾 $63.4 亿公司资金（$50 亿已为同类代币、余下市场/OTC 补齐，不含约 $30 亿冻结资产），已开始恢复用户资产，最终以公开储备证明验证；何一称年收入足以覆盖、暂不卖 SPCX 股份；10-31 03:33 公告#2：$50 多亿对应代币已到位、即已填回约 80%，剩余正通过市场及 OTC 购买；10-31 11:31 Lookonchain/余烬披露约 1.286 亿枚 ENA（约 $2400 万，约占被盗 2.175 亿枚 ENA 的 59%）存入币安，疑为 OTC 买回进展，但币安与 Ethena 均未确认用途，不直接等同已买回；10-31 22:27 公告#3：补回进度升至约 90%（前十大资产 BTC/ETH/USDT/BNB/SOL/USDC/XRP/USD1/RLUSD/ZEC 已 100% 储备支持），剩余约 10% 低流动性代币仍在市场/OTC 买回中，资金新增 SAFU 部分动用（24 小时内完成、事后补回至约 $10 亿）+ 合约保险基金超额部分 + 公司资金；PoR 快照已于 10-31 08:00 北京时间完成，完整零知识证明预计 11-03 生成（此前“11-02 前公布结果”口径以此为准调整）。；10-31 22:51 Arkham 数据：币安 SAFU 钱包向新地址转出约 7,499 枚 BTC（约 $5.81 亿），币安确认转账完成，转出后该 SAFU 地址仍持约 7,500 枚 BTC——为公告#3 所称 SAFU 部分动用的当晚链上执行证据（属币安自有资金调拨，非攻击者动向）。；公告#4（11-01）：补回升至约 95%（高于公告#3 的约 90%），剩余约 5% 为十大代币以外的低流动性币种，仍在市场/OTC 购入中，前十大仍 100% 储备。；11-02 00:17 币安称更新后的 PoR 报告预计 11-02 在 PoR 官网公布（此前追踪口径为完整零知识证明预计 11-03，11-02 报告是否为完整证明还是快照结果、原文未明说，以公布时为准）。",
+      "label": "赔付",
+      "value": "SAFU + 公司资金全额承担"
+    },
+    "deposits": {
+      "detail": "官方初调称充提均暂停；何一称充值正常运作",
+      "label": "充值",
+      "value": "口径不一"
+    },
+    "frozen": {
+      "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC 等；另有 USDT0 约 $618 万、Pundi X 约 $37 万小额冻结，不改变总额口径；Allora 另冻结被盗 ALLO 并正全额归还币安（金额未披露、归还进行中），亦不改变约 $30 亿口径",
+      "label": "链上已冻结（官方核实）",
+      "value": "约 $3.0B"
+    },
+    "net_loss": {
+      "detail": "四种口径并存：略超 $1B（CZ 转述 0xngmi 估算）/ 约 $2B 缺口（CZ 09:46 自算：逾 $6B -$3B 冻结 -$1B SAFU）/ 最大约 $2.64B（江卓尔推算）/ 约 $3.43B（余烬口径）",
+      "label": "净损失",
+      "value": "未定案"
+    },
+    "root_cause": {
+      "detail": "官方称攻击者进入服务容器提交未授权提现交易，未发现私钥泄露证据；16:37 更新称调查又发现“更多入侵点”，不再只有笔记本一个入口，仍在配合执法部门核实事实，与链上 EIP-7702 授权如何衔接，待技术复盘；22:34 Teng 补充：攻击者用了自毁机制销毁工具与痕迹，EIP-7702 委托未经过正常审批控制",
+      "label": "根因（初步）",
+      "value": "DevOps 笔记本 + 更多入侵点"
+    },
+    "total_impact": {
+      "detail": "多链毛流出各家口径 $5.5B–$6.36B",
+      "label": "总影响（币安官方口径）",
+      "value": "约 $6.3B"
+    },
+    "withdrawals": {
+      "detail": "公告#4（11-01）：计划今日 14:00–17:00 恢复第一阶段提现，首批 15 个网络/资产组合（BTC、ETH、BSC、TRX、SOL、XRP、ZEC、DOGE、TON、MATIC、AVAXC、ARBITRUM、BASE、OP、SUI），按过去一周用户需求定优先顺序、每组合须通过稳定性与安全性检查后开放，初期流量大或有延迟，其他网络/资产随后陆续开放；14:10 Odaily 转述币安官方消息：分阶段恢复的首批网络为比特币网络，即 BTC 网络已实际开放、第一阶段从计划进入执行；其余 14 个首批网络/资产组合截至本轮 14:20 尚未见已开放的确认，仍在 14:00–17:00 窗口内陆续开放；充值保持开放；Alpha 仍无恢复消息（仍为 10-30 07:06 暂停口径）。此前：何一称 48 小时内开始逐步恢复（约 11-01 中午起）；16:37 币安更新称仍按计划、45 小时内恢复（约 11-01 下午），与 48 小时口径基本一致；22:34 Teng 新目标：40 小时内恢复（赶在周日截止前）、周一发布完整储备证明（先给初步快照）；主账号已确认 48 小时口径；10-31 03:33 公告#2：约 34 小时内按代币分阶段恢复（约指向 11-01 下午，须通过安全检查、非已恢复），12 小时内首次储备证明快照、结果 11-02 前公布，约 48 小时内公布进一步技术调查结果；14:55 币安更新 PoR 地址列表、后续所有提现改由新生成钱包处理；链新闻 14:50 App 实测：BTC 已可提、USDT/USDC 仍暂停，其余 14 个首批网络截至本轮 15:17 仍在 14:00–17:00 窗口内陆续开放、未见已开放确认；15:56 币安华语确认 ETH 网络（ETH/USDT/USDC）与 BSC 网络（BNB/USDT/USDC）已恢复提现，为第二批实际开放；截至本轮 16:17，其余 12 个首批网络/资产组合尚未见已开放的单独确认，仍在 14:00–17:00 窗口内陆续开放。；17:43 币安最新进展确认第三批开放：XRP 网络（XRP）与 Base 网络（ETH、USDC）已恢复，BTC/ETH/BSC 组合为重申；该批已超出公告#4 原定的 14:00–17:00 窗口，说明分阶段放行在窗口结束后仍在继续；截至本轮 17:47，其余 10 个首批网络/资产组合（TRX、SOL、ZEC、DOGE、TON、MATIC、AVAXC、ARBITRUM、OP、SUI）尚未见已开放的单独确认。；18:11 币安最新进展确认第四批开放：DOGE 网络（DOGE）与 OP 网络（ETH、USDT、USDC）已恢复，BTC/ETH/BSC/XRP/Base 组合为重申；截至本轮 18:17，其余 8 个首批网络/资产组合（TRX、SOL、ZEC、TON、MATIC、AVAXC、ARBITRUM、SUI）尚未见已开放的单独确认。；18:53 币安最新进展确认第五批开放：TRX 网络（TRX、USDT）与 Arbitrum 网络（ARB、ETH、USDT、USDC）已恢复，BTC/ETH/BSC/XRP/Base/DOGE/OP 组合为重申；截至本轮 19:17，其余 6 个首批网络/资产组合（SOL、ZEC、TON、MATIC、AVAXC、SUI）尚未见已开放的单独确认。；19:19 币安新增恢复 Solana 网络 SOL、USDT、USDC；19:33 新增恢复 Polygon 网络 POL、USDT、USDC 与 Avalanche C 链 AVAX、USDT、USDC；截至本轮 19:47，其余 3 个首批网络/资产组合（ZEC、TON、SUI）尚未见已开放的单独确认；截至本轮 20:17，ABMedia 20:10 更新仍只列 12 条链开放，其余 3 个首批网络/资产组合（ZEC、TON、SUI）尚未见已开放的单独确认。；20:38 币安新增恢复 ZEC 网络 ZEC、TON 网络 USDT 与 GRAM、SUI 网络 SUI，至此公告#4 首批 15 个网络/资产组合全部确认开放，第一阶段完成；第二阶段（其他网络/资产）仍无确切时间表，何一称其余钱包仍在反复安全审计、排序看市值、锁仓与用户数。；币安 11-02 00:17 总结：11-01 全天提现 46.49 亿、充值 10.1 亿、净流出约 36.4 亿（占 1710 亿 AUM 的 2.1%），提现量初期激增后已回落趋稳、充值保持较高水平；其余网络仍在测试、第二阶段恢复安排待公布。",
+      "label": "提现",
+      "value": "第一阶段全部完成：首批 15 个网络均已开放（BTC 14:10 至 ZEC/TON/SUI 20:38）"
+    }
+  },
+  "updates": [
+    {
+      "time": "2026-11-02T04:09:00+08:00",
+      "title": "币安冷/热钱包间转移 2.175 万枚 BTC（约 $16.9 亿），系内部调拨",
+      "body": "Onchain Lens 监测（经 Odaily 04:09 转述）：币安在其冷钱包与热钱包之间转移 2.175 万枚 BTC，约 $16.9 亿，冷钱包地址 3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6，或在为用户补足资金做准备。此为币安内部调拨，非攻击者动向；被盗的 18,270 枚 BTC 仍未动。",
+      "category": "链上数据",
+      "source": "Onchain Lens（经 Odaily 转述）",
+      "url": "http://www.odaily.news/zh-TW/newsflash/529666"
+    },
+    {
+      "time": "2026-11-02T02:54:00+08:00",
+      "title": "SomaXBT 波场洗钱全账：两天内约 $2.42 亿经 Tron 洗出，Chainflip 成新增通道，Tron 上仍约 $2.49 亿可转移",
+      "body": "链上分析师、SEAL 成员 SomaXBT 在 X 发帖（经 PANews 北京时间 11-02 02:54、The Block、The Defiant 交叉转述）：币安被盗后两天内，攻击者仅经 Tron 就洗出约 $2.42 亿。Tron 链上被盗资产约 $6.28 亿，Tether 冻结 3.787 亿 USDT 后仍约 $2.49 亿可转移；已洗出部分中约 $1.94 亿经桥/兑换服务离链——Relay 约 $4800 万、THORChain 约 $4400 万、Chainflip 约 $3210 万、Symbiosis 约 $1600 万（四者合计约 $1.40 亿），另有约 $4170 万经 Bitget Wallet 处理、去向未明；约 $2600 万仍留在 Tron 链上，约 $2200 万为费用/滑点/价格变动损耗。分项：THORChain 共收到 1.851 亿枚 TRX + 383 万枚 USDT（2697 笔存入），付出 17,019 枚 ETH 至 170 个地址 + 53.25 枚 BTC 至 20 个地址；Chainflip 收到 4947 万枚 USDT（571 笔），多笔兑换失败、1791 万枚 USDT 被退回全新 Tron 钱包后重新送入；Relay 收到 3764 万枚 USDT + 3928 万枚 TRX（735 笔）。关键限定：这是两天累计口径，不是本轮 30 分钟内的一笔新转移——Relay、THORChain、Symbiosis、Bitget Wallet 各腿与此前已报口径（Relay 约 $3800 万/7 小时、Bitquery THORChain 约 $2000 万下限、Symbiosis 转移尝试、Bitget Wallet 跨链桥线索）有重叠，不能与此前数字直接相加；其中 Chainflip 约 $3210 万是追踪站此前未收录的新通道，Bitget Wallet 约 $4170 万是此前金额未披露一腿的首次量化。同期核查：The Block 援引 Mempool 数据称 18,270 枚被盗 BTC 仍在 FBI 所列 19 个地址中一枚未动；THORChain 截至美东周日 13:20 仍有 10/13 条链交易暂停（Tron 交易自周六中午起暂停），其联合创始人 Chad Barraford 未承诺拦截 FBI 所列地址，且 FBI 公布的地址清单中没有 Tron 地址；Elliptic 核实冻结/扣押约 $28.5 亿（约占其统计 $64.3 亿的 44%），约 $32.5 亿属无法冻结资产（含其统计的 18,327 枚 BTC，与 18,270 枚口径有出入，不采纳为新数）+ 2.33 亿枚 XRP。冻结总额仍约 $30 亿口径未变；SOL→BTC 换币完成量与接收 BTC 地址仍未披露；11-02 当天预计公布的 PoR 更新报告截至本轮 04:13 尚未见公布；第二阶段提现仍无时间表，Alpha 交易仍无恢复消息。本条为累计链上统计，不更换 funds.json 首页 alert（仍为 11-01 18:35 的 SOL→BTC 动静），仅在 flows 与洗钱池中增记。",
+      "category": "链上数据",
+      "source": "SomaXBT（SEAL 成员，经 PANews / The Block / The Defiant 转述）",
+      "url": "https://www.panews.io/articles/01a19876-75a7-75bb-a6d1-7d1516f09c4f"
+    },
+    {
+      "time": "2026-11-02T00:17:00+08:00",
+      "title": "币安公布11月1日提现首日官方数据：提现46.49亿、充值10.1亿、净流出约36.4亿；PoR更新报告预计11月2日公布",
+      "body": "币安发文总结（经 Odaily 北京时间 11-02 00:17 转述）：11 月 1 日分阶段恢复提现首日，截至当日 15:30，币安累计处理提现 46.49 亿美元、充值 10.1 亿美元，净流出约 36.4 亿美元，占其 1710 亿美元总资产管理规模（AUM）的 2.1%；提现量在初期激增后已回落并趋于稳定，充值量持续保持较高水平，市场状况稳定；首阶段 15 条网络及资产的提现恢复已完成（最后一批 ZEC/TON/SUI 为 11-01 20:38 已报）。储备证明进展：新一轮 PoR 快照已于 10 月 31 日 00:00（UTC）完成，零知识证明（ZKP）计算已启动，预计更新后的报告将于 11 月 2 日在 PoR 官网公布；其余网络及资产仍在测试中，后续阶段的恢复安排将适时公布。关键限定：这是币安官方口径的首日全天数据，取代此前第三方估计口径（CryptoQuant 首日提走约 44 亿、净减约 37.5 亿为同一用户侧流出故事的估计口径，不再并列引用）；11 月 2 日公布的报告是否为完整零知识证明、还是快照结果，币安原文未明说——此前追踪口径为完整零知识证明预计 11-03 生成，以实际公布内容为准，不能提前报成完整证明已出；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 30 亿美元、18,270 枚 BTC 仍未动、SOL→BTC 换币完成量与接收地址仍未披露、Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）均未变。本条是用户侧提现恢复总结、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
+      "category": "官方确认",
+      "source": "币安官方发文（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529647"
+    },
+    {
+      "time": "2026-11-01T23:54:00+08:00",
+      "title": "何一提醒：警惕利用 Telegram GRAM 转账冒充币安官方的新型诈骗",
+      "body": "币安联合创始人何一提醒（经 Odaily 北京时间 11-01 23:54 转述）：近期有骗子利用 Telegram 的 GRAM 转账功能，向用户发送少量 GRAM，并在交易信息中附上假冒的币安官方公告，声称币安遭黑客攻击、用户资产不安全，诱导用户将资产转入所谓的币安保险库。关键限定：这是与 11-01 20:10 已报“150 美元提币暂停补偿”谣言不同的第二种冒充手法——前者是假补偿领取，后者是假官方公告诱导转账至所谓保险库，两者均为诈骗、币安并无此类保险库转账流程；本条是官方防骗提醒、不是新的赔付方案，赔付口径仍为 SAFU + 公司资金全额承担（补回约 95%、前十大 100% 储备）；提现第一阶段已全部完成、冻结总额仍约 30 亿美元、18,270 枚 BTC 仍未动、Alpha 仍无恢复消息均未变。本条非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
+      "category": "官方表态",
+      "source": "币安联合创始人何一（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529644"
+    },
+    {
+      "time": "2026-11-01T20:38:00+08:00",
+      "title": "第一阶段提现全部完成：ZEC、TON、SUI 网络已恢复，首批 15 个网络全部开放",
+      "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 20:38 转述官方公告）：已恢复 ZEC 网络的 ZEC、TON 网络的 USDT 和 GRAM，以及 SUI 网络的 SUI 提现。至此公告#4 首批 15 个网络/资产组合全部确认开放：BTC（14:10）、ETH/BSC（15:56）、XRP/Base（17:43）、DOGE/OP（18:11）、TRX/Arbitrum（18:53）、SOL（19:19）、Polygon/AVAX（19:33）、ZEC/TON/SUI（20:38）。关键限定：这是第一阶段（首批 15 个网络）的完成，不等于全部网络/资产恢复——公告#4 原称其他网络及资产将在具备恢复条件后陆续开放，第二阶段目前仍无确切时间表（何一称其余钱包仍在反复安全审计，排序看市值、锁仓与用户数）；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
+      "category": "官方确认",
+      "source": "币安官方公告（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529618"
+    },
+    {
+      "time": "2026-11-01T20:10:00+08:00",
+      "title": "何一提醒：网传“150 美元提币暂停补偿”系诈骗，币安目前无现金券活动",
+      "body": "币安联合 CEO 何一晚间提醒（经链新闻 ABMedia 北京时间 11-01 20:10 更新转述）：网络上有人宣称币安发放 150 美元的提币暂停补偿，何一表示币安的社群奖励活动需要监管机构核准，预计主管机关隔天上班审核通过后才上线，目前没有任何现金券活动，用户要小心各种钓鱼与诈骗链接。关键限定：这是针对冒充币安补偿活动的防骗提醒，不是新的赔付方案——币安承担损失的口径仍为 SAFU + 公司资金全额承担（补回约 95%、前十大 100% 储备），不存在用户申请领取 150 美元补偿的流程，任何索要账户资料或要求连接钱包的“领补偿”链接都应先当诈骗；本条不改变提现状态（截至本轮 20:17，首批 15 个网络仍只确认 12 条链已开放，ZEC、TON、SUI 尚未见已开放的单独确认，不能报成首批已全部开放）、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）；本条是官方表态、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
+      "category": "官方表态",
+      "source": "币安联合 CEO 何一（经链新闻 ABMedia 转述）",
+      "url": "https://abmedia.io/binance-hot-wallet-hack-tether-circle-freeze"
+    },
+    {
+      "time": "2026-11-01T19:54:00+08:00",
+      "title": "补报：提现重开后约 3 小时流出约 $20 亿，首日 24 小时净流出约 $12.6 亿，未见恐慌抛售",
+      "body": "媒体统计（蕃新闻北京时间 11-01 19:54 综合外电，援引 BeInCrypto 经 Yahoo 转载与韩国 TokenPost）：币安 11-01 下午 14:00 分阶段恢复提现后，约 3 小时内约 $20 亿的 BTC、ETH 与稳定币流出平台，Whale Alert 标记的大额转出包括 1 万枚 BTC（约 $7.79 亿）、近 $10 亿 USDT、约 $2 亿 USDC 与 3 万枚 ETH（约 $6800 万）；TokenPost 统计币安当日 24 小时净流出约 $12.6 亿（若把 10-29 至 10-30 被盗期间一并计入，过去 7 天净流出约 $80.1 亿），同期 OKX、Bybit 呈小幅净流入。关键限定：这是用户侧提现资金流动、不是攻击者资金动向（攻击者 18,270 枚 BTC 仍未动、SOL→BTC 换币腿见 18:35 条）；净流出为流出扣除流入后的数字，不等于总提领金额，24 小时统计窗口的起止定义在转述中未完全披露；BTC 价格在 11-01 傍晚维持约 $7.8 万附近、未见明显抛压。补回仍约 95%、冻结总额仍约 $30 亿、Alpha 仍无恢复消息均未变。本条不触发 funds.json 的资金动静提醒。",
+      "category": "链上数据",
+      "source": "BeInCrypto（经 Yahoo 转载）/ TokenPost（经蕃新闻综合转述）",
+      "url": "https://n.yam.com/Article/20261101994763"
+    },
+    {
+      "time": "2026-11-01T19:33:00+08:00",
+      "title": "第七批提现开放：Polygon 与 Avalanche C 链已恢复",
+      "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 19:33 转述官方公告）：已恢复 Polygon 网络的 POL、USDT 和 USDC 提现，以及 Avalanche C 链的 AVAX、USDT 和 USDC 提现。此前已开放的 Solana 网络组合在本条中是重申、非新增。关键限定：截至本轮 19:47，尚未见 ZEC、TON、SUI 等其余 3 个首批网络/资产组合已开放的单独确认——它们仍在陆续开放中，不能报成首批 15 个网络已全部开放；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
+      "category": "官方确认",
+      "source": "币安官方公告（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529612"
+    },
+    {
+      "time": "2026-11-01T19:19:00+08:00",
+      "title": "第六批提现开放：Solana 网络已恢复",
+      "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 19:19 转述官方公告）：已恢复 Solana 网络的 SOL、USDT 和 USDC 提现。关键限定：这是用户提现恢复、与同日 17:42–18:35 攻击者转移/兑换被盗 SOL 的资金动向是两回事，不能混淆——本条是币安用户侧 Solana 提现通道重开，不是攻击者 SOL 已套现；截至本轮 19:47，尚未见 ZEC、TON、MATIC、AVAXC、SUI 等其余 5 个首批网络/资产组合已开放的单独确认（19:33 的 Polygon/AVAX 开放见本轮另条）；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条本身不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
+      "category": "官方确认",
+      "source": "币安官方公告（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529610"
+    },
+    {
+      "time": "2026-11-01T19:12:00+08:00",
+      "title": "何一：预测市场模块独立、与主站钱包的安全审计仍在进行，优先级靠后",
+      "body": "币安联合 CEO 何一表示（经 Odaily 北京时间 11-01 19:12 转述）：预测市场是独立模块，其与币安主站钱包之间的安全审计仍在进行，优先级会排得稍后一点，请耐心等待。关键限定：这不是 Alpha 交易恢复消息——Alpha 仍无恢复消息（仍为 10-30 07:06 暂停口径）；何一未给出预测市场恢复的具体时间，只说明审计未完成且优先级靠后，不能报成预测市场即将恢复或已恢复；提现第一阶段截至本轮为 BTC、ETH、BSC、XRP、Base、DOGE、OP、TRX、Arbitrum 已开放（见本轮另条），补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变。本条是官方表态、非攻击者资金动向，不触发 funds.json 的资金动静提醒。",
+      "category": "官方表态",
+      "source": "币安联合 CEO 何一（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529609"
+    },
+    {
+      "time": "2026-11-01T18:53:00+08:00",
+      "title": "第五批提现开放：TRX 与 Arbitrum 网络已恢复",
+      "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 18:53 转述官方公告）：已恢复 Arbitrum 网络的 ARB、ETH、USDT、USDC 提现，以及 TRX 网络的 TRX、USDT 提现。此前已开放的 BTC、ETH、BSC、XRP、Base、DOGE、OP 组合在本条中是重申、非新增。链新闻 19:06 更新佐证：目前共 9 条链开放，晚间 19:00 App 实测 USDT 已可经 Tron（TRC20）、BSC、以太坊、Arbitrum 与 Optimism 提领（TRC20 手续费约 4 USDT、最低 10 USDT，开放前 App 显示为 1.5 USDT，币安未说明调整原因）。关键限定：截至本轮 19:17，尚未见 SOL、ZEC、TON、MATIC、AVAXC、SUI 等其余 6 个首批网络/资产组合已开放的单独确认——它们仍在陆续开放中，不能报成首批 15 个网络已全部开放；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 18:35 的 SOL→BTC 动静记录不变。",
+      "category": "官方确认",
+      "source": "币安官方公告（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529606"
+    },
+    {
+      "time": "2026-11-01T18:50:00+08:00",
+      "title": "Symbiosis 称检测到币安事件相关资金试图经其协议转移，正设法拦截并已联系币安",
+      "body": "跨链协议 Symbiosis 表示（经 Odaily 北京时间 11-01 18:50 转述）：其团队检测到有人试图把与币安近期安全事件相关的资金经 Symbiosis 协议转移，目前正尽力阻止并已联系币安；作为去中心化协议，其筛查机制主要针对常规资金流，难以追踪快速复杂的转移行为，部分机制存在漏洞、团队正逐一修复；用户资金如处于待处理或被误退回状态可联系团队处理。此前 BlockSec 的分析称部分被盗 TRX 已通过 Symbiosis 等渠道跨链至以太坊。关键限定：Symbiosis 未披露涉及金额、地址与是否已有资金实际通过——这是协议方对转移尝试的检测声明，不是已确认的定额资金移动，不能报成新增一笔定额洗钱或已拦截/已冻结；与已报的 Relay 桥接腿（约 $3800 万级，仍在继续）与 THORChain 腿属不同协议的并行线索，不直接相加；18,270 枚 BTC 仍未动，冻结总额仍约 $30 亿。本条不更换 funds.json 首页 alert（无确认的定额移动、无混币器/交易所新去向），仅在 flows 与洗钱池中增记一笔“尝试检测、金额与是否通过均未披露”的记录。",
+      "category": "链上数据",
+      "source": "Symbiosis（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529605"
+    },
+    {
+      "time": "2026-11-01T18:35:00+08:00",
+      "title": "攻击者正把被盗 SOL 换成 BTC：约 97.05 万枚 SOL（约 $9590 万）经 Relay 跨链",
+      "body": "Lookonchain 监测（经 Odaily 北京时间 11-01 18:35 转述）：标记为币安黑客的地址 AffzFDKZ...GigBEaU 正把被盗的 97.05 万枚 SOL（价值约 $9590 万）兑换为 BTC；过去一小时内已转移 48.7 万枚 SOL（约 $4640 万），目前正通过 Relay Protocol 将 SOL 兑换为 BTC。关键限定：这是 17:42 Arkham 所报 485,270 枚 SOL 转移的去向跟进——数量（48.7 万枚 vs 48.527 万枚）与时间窗口吻合，属同一笔转移的后续，不是第二笔约 48 万枚 SOL 转移，不能与 17:42 条相加；97.05 万枚是被盗 SOL 全量口径（Arkham 最初统计 970,522 枚），即攻击者疑似在把整个 SOL 池换成 BTC，但截至本轮尚未披露已实际换成多少 BTC、接收 BTC 地址为何，换币完成量与最终去向均未确认，不能报成 SOL 已全部换完或已套现；18,270 枚被盗 BTC 本身仍未动（本条是新增 BTC 换入方向、非被盗 BTC 转出）；冻结总额仍约 $30 亿；提现第一阶段截至本轮仍为 BTC、ETH、BSC、XRP、Base、DOGE、OP 已开放，其余 8 个首批网络/资产组合（TRX、SOL、ZEC、TON、MATIC、AVAXC、ARBITRUM、SUI）尚未见已开放的单独确认；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条命中 funds.json 的资金动向触发点，首页 alert 已同步更新为本笔 SOL→BTC 动静。",
+      "category": "链上数据",
+      "source": "Lookonchain（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529603"
+    },
+    {
+      "time": "2026-11-01T18:11:00+08:00",
+      "title": "第四批提现开放：DOGE 与 OP（Optimism）网络已恢复",
+      "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 18:11 转述官方公告）：已恢复 DOGE 网络的 DOGE 提现，以及 OP（Optimism）网络的 ETH、USDT、USDC 提现。此前已开放的 BTC、ETH、BSC、XRP、Base 组合在本条中是重申、非新增。关键限定：截至本轮 18:17，尚未见 TRX、SOL、ZEC、TON、MATIC、AVAXC、ARBITRUM、SUI 等其余 8 个首批网络/资产组合已开放的单独确认——它们仍在陆续开放中，不能报成首批 15 个网络已全部开放；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 17:42 的 SOL 转移动静记录不变。",
+      "category": "官方确认",
+      "source": "币安官方公告（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529598"
+    },
+    {
+      "time": "2026-11-01T17:43:00+08:00",
+      "title": "第三批提现开放：XRP 与 Base 网络已恢复",
+      "body": "币安发布最新提现恢复进展（经 Odaily 北京时间 11-01 17:43 转述）：已重新开放 BTC 网络的 BTC；ETH 网络的 ETH、USDT、USDC；BSC 网络的 BNB、USDT、USDC；XRP 网络的 XRP；Base 网络的 ETH、USDC。相对上一批（15:56 的 ETH/BSC 开放）新增的是 XRP 网络与 Base 网络：此前已开放的 BTC、ETH、BSC 组合在本条中是重申、非新增。关键限定：17:43 已超出公告#4 原定的 14:00–17:00 第一阶段窗口，说明分阶段放行在窗口结束后仍在继续，不能报成窗口内全部完成；截至本轮 17:47，尚未见 TRX、SOL、ZEC、DOGE、TON、MATIC、AVAXC、ARBITRUM、OP、SUI 等其余 10 个首批网络/资产组合已开放的单独确认——它们仍在陆续开放中，不能报成首批 15 个网络已全部开放；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条本身是用户提现恢复、非攻击者资金动向；本轮资金动静提醒由下一条 SOL 转移触发，见 funds.json。",
+      "category": "官方确认",
+      "source": "币安官方进展（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529592"
+    },
+    {
+      "time": "2026-11-01T17:42:00+08:00",
+      "title": "攻击者转移约 48.53 万枚 SOL（约 $4623 万），被盗 SOL 约半数首次异动",
+      "body": "Arkham 监测（经 Odaily 北京时间 11-01 17:42 转述，转移发生在报道约 1 分钟前）：标记为币安黑客的地址向某地址转移 485,270 枚 SOL，价值约合 $4623 万。这是被盗 SOL 池的首次大额异动：Bitquery 11-01 00:51 截点仍称 SOL（约 97 万枚）未动，Arkham 最初统计被盗 SOL 为 970,522 枚——本笔 485,270 枚约占被盗 SOL 的一半。关键限定：Odaily 只披露了转移数量与约值，未披露接收地址归属与后续去向，未确认进入交易所充值地址、混币器或已抛售，不能报成已洗钱或已套现；18,270 枚 BTC 仍未动，冻结总额仍约 $30 亿，提现第一阶段仍在陆续开放（截至本轮 BTC、ETH、BSC、XRP、Base 已确认开放）、Alpha 仍无恢复消息。本条命中 funds.json 的资金动向触发点（被可靠来源确认的资金移动），首页 alert 已同步更新为本笔 SOL 动静。",
+      "category": "链上数据",
+      "source": "Arkham（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529591"
+    },
+    {
+      "time": "2026-11-01T15:56:00+08:00",
+      "title": "第二批提现开放：ETH 与 BSC 网络已恢复",
+      "body": "币安华语发文（经 0xZX 北京时间 11-01 15:56 转述）：目前已恢复以太坊网络 USDC、USDT、ETH，以及 BNB 智能链（BSC）USDC、USDT、BNB 的提现服务；平台将继续进行安全检查，并在完成相关检查后分阶段恢复更多资产及网络的提现服务，后续进展将通过官方渠道更新。这是第一阶段提现恢复的第二批实际开放：此前 14:10 仅 BTC 网络确认已开放，14:50 链新闻 App 实测当时 USDT/USDC 仍暂停——15:56 的 ETH/BSC 开放意味着 ETH 与 BSC 上的 USDT/USDC 也已从暂停转为可提。关键限定：截至本轮 16:17，尚未见 TRX、SOL、XRP、ZEC、DOGE、TON、MATIC、AVAXC、ARBITRUM、BASE、OP、SUI 等其余 12 个首批网络/资产组合已开放的单独确认——它们仍在公告#4 的 14:00–17:00 窗口内陆续开放，窗口关闭前仍可能继续放行，不能报成首批 15 个网络已全部开放；何一 15:57 称目前提现整体运行平稳、大量请求时可能短暂拥堵、稍后恢复顺畅，属公告#4 已含的分阶段/初期延迟口径的用户指引，不单独成条；补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、ETH 仍无确认进入混币器的后续均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 04:43 的 Relay 约 $3800 万桥接动静记录不变。",
+      "category": "官方确认",
+      "source": "币安华语（经 0xZX 转述）",
+      "url": "https://0xzx.com/flash/374872"
+    },
+    {
+      "time": "2026-11-01T15:10:00+08:00",
+      "title": "Lookonchain：攻击者仅在 EVM 链已抛售超 130 种山寨币，累计换得约 12.34 万枚 ETH",
+      "body": "Lookonchain 监测（经 Odaily 北京时间 11-01 15:10 转述）：币安攻击者仅在 EVM 兼容链上就已抛售超过 130 种山寨币，累计获得 123,400 枚 ETH（约 $2.7726 亿）和 169 万枚 USDC，合计约 $2.79 亿。关键限定：这是截至 11-01 下午的累计口径，不是本轮 30 分钟内的一笔新抛售；它包含此前已报的 7 种山寨币共 $1.58 亿换 70,480 ETH 的子集（以及 PROM 极端滑点等个例），不能与此前数字直接相加、也不能报成新增 $2.79 亿抛售；该统计只覆盖 EVM 链，未计入 Tron 等其他链的换币腿；仍未见资金转入交易所充值地址或混币器的确认。冻结总额仍约 $30 亿，18,270 枚 BTC 仍未动，提现第一阶段仍在 14:00–17:00 窗口内陆续开放（截至本轮仅 BTC 网络确认已开放），Alpha 仍无恢复消息。本条不触发 funds.json 首页 alert 的更换（无混币器/交易所新去向），仅在 flows 与洗钱池中增记累计口径。",
+      "category": "链上数据",
+      "source": "Lookonchain（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529568"
+    },
+    {
+      "time": "2026-11-01T14:55:00+08:00",
+      "title": "币安更新 PoR 地址列表：后续所有提现改由新生成钱包处理",
+      "body": "币安在 X 发文（经 Odaily 北京时间 11-01 14:55、TokenPost 转述）：作为持续安全响应工作的一部分，已更新储备证明（PoR）地址列表，纳入新生成的钱包地址；后续所有提现交易都将通过这些新钱包地址处理。这是第一阶段提现恢复进行中的配套安全动作：提现路由从受影响的旧热钱包地址切换到新地址，PoR 地址清单同步更新以便核对。关键限定：这不是一份新的完整 PoR（完整零知识证明仍待 11-03）；链新闻 14:50 App 实测显示当时 BTC 已可提、USDT 与 USDC 仍暂停，说明截至本轮其余 14 个首批网络/资产组合仍在 14:00–17:00 窗口内陆续开放、尚未见已开放确认，不能报成首批 15 个网络已全部开放；补回约 95%、前十大 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动均未变。本条是币安自有提现基础设施的调整、非攻击者资金动向，不触发 funds.json 的资金动静提醒。",
+      "category": "官方确认",
+      "source": "币安官方（经 Odaily / TokenPost 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529566"
+    },
+    {
+      "time": "2026-11-01T14:10:00+08:00",
+      "title": "第一阶段提现开始执行：BTC 网络已开放",
+      "body": "Odaily 于北京时间 11-01 14:10 转述币安官方消息：分阶段恢复提现的首批网络为比特币网络，即 BTC 网络提现已实际开放。这是公告#4（11-01 12:16 已报）的计划落地：公告#4 原定今日 14:00–17:00 期间恢复第一阶段提现，首批 15 个网络/资产组合按过去一周用户需求定优先顺序、每组合须通过稳定性与安全性检查后开放；14:10 的 BTC 网络开放意味着第一阶段已从“计划”进入“执行”，不再是全部待恢复状态。关键限定：截至本轮 14:20，仅见 BTC 网络已开放的确认，尚未见 ETH、BSC、TRX、SOL 等其余 14 个首批网络/资产组合已开放的确认——它们仍在 14:00–17:00 窗口内陆续开放，初期流量大或有延迟、失败稍后重试仍属公告#4 所述的正常现象；补回约 95%、前十大 100% 储备、冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、ETH 仍无确认进入混币器的后续均未变；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）。本条是用户提现恢复、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-01 04:43 的 Relay 约 $3800 万桥接动静记录不变。",
+      "category": "官方确认",
+      "source": "币安官方消息（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-CN/newsflash/529562"
+    },
+    {
+      "time": "2026-11-01T12:17:00+08:00",
+      "title": "攻击者把约 90.88 万枚 PROM 卖入近乎空池，仅得约 $71",
+      "body": "Lookonchain 监测（经 Odaily 北京时间 11-01 12:17 转述）：币安攻击者把价值约 $500 万的 90.8793 万枚 PROM 卖入流动性几乎为空的 Uniswap V2 流动性池，仅收到 0.0316 枚 ETH，价值约 $71。关键限定：这不是一笔进入交易所充值地址或混币器的转移，而是攻击者在 DEX 上抛售剩余山寨币仓位时遭遇的极端滑点个例——名义 $500 万、实际变现约 $71，经济意义可忽略；属此前已报“批量抛售山寨币换 ETH”模式的延续（Lookonchain 此前统计 7 种山寨币共 $1.58 亿换 70,480 ETH），不改变大局：18,270 枚 BTC 仍未动，冻结总额仍约 $30 亿，ETH 仍无确认进入混币器的后续；PROM 抛售本身不触发 funds.json 首页 alert 的更换（实际变现仅约 $71、无混币器/交易所去向，首页仍保留进行中的 Relay 约 $3800 万桥接动静），仅在 funds.json 的 flows 与洗钱池中增记一笔。",
+      "category": "链上数据",
+      "source": "Lookonchain（经 Odaily 转述）",
+      "url": "https://www.odaily.news/zh-TW/newsflash/529548"
+    },
+    {
+      "time": "2026-11-01T12:16:00+08:00",
+      "title": "币安公告#4：今日 14:00–17:00 恢复第一阶段提现，补回升至约 95%",
+      "body": "币安发布安全事件恢复进展公告#4（官网原文，Odaily 于北京时间 11-01 12:16 转述）：计划于今日 14:00 至 17:00（东八区时间）期间恢复第一阶段提现服务。首批逐步开放 15 个网络及资产组合：BTC 链 BTC；ETH 链 ETH、USDT、USDC；BSC 链 BNB、USDT、USDC；TRX 链 TRX、USDT；SOL 链 SOL、USDT、USDC；XRP 链 XRP；ZEC 链 ZEC；DOGE 链 DOGE；TON 链 USDT、GRAM；MATIC（Polygon）链 POL、USDT、USDC；AVAXC 链 AVAX、USDT、USDC；ARBITRUM 链 ETH、USDT、USDC、ARB；BASE 链 ETH、USDC；OP 链 ETH、USDT、USDC；SUI 链 SUI。币安称将根据过去一周用户需求数据确定各代币恢复优先顺序，每个网络与资产组合均须完成稳定性与安全性检查后才审慎开放；恢复初期因流量较大、部分提现可能出现暂时延迟或较长处理时间，失败后稍后重试属分阶段恢复期间的正常现象；其他网络及资产将在具备恢复条件后陆续开放；充值服务保持开放。补回进度同步更新：受影响资产回填已从公告#3 的约 90% 升至约 95%，剩余约 5% 为十大代币以外的低流动性币种，仍需经市场/OTC 购足；BTC、ETH、USDT、BNB、SOL、USDC、XRP、USD1、RLUSD、ZEC 仍为 100% 足额储备支持，用户可通过储备金证明页面核实快照（完整零知识证明仍待 11-03）。关键限定：截至本轮 12:17，提现尚未实际恢复，本条是恢复计划与时间窗口、非已恢复；Alpha 交易仍无恢复消息（仍为 10-30 07:06 暂停口径）；95% 与前十大 100% 均为币安自述，可验证证明尚未公开；冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、ETH 仍无确认进入混币器的后续，均未变。",
+      "category": "官方确认",
+      "source": "币安安全事件恢复进展公告#4（官网原文，经 Odaily 转述）",
+      "url": "https://www.binance.com/zh-CN/support/announcement/detail/73911fb819b240f88b88256bdd318eda"
+    },
+    {
+      "time": "2026-11-01T05:46:00+08:00",
+      "title": "FBI 正式归因：朝鲜 TraderTraitor 对逾 $60 亿币安被盗案负责，公布数百个关联地址并呼吁拦截",
+      "body": "美国联邦调查局（FBI）于美国时间 10-31 发布网络安全通报（The Defiant 发布时间为 10-31 21:46 UTC，即北京时间 11-01 05:46）：正式认定朝鲜对币安约 10-29 发生的逾 $60 亿美元虚拟资产被盗案负责，所涉朝鲜恶意网络活动代号为 TraderTraitor——即此前 TRM Labs/Chainalysis 以高信心指向、ZachXBT 亦指向的同一组织，也是 FBI 此前认定的 2025 年 Bybit 约 $15 亿被盗案行为人。通报由 FBI 联合美国特勤局（USSS）与国税局刑事调查部门（IRS-CI）发出：观察到 TraderTraitor 正把被盗资产主要兑换成 ETH，预计随后经 DeFi 与即时兑换服务进一步转换、进入后续洗钱阶段；呼吁 THORNode 运营方、RPC 节点运营方、即时交易所、DeFi 服务、链上分析公司及其他虚拟资产服务商拦截与通报所列地址相关或衍生的交易，并公布了约 628 个 ETH/BTC/SOL 地址（对 FBI 原页清单逐条清点：ETH 约 608 条、BTC 19 条、SOL 1 条）（称其持有或曾持有被盗资产、由 TraderTraitor 运营或密切相关），其中 ETH 地址 0x03b0…020ea 即此前已报的 17,260 ETH 试探转移接收方，属已有地址的官方确认、非新一笔转移。关键限定：这是美国执法机构的首次官方归因，币安自身仍未具名归因；FBI 的拦截呼吁是请求、非制裁令或法院命令，不等于新增冻结金额，冻结总额仍约 $30 亿；本条不触发 funds.json 的资金动静提醒（无 BTC 转出、无 ETH 入混币器/交易所的新确认、无新增冻结/追回），首页 alert 保持 11-01 05:50 的 Relay 桥动静记录不变；提现截至本轮仍暂停、仍按公告#2/#3 的 11-01 分阶段恢复口径（约指向当天下午），尚未实际恢复；PoR 完整证明仍待 11-03。",
+      "category": "官方确认",
+      "source": "FBI 网络安全通报（经 The Defiant / Arab News / CoinEdition 转述）",
+      "url": "https://www.fbi.gov/investigate/cyber/alerts/2026/north-korea-responsible-for-6-billion-binance-attack"
+    },
+    {
+      "time": "2026-11-01T05:50:00+08:00",
+      "title": "Bitquery 全链复盘：攻击者 10-31 起改走 Relay 桥，约 $1600 万 TRX/USDT 已换成 7,352 枚 ETH",
+      "body": "链上数据公司 Bitquery 发布币安被盗事件全链调查（链上持仓截点为 10-31 16:51 UTC，即北京时间 11-01 00:51；转移追踪截至 10-31 16:01 UTC）：攻击者自 10-31 中午起新增一条洗钱腿——改走跨链桥 Relay。链上时间线：10-31 12:27 UTC（北京时间 20:27）之后，攻击者此前付款的 5 个 THORChain 金库不再接收任何人的 TRX（与此前已报的 THORChain 因以太坊重组误发双倍退款而紧急暂停换币时间吻合，但暂停本身是协议自保、非针对被盗资金的定向拦截）；一个分发地址把 5700 万枚 TRX 投入一个波场中转合约、取出大部至 9 个新钱包，在 SunSwap 换成 USDT；截至 16:01 UTC（北京时间 11-01 00:01），其中 7 个钱包已向 Relay 发送约 $1600 万的 USDT 与 TRX（Relay 退回了其中几笔存款）；Relay 的付款落在以太坊 8 个新钱包，这些钱包把 USDT 换成 ETH（多经 CoW Swap），大部再转入 16 个新钱包——截点时这 16 个钱包持有 7,352 枚 ETH、另有 718 枚 ETH 仍在一个 Relay 钱包中，且桥接在截点后仍在继续，故余额可能已进一步增加。同一调查还量化了 THORChain 腿：10-30 至 10-31，43 个地址向 THORChain 发送 6400 万枚 TRX（退款后约 $2000 万），换得的 3,600 枚 ETH 落入 2 个地址并分发至 35 个新钱包（Bitquery 注明只读了一个钱包的换币备注，故 3,600 枚为下限）。全口径持仓：截点时攻击者仍持有约 $31 亿，其中 ETH 达 525,201 枚（为被盗 ETH 的 2.6 倍，含用被盗稳定币/代币/TRX 换得的部分），高于此前约 48 万枚的主钱包口径，属统计范围差异；BTC 18,270 枚自 10-29 20:48 UTC 后未动，XRP（2.335 亿枚）与 SOL（约 97 万枚）亦未动；Bitquery 未发现任何一笔转入交易所充值地址或混币器的资金（其冻结统计约 $27 亿为链上可查冻结口径，与币安核实约 $30 亿为统计方法与截点差异）。大局未变：提现仍按公告#2/#3 的 11-01 分阶段恢复口径、截至本轮尚未实际恢复；冻结总额仍约 $30 亿；PoR 完整证明仍待 11-03。",
+      "category": "链上数据",
+      "source": "Bitquery 调查",
+      "url": "https://bitquery.io/investigations/binance-hack"
+    },
+    {
+      "time": "2026-11-01T04:43:00+08:00",
+      "title": "补报：Specter 监测称攻击者 7 小时内经 Relay 桥接约 $3800 万且仍在继续，Relay 腿较 Bitquery 截点显著扩大",
+      "body": "链上侦探 Specter 监测（经 Odaily/BBX/KuCoin/TokenPost 转述，BBX 发布时间为北京时间 11-01 04:43）：攻击者约 7 小时内经跨链桥 Relay 桥接约 $3800 万，且仍在继续；Specter 指出 Relay 虽自称已启用 KYT 系统、仍未能拦截相关操作，并称经 THORChain 不可能在这么短时间内洗出这一规模、是 Relay 打开了通道。这是 05:50 轮次已报 Bitquery Relay 腿的后续扩大：Bitquery 截点为 11-01 00:01、当时 7 个钱包已向 Relay 发送约 $1600 万 USDT 与 TRX（另 718 枚 ETH 仍在 Relay 钱包），Specter 的 $3800 万为另一家在更晚截点的桥接量统计，两家口径与截点不同、不能直接相加，但方向一致——Relay 腿在 Bitquery 截点后仍在扩大，且 THORChain 换币暂停（12 链）仍未见恢复报道，攻击者洗钱主通道已转向 Relay。关键限定：$3800 万为单家侦探的监测口径、未经 Relay 或第二家链上公司复核；Specter 未称资金已进入交易所充值地址或混币器，Bitquery 截点“未发现转入交易所/混币器”的结论在本轮未被推翻；18,270 枚 BTC 仍未动，冻结总额仍约 $30 亿，提现截至本轮（11-01 早间）仍暂停、仍按公告#2/#3 的 11-01 分阶段恢复口径（约指向当天下午）、尚未实际恢复。",
+      "category": "链上数据",
+      "source": "链上侦探 Specter（经 Odaily / BBX / KuCoin / TokenPost 转述）",
+      "url": "https://www.kucoin.com/news/flash/38m-usd-bridged-via-relay-in-7-hours-chain-analyst-claims-dprk-still-transferring"
+    },
+    {
+      "time": "2026-10-31T23:09:00+08:00",
+      "title": "THORChain 因以太坊重组误发双倍退款紧急暂停 12 条链换币，Chainalysis 称意外延缓被盗资金洗钱",
+      "body": "跨链协议 THORChain 于北京时间 10-31 晚间触发紧急暂停：以太坊发生链重组（reorg）后，协议误将一笔 10 枚 ETH 的存款退款发了两次，触发紧急制动，12 条链（共 13 条）的换币交易暂停；多数受影响链上的出账签名仍保持开启，付款仍可发出、只是新换币被堵住。这是此前各轮漏报的补报：BBX 于 23:09 北京时间首报状态接口显示 12/13 链暂停，The Defiant 与 TokenPost 于 11-01 01:43–01:44 北京时间确认换币仍暂停、暂无恢复报道，截至本轮（11-01 05:17）亦未见恢复报道。关键限定：暂停并非针对被盗资金的定向拦截，而是重组导致误退款触发的协议自保；Chainalysis 把这次中断与币安被盗资金的洗钱活动联系起来（归因为朝鲜相关行为人），称暂停使经 THORChain 的洗钱被迫等待、给追踪留出时间，但未给出经此路线被堵的具体金额与地址。这不是一笔新的攻击者资金转移、不是新增冻结或追回，故不触发 funds.json 的资金动静提醒，首页 alert 保持 10-31 09:27 的 TRX 池拆分记录不变；大局未变：18,270 枚 BTC 仍未动，ETH 仍无确认进入 Tornado Cash 等混币器的后续，冻结总额仍约 $30 亿，提现仍按公告#2/#3 的 11-01 分阶段恢复口径、截至本轮尚未实际恢复。",
+      "category": "链上数据",
+      "source": "Chainalysis（经 CryptoBriefing / TokenPost / The Defiant / BBX 转述）+ THORChain 状态接口",
+      "url": "https://cryptobriefing.com/thorchain-pauses-ethereum-reorg-double-refund/"
+    },
+    {
+      "time": "2026-10-31T22:51:00+08:00",
+      "title": "币安 SAFU 钱包转出约 7,499 枚 BTC（约 $5.81 亿），SAFU 部分动用落地",
+      "body": "Arkham 链上数据显示，北京时间 10-31 22:51（美东时间 10:51），币安 SAFU 钱包 1BAuq 向新地址 165Eur…SMmee 转出 7,499 枚 BTC（约 $5.81 亿），币安随后确认该笔 SAFU 转账已完成；转出后 SAFU 该地址仍持有约 7,500 枚 BTC。链上分析师 Ai 姨（@ai_9684xtpa）与 Lookonchain 亦监测到同一规模的 SAFU 转出，PANews/TokenPost 转述称或与受影响资产的储备补足有关。这是公告#3（22:27）所称“SAFU 部分动用、24 小时内完成”在当晚的链上执行证据，与公告#3 的约 90% 补回、前十大资产 100% 储备口径相互印证，但不等同于 90% 本身：7,499 BTC 约 $5.81 亿只是 SAFU 动用的一部分，补回总额仍以币安公告为准。关键限定：这是币安自有资金的内部调拨，不是攻击者资金动向，不触发 funds.json 的资金动静提醒；7,500 与 7,499 之差为各家四舍五入/口径差异；接收地址后续去向未披露。提现仍按公告#2/#3 的 11-01 分阶段恢复口径，截至本轮（11-01 01:47）尚未实际恢复；冻结总额仍约 $30 亿，18,270 枚 BTC 仍未动，ETH 仍无确认进入混币器的后续。",
+      "category": "链上数据",
+      "source": "Arkham（经 WuBlockchain / CryptoPanic 转述）+ Ai 姨 @ai_9684xtpa / Lookonchain（经 PANews / TokenPost）",
+      "url": "https://www.tokenpost.com/news/technology/45570"
+    },
+    {
+      "time": "2026-10-31T22:27:00+08:00",
+      "title": "币安公告#3：已补回约 90% 被盗资产，前十大资产 100% 储备、PoR 快照已完成",
+      "body": "币安第三次安全事件进展公告（经路透/TokenPost/BBX/CryptoBriefing 转述，BBX 发布时间 22:27 北京时间）：被盗资产补回进度由公告#2 的约 80% 升至约 90%；BTC、ETH、USDT、BNB、SOL、USDC、XRP、USD1、RLUSD、ZEC 这前十大用户资产已达 100% 储备支持。剩余约 10% 为流动性较低的其他代币，仍需经市场及 OTC 渠道继续买回、耗时更久。资金来源新增口径：SAFU 基金部分动用（预计 24 小时内完成划拨，事后 SAFU 将补回至约 $10 亿规模）+ 合约保险基金中超出风控最低要求的部分 + 公司自有资金，此前 $63.4 亿拨备总额口径未变。储备证明进展：新一轮 PoR 快照已于 10-31 08:00 北京时间（00:00 UTC）完成，完整零知识证明（zk-SNARK/Merkle）预计 11-03 生成（BBX 称 11-03 08:00 北京时间，TokenPost 称 11-03 UTC，日期一致、时刻表述有别，以币安原文为准）；此前公告#2 称“结果 11-02 前公布”，现以 11-03 完整证明为准，11-02 前是否先出快照结果待核实。提现仍按原定时间表、11-01 分阶段恢复，尚未实际恢复。关键限定：90% 与前十大 100% 均为币安自述，快照数据尚未经外部可验证证明公开，不能等同最终 PoR 结果；冻结总额仍约 $30 亿、18,270 枚 BTC 仍未动、ETH 仍无确认进入混币器的后续，均未变。",
+      "category": "官方确认",
+      "source": "币安安全事件进展公告#3（经路透/TokenPost/BBX/CryptoBriefing 转述）",
+      "url": "https://www.tokenpost.com/news/technology/45530"
+    },
+    {
+      "time": "2026-10-31T20:39:00+08:00",
+      "title": "Chainalysis 新披露 Tron 洗钱路径：稳定币经 DeFi 存款凭证绕冻结、再跨链换 ETH",
+      "body": "Chainalysis 于北京时间 10-31 20:39（12:39 UTC）发文（经 ChainCatcher 转述）：币安被盗资金相关地址正试图赶在稳定币冻结前转移资产，其正在追踪的一种方式是——先在波场链上把 TRX 换成稳定币，再存入 DeFi 借贷协议换取存托凭证类代币（凭证代币本身不能被发行方冻结，但可兑换回所代表的稳定币），随后转入未被关联的新钱包换回稳定币，再经跨链桥换成以太坊上的 ETH。关键限定：该方法自约 64 亿美元攻击发生后的早期起即已出现在波场链上，本次是 Chainalysis 10-31 的公开路径披露，不是今天新发生的一笔定额转移——文中未给出这条路径对应的币安资金金额与地址，文中所举 TraderTraitor 转移 50 万美元的例子是该组织在其他案件中的类似手法，不是本案金额；Chainalysis 同时称 Circle 与 Tether 迄今已参与冻结约 28 亿美元（与币安核实约 30 亿美元为统计时点与口径差异，不构成新增冻结），并称把稳定币换成 ETH 并不能使攻击者免于追踪、其调查人员正实时监测相关链上模式。这与 10-30 18:09 已报的自动化拆分—回流—再分发模式同属洗钱环节的不同侧面：此前报的是拆分形态，本次补的是绕冻结的具体机制。大局未变：18,270 枚 BTC 仍未动，ETH 仍无确认进入 Tornado Cash 等混币器的后续，冻结总额仍约 30 亿美元，提现仍按公告#2 的约 34 小时分阶段口径（约 11-01 下午）、尚未恢复，PoR 快照结果仍待 11-02 前公布；因本条是路径披露而非离散新转移，funds.json 的首页 alert 保持 10-31 09:27 的 TRX 池拆分动静记录不变。",
+      "category": "链上数据",
+      "source": "Chainalysis（经 ChainCatcher 转述）",
+      "url": "https://www.chaincatcher.com/article/2300660"
+    },
+    {
+      "time": "2026-10-31T11:31:00+08:00",
+      "title": "Ethena 约 1.286 亿枚 ENA 存入币安，疑为买回被盗 ENA 的 OTC 进展（用途未确认）",
+      "body": "Lookonchain 于北京时间 10-31 11:31 发帖（经 CryptoTimes / TokenPost / Coinfomania 转述；余烬 @EmberCN 更早于约 08:21 前后窗口已先行提示同一笔转账）：一个被识别为 Ethena 的钱包在约 8 小时内向币安存入约 1.2863 亿枚 ENA（约 $2400 万），约占攻击者 10-29 盗走的 2.175 亿枚 ENA 的 59%，剩余约 8887 万枚 ENA 仍待补齐。关键限定：转账本身是链上事实，但币安与 Ethena 均未确认这笔存入就是买回被盗资产的 OTC 交易——项目方钱包向交易所转账也可能用于做市、财库管理或 OTC 结算，不能直接报成“币安已买回 59% 的 ENA”；攻击者此前已把全部 2.175 亿枚 ENA 以约 $3393 万抛售换 ETH（属已报的 7 种山寨币共 $1.58 亿换 70480 ETH 的一部分），这笔存入与攻击者资金无关、不是攻击者动向，故不触发 funds.json 的资金动静提醒。这是公告#2“剩余部分正通过市场及 OTC 购买”之后，首个代币级别的买回进展链上证据：何一 10-30 已称将按被盗数量原币种全额买回山寨币备更新版 PoR；最终 ENA 是否回到足额储备，仍以 11-02 前公布的首次 PoR 快照结果为准。冻结总额仍约 $30 亿，提现仍按公告#2 的约 34 小时分阶段口径（约 11-01 下午）、尚未恢复，18,270 枚 BTC 仍未动，ETH 仍无确认进入混币器的后续。",
+      "category": "链上数据",
+      "source": "Lookonchain / @EmberCN（经 CryptoTimes / TokenPost / Coinfomania）",
+      "url": "https://www.cryptotimes.io/2026/10/31/binance-buys-back-stolen-assets-via-otc-deals-after-6-3b-hack-as-ethena-sends-24m/"
+    },
+    {
+      "time": "2026-10-31T09:27:00+08:00",
+      "title": "黑客 Tron 池拆分：约 6.382 亿 TRX 分 5 址，其中 1.2 亿枚 TRX 再转手",
+      "body": "Onchain Lens 监测、Whale Alert 亦报（经 PANews / ChainCatcher / TokenPost / CryptoBriefing 于 10-31 早间披露）：攻击者 Tron 资金池出现新一轮自动化拆分转手。链上时间实为 10-30 18:15–18:20（北京时间）：约 6.382 亿枚 TRX 池在 5 分钟内分拆为 5 个新地址——4 个各得 1.2 亿枚、1 个得 1.582 亿枚；其中一个 1.2 亿枚接收方于 18:20 随即将全额（约 $3878 万）转手至一个已在追踪链中的地址，随后又进一步分发。关键限定：这不是新增被盗——该池源自攻击者此前用约 $2.34 亿 USDT 经 SunSwap 换得的约 6.38 亿 TRX；TokenPost 明确指出，此次交易未指明地址控制人、也未显示卖出或套现；CryptoBriefing / Whale Alert 口径称转入“未知地址”，与 TokenPost“已在追踪链中”并不冲突（未知身份、但在追踪范围内），均未确认进入交易所或混币器。模式与 10-30 18:09 Chainalysis 已报的自动化拆分—回流—再分发洗钱模式一致。18,270 枚 BTC 仍未动，ETH 仍无确认进入 Tornado Cash 等混币器的后续，冻结总额仍约 $30 亿，提现仍按公告#2 的约 34 小时分阶段口径、尚未恢复。",
+      "category": "链上数据",
+      "source": "Onchain Lens / Whale Alert（经 PANews / ChainCatcher / TokenPost / CryptoBriefing）",
+      "url": "https://www.panewslab.com/zh/articles/01a18f91-463a-75c2-a9b9-7abe5ad30779"
+    },
+    {
+      "body": "币安发布安全事件进展公告#2：已准备逾 $63.4 亿公司资金，其中 $50 多亿等值 USDC、USDT、BTC、ETH、BNB 等对应代币已到位，即已填回约 80% 被盗资金，剩余部分正通过市场及 OTC 渠道购买——这是 10-30 19:01 已报 $63.4 亿拨备（$50 亿已持同类代币）的进度表述，非新增拨备额。链上冻结仍约 $30 亿，现阶段仍未发现钱包私钥泄露证据。时间表首次细化：约 34 小时内按代币分阶段恢复提现（自公告约 03:33 起算，约指向 11-01 下午，仍须通过安全检查、非已恢复）；12 小时内进行首次储备证明快照、结果于 11-02（周一）前公布；约 48 小时内公布进一步技术调查结果。此前 Teng 40 小时目标与何一 42 小时口径同属约 11-01 周末恢复区间，34 小时为更具体的分阶段版本。",
+      "category": "官方确认",
+      "source": "币安安全事件进展公告#2（经 PANews / CryptoBriefing 转述）",
+      "time": "2026-10-31T03:33:00+08:00",
+      "title": "币安公告#2：已填回约 80% 被盗资金，约 34 小时内分阶段恢复提现",
+      "url": "https://www.panewslab.com/zh/articles/01a18e5f-d62b-74bb-b55c-a2cae7755753"
+    },
+    {
+      "body": "Allora 在 X 发帖称：Allora 网络及 ALLO 代币合约安全，币安以外持有的 ALLO 未受影响；部分存放于币安的 ALLO 在本次被盗事件中被盗，团队发现后已执行 ALLO 代币合约内置的紧急保护机制，攻击者已无法转移、出售或使用这部分 ALLO，被盗 ALLO 均未被卖出或转出攻击者钱包；目前正将被盗 ALLO 全额归还币安，ALLO 总供应量不变。金额未披露，不改变币安核实约 $30 亿冻结总额口径；归还进行中、尚未确认到账。这是冻结之外又一笔协议方实际追回待归还的资产（此前 Synthetix SNX 约 $155 万为首笔）。",
+      "category": "链上数据",
+      "source": "Allora @AlloraNetwork（经 PANews 转述）",
+      "time": "2026-10-31T00:30:00+08:00",
+      "title": "Allora 已冻结被盗 ALLO，正全额归还币安（金额未披露）",
+      "url": "https://www.panewslab.com/zh/articles/01a18da5-e5f3-70b4-922e-7eb7c3d18b68"
+    },
+    {
+      "body": "Decrypt 引述 Arkham 数据：北京时间 10-30 23:37–约 00:12（美东时间周五 11:37–12:12），一个被 Arkham 归因为攻击者的 Tron 钱包向 12 个地址转出约 519 万枚 TRX（约 $173 万）。这是 10-30 白天慢雾已报的 TRX 跨链洗钱腿之后的又一次 Tron 链上拆分动向，金额小，不改变大局：18,270 枚 BTC 仍未动，ETH 仍无确认进入 Tornado Cash 等混币器的后续，冻结总额仍约 $30 亿。注意：12 个接收地址的归属与后续去向未披露，是否进入交易所/混币器未确认。",
+      "category": "链上数据",
+      "source": "Arkham（经 Decrypt）",
+      "time": "2026-10-30T23:37:00+08:00",
+      "title": "攻击者 Tron 钱包再拆分约 519 万枚 TRX 至 12 个地址",
+      "url": "https://decrypt.co/382237/binance-sets-aside-6-34b-to-cover-hack-losses-ceo-says-your-assets-are-safe"
+    },
+    {
+      "body": "币安联合 CEO Richard Teng 发帖称，目标在 40 小时内恢复提现（希望赶在周日截止前恢复），并于下周一发布完整储备证明报告、在此之前先给初步储备快照。Teng 还披露：攻击者作案期间用了“自毁机制”销毁工具与痕迹，加大了调查难度；涉案 EIP-7702 委托“未经过正常审批控制”。注意：40 小时是目标/希望、不是已恢复；与此前 45–48 小时口径相比窗口进一步收紧，实质仍指向约 11-01 周末恢复；周一完整 PoR 时间表为首次明确，11-01 当天是否先出快照待核实。冻结总额仍约 $3B，18,270 BTC 仍未动，ETH 仍无确认入混币器后续。",
+      "category": "官方表态",
+      "source": "Richard Teng @_RichardTeng（经 Cointelegraph 直播 / The Defiant / Lookonchain 转述）",
+      "time": "2026-10-30T22:34:00+08:00",
+      "title": "Teng：目标 40 小时内恢复提现、周一发布完整储备证明",
+      "url": "https://thedefiant.io/news/hacks/binance-s-teng-targets-sunday-withdrawal-restart-after-hack"
+    },
+    {
+      "body": "Aave 官方 X 更新：因币安事件预防性冻结的 V3、V4 全部市场已解冻，新存款与新借款恢复；冻结期间提款与还款一直正常；Aave 合约未受事件影响、仓位仍超额抵押。持续预防：USDT、USDC、USDT0、POL、WAVAX、sAVAX、XAUT、PAXG、OP 九项资产 LTV 暂维持 0，暂不能作新借款抵押品。此前 LlamaRisk 已提议在分阶段解冻前削减约 $38 亿未用借款额度，防攻击者用剩余代币开大仓位。注意：解冻不等于攻击者资金移动——攻击者 Aave 仓位本身未变（存 6000 万 USDT 抵押、借 19762 WETH，仍超额抵押；何一所称执法解冻后或多追回约 $14M 仍未成事实），18,270 BTC 仍未动，ETH 仍无确认入混币器后续。",
+      "category": "链上数据",
+      "source": "Aave 官方（经 Cointelegraph 直播 / Blocktempo 转述）",
+      "time": "2026-10-30T21:57:00+08:00",
+      "title": "Aave 解除 V3/V4 预防性冻结，9 项资产 LTV 暂置 0 防攻击者再抵押",
+      "url": "https://www.blocktempo.com/aave-v3-v4-markets-unfrozen-ltv0-binance-incident/"
+    },
+    {
+      "body": "Newton Foundation 发帖称，攻击者疑似误操作，把约 800 万枚 NEWT 及另外 17 种代币（ANIME、ANKR、ARPA、BARD、CELR、DENT、DOLO、FTT、GLM、HIGH、HOT、KNC、LQTY、RARE、RESOLV、SIGN、WOO）直接转入 NEWT 代币合约地址，合计时价约 $350 万（Lookonchain 估约 $332 万，估值时点差异）。该合约不可升级、无所有者/管理员（管理权已于 2025 年在链上放弃），任何人包括基金会都无法取回，代币永久锁死、攻击者也卖不掉，NEWT 合约本身未被黑。这是此前各轮漏报的补报：金额小，不改变约 $30 亿冻结总额与总影响约 $63 亿口径，也不是发行方冻结或追回返还。",
+      "category": "链上数据",
+      "source": "Newton Foundation（经 PANews / Lookonchain）",
+      "time": "2026-10-30T20:58:00+08:00",
+      "title": "攻击者误把约 $350 万代币转入 NEWT 合约，永久锁死",
+      "url": "https://www.panews.io/articles/01a18cf2-5ea1-7557-aa43-4f36d3c13e92"
+    },
+    {
+      "time": "2026-10-30T20:45:00+08:00",
+      "title": "Elliptic 分链统计：11 条链共被盗约 $64.3 亿、已冻结约 $28.4 亿",
+      "body": "链上分析公司 Elliptic 按 11 条区块链统计（价格为盗取时点、冻结数为 10-30 12:45 UTC 截点）：总被盗约 $64.3 亿，已冻结约 $28.4 亿。分链看：以太坊约 $37.98 亿、冻结约 64%；比特币约 $14.76 亿、零冻结；Tron 约 $6.27 亿、冻结约 $3.79 亿；XRP Ledger 约 $3 亿、零冻结；Solana 约 $9,700 万、NEAR 约 $5,400 万均零冻结；Arbitrum 约 $3,200 万中冻结约 96%。其总影响口径与 TRM 的约 $63.6 亿接近、为各机构中最高；冻结数略低于币安自称的约 $30 亿，属截点与统计方法差异，并列呈现。",
+      "category": "链上数据",
+      "source": "Elliptic（经 @giantcutie666 文章引用其图表）",
+      "url": "https://x.com/giantcutie666/status/2116305216366657781"
+    },
+    {
+      "body": "Chainalysis 称其调查人员观察到被盗资金出现“前所未见的洗钱模式”：短时间内数千笔交易，疑似攻击者用自动化手段混淆资金轨迹；资金在地址间反复流转，有时回流到此前用过的钱包。The Defiant 同日报道亦称 Chainalysis 报告描述了显示自动化洗钱的交易模式，并将其冻结口径计为约 $28 亿（与币安核实约 $30 亿为时点/口径差异）。这不是已确认进入 Tornado Cash 等混币器的证据：此前 17,260 ETH 试探转移后仍无确认入混币器的后续，18,270 BTC 仍未动。",
+      "category": "链上数据",
+      "source": "Chainalysis（经 Cointelegraph 直播 / The Defiant）",
+      "time": "2026-10-30T18:09:00+08:00",
+      "title": "Chainalysis：攻击者疑用自动化手段洗钱，出现前所未见的循环流转模式",
+      "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"
+    },
+    {
+      "body": "币安发帖称已开始为受影响用户恢复资产，并继续与执法部门、发行方、链上情报公司及行业伙伴合作追踪、冻结、追回更多资金。币安称已预留逾 $63.4 亿公司资金弥补本次损失，其中 $50 亿已持有与被盗资产同类的代币，余下部分正通过市场与 OTC 渠道补齐；因部分代币流动性低、OTC 结算需时，这一步可能较久。该笔拨备不含已冻结/受保护资产（约 $30 亿冻结口径不变，仍在与伙伴及执法部门推进追回）。币安称将继续动用公司资源弥补已确认缺口，最终所有用户资金将通过公开储备证明验证。提现仍在安全改造期间暂停，未提前恢复。另据路透引述消息人士（经 PANews/Odaily 转述），币安正与美国 FBI 及特勤局合作调查本案，此为消息人士口径、非币安官方具名确认。",
+      "category": "官方确认",
+      "source": "币安 @binance（经 PANews / Odaily / The Defiant 转述）",
+      "time": "2026-10-30T19:01:00+08:00",
+      "title": "币安：已预留逾 $63.4 亿公司资金补亏、开始恢复用户资产",
+      "url": "https://thedefiant.io/news/hacks/binance-says-it-has-reserved-over-6-34-billion-to-cover-hack-losses"
+    },
+    {
+      "body": "Synthetix protocolDAO 称已追回被盗的约 840.57 万枚 SNX（PANews 折合约 $155 万），目前存放在 protocolDAO 的 Safe 多签钱包中，已通知币安、待币安正式请求后归还。链上显示该笔 SNX 于北京时间 15:03（07:03 UTC）自标注为“Binance Hot Wallet Exploiter 2”的地址转入 DAO 多签；披露时间为北京时间 18:53（The Defiant）。这是冻结之外的首笔协议方实际追回并待归还的资产，金额小，不改变约 $30 亿冻结总额口径。",
+      "category": "链上数据",
+      "source": "Synthetix protocolDAO（经 PANews / The Defiant）",
+      "time": "2026-10-30T18:53:00+08:00",
+      "title": "Synthetix 追回约 840 万枚被盗 SNX，待币安请求后归还",
+      "url": "https://thedefiant.io/news/hacks/synthetix-recovers-8-4-million-snx-stolen-in-binance-hack"
+    },
+    {
+      "body": "USDT0 在 Polygon 冻结攻击者钱包 618 万 USDT0（约 $618 万），此前曾暂停 TRON-以太坊跨链通道、事后已恢复；Pundi X Labs 应币安请求冻结黑客钱包内 3,747,276 枚 PUNDIX（约 $37 万），未发现其他已知黑客钱包持有 PUNDIX。两笔合计约 $655 万，不改变币安核实约 $3B 的冻结总额口径。",
+      "category": "链上数据",
+      "source": "USDT0 / Pundi X Labs（经 The Defiant / TokenPost）",
+      "time": "2026-10-30T17:43:00+08:00",
+      "title": "新增小额冻结：USDT0 约 $618 万、Pundi X 约 $37 万",
+      "url": "https://thedefiant.io/news/hacks/usdt0-freezes-6-19-million-tokens-linked-to-binance-exploit"
+    },
+    {
+      "time": "2026-10-30T17:18:00+08:00",
+      "title": "清扫合约逆向分析：扫 ETH 写死留 1 枚、单币失败不回滚整批",
+      "body": "研究者 CyberSatoshi（@XBToshi）公布对清扫合约 0x63e842…6fAe 的字节码重构：原生 ETH 只转出 bal − 1 ether（余额大于 1 枚才执行），ERC-20 用 staticcall 查余额后全额转出，单币失败只抛自定义错误 SweepItemFailed 并继续，避免整批交易回滚；合约另含 callExecute 函数，可冒充 Binance 14 调用外部金库，与 Hot Wallet 34 借道转出 8.23 亿 USDC 的已核实机制吻合。对“为何留 1 ETH”解释不一：源帖称是避免币安自动热钱包队列因 gas 报错触发警报，转述者 @fishjar 称是避免余额归零触发熔断，评论区亦有“仅为预留 gas”的解释。属单一研究者的反编译结果，未获官方或第二家机构复核，动机部分为推测。",
+      "category": "分析师推测",
+      "source": "CyberSatoshi @XBToshi（经 @fishjar 转述）",
+      "url": "https://x.com/XBToshi/status/2116097368705937613"
+    },
+    {
+      "body": "何一称黑客在 Aave 存入的 $60M USDT 抵押不在完全冻结范围内，黑客实际借走约 $46M ETH；该抵押品经执法系统解冻后，或可额外追回约 $14M。此仓位此前已在追踪中（抵押 $60M、借出 19,762 ETH），不在币安公布的约 $3B 冻结总额内；解冻追回仍需执法流程，未成事实。",
+      "category": "官方表态",
+      "source": "何一 @heyibinance（经 PANews / BBX / 0xZX 转述）",
+      "time": "2026-10-30T10:30:00+08:00",
+      "title": "何一：Aave 上 $60M USDT 抵押未全冻，执法解冻后或多追回约 $14M",
+      "url": "https://0xzx.com/flash/374668"
+    },
+    {
+      "body": "CZ 自算：总影响逾 $60 亿，已冻结约 $30 亿，SAFU 约 $10 亿+，剩余缺口约 $20 亿；币安所持 SPCX 股份价值逾 $10 亿，剩余缺口“痛苦但可控”。何一补充：币安年收入足以覆盖损失，暂无需出售 SpaceX 股份。注意：这不是官方最终净损失定案，是 CZ/何一对赔付能力的表态；与此前 CZ 转述“略超 $1B”（基于 0xngmi 托管口径）口径不同，并列，不选一。",
+      "category": "官方表态",
+      "source": "CZ @cz_binance / 何一 @heyibinance（经 PANews / TechFlow / The Defiant 转述）",
+      "time": "2026-10-30T09:46:00+08:00",
+      "title": "CZ/何一：损失缺口约 $2B 在可控范围，暂不卖 SpaceX 股份",
+      "url": "https://lookonchain.com/feeds/79179"
+    },
+    {
+      "body": "币安调查更新称，在最初指向 DevOps 工程师笔记本被入侵之后，调查又发现了“更多入侵点”（additional points of breach）；币安称仍在配合执法部门核实事实，具体是哪些入侵点未披露。提现仍按计划推进：该更新称 45 小时内恢复（约 11-01 下午），与何一 48 小时口径基本一致；充值仍正常，暂停提现后平台外流已停止。",
+      "category": "官方确认",
+      "source": "币安调查更新（经 Cointelegraph 直播转述，另有转载标题佐证）",
+      "time": "2026-10-30T16:37:00+08:00",
+      "title": "币安：调查发现更多入侵点，不止笔记本一个入口",
+      "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"
+    },
+    {
+      "body": "主持 @ChandlerGuo（宝二爷）、共同主持 @qg7777，大漂亮、张哥、K 线教主、Adam、林可等发言。场内最一致的三点：币安体量够大、赔得起，不必恐慌挤兑、不要断言“第二个 FTX”；没有一种保管方式 100% 安全，所有交易所都会丢币，区别在丢多少、利润盖不盖得住、冻结追回多少；普通人最现实的是分开放、用官方渠道冷钱包、助记词分片加密保存、不信主动找上门的“假客服”。分歧与未定论：张哥个人判断“内外勾结可能性 80%”（个人分析、无证据）；场内多次称“已确认 Lazarus”仅为发言人转述。完整纪要（含数字对照表与实操建议）见仓库 spaces/ 目录。",
+      "category": "分析师推测",
+      "source": "X Space「币安被黑事件讨论」（录音转写纪要，完整版在本仓库 spaces/ 目录）",
+      "time": "2026-10-30T16:20:00+08:00",
+      "title": "X Space「币安被黑事件讨论」纪要发布：宝二爷主持，6 小时 21 分录音整理完毕",
+      "url": "https://github.com/yatstudio/binance-hack-2026/blob/main/spaces/2026-10-30-binance-hack-space.md"
+    },
+    {
+      "body": "Teng 表态称攻击并非“单一工程师权限/一人一键操作”，而是更复杂的过程，调查现阶段未归因于任何个人；口径维持 DevOps 笔记本被入侵、无私钥泄露证据，SAFU+公司资金全额赔付，已撤销受影响地址授权，调查后发技术复盘并更新储备证明。",
+      "category": "官方确认",
+      "source": "Richard Teng（经 Cointelegraph 直播 / Lookonchain 转述）",
+      "time": "2026-10-30T15:47:00+08:00",
+      "title": "CEO Richard Teng 澄清：不是单一工程师一人操作",
+      "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor"
+    },
+    {
+      "body": "涉案地址转出 17,260 ETH（约 $3,882 万）至新钱包 0x03b…020ea，转后仍持有约 480,720 ETH（约 $10.8 亿）。OnchainLens 称意图经混币器清洗，Arkham 称是否流入 Tornado Cash 尚待观察，尚未确认已进入混币器。大头未动，BTC 仍未动。",
+      "category": "链上数据",
+      "source": "OnchainLens / Arkham（经 BlockBeats、Lookonchain）",
+      "time": "2026-10-30T13:36:00+08:00",
+      "title": "攻击者 ETH 开始小额试探转移",
+      "url": "https://www.tokenpost.com/news/technology/44305"
+    },
+    {
+      "body": "慢雾 MistTrack 监测到被盗 TRX 经 Bitget Wallet 跨链桥转移，目标地址 0xCd684D22E8C3600E6eE93B5a57923c3b517f3396 此前出现在 Phemex 被盗案链条中（该案此前被认定涉朝鲜黑客）。共用目标地址不能证明同一行为人，仅为归因提供新的链上佐证。",
+      "category": "链上数据",
+      "source": "慢雾 MistTrack（经 ChainCatcher / The Defiant）",
+      "time": "2026-10-30T13:30:00+08:00",
+      "title": "被盗 TRX 进入洗钱环节，与 Phemex 案地址产生关联",
+      "url": "https://thedefiant.io/news/hacks/misttrack-links-binance-theft-route-to-phemex-connected-address"
+    },
+    {
+      "body": "1inch 已在 dApp、钱包、API 屏蔽攻击相关地址（联合 ZeroShadow、SEAL 911、TRM Labs）。但被盗 1INCH 为标准 ERC-20、无冻结/黑名单功能，无法链上冻结，只能配合追索。属协议方动作，非新增冻结额。",
+      "category": "链上数据",
+      "source": "1inch 官方（经 Cointime / BlockBeats）",
+      "time": "2026-10-30T13:00:00+08:00",
+      "title": "1inch 屏蔽攻击相关地址，但 1INCH 本身冻不住",
+      "url": "https://www.cointime.ai/flash-news/1inch-blocks-addresses-related-to-binance-attack-16510"
+    },
+    {
+      "body": "何一发布 Service Update：团队正在升级提现服务及相关地址管控，预计未来 48 小时内开始逐步恢复提现；并称充值服务未受影响、正常运作。这是事件后首个恢复时间表。但“充值正常”与币安凌晨“全部充提暂停”措辞有出入，主账号 @binance 尚未跟进确认。",
+      "category": "官方表态",
+      "source": "何一 @heyibinance（经 FinanceFeeds / TokenPost / The Defiant / 新浪财经转述）",
+      "time": "2026-10-30T12:17:00+08:00",
+      "title": "何一：预计 48 小时内开始逐步恢复提现",
+      "url": "https://financefeeds.com/binance-withdrawals-resume-48-hours/"
+    },
+    {
+      "body": "TRM Labs 以“高信心”将事件归因朝鲜 TraderTraitor（Lazarus 旗下），其口径：10 链共 $6.36B、冻结约 $2.7B（截点 08:30，与官方 $3B 差异为时点/口径）。Chainalysis 发言人对 CNN 亦称高信心指向朝鲜，其被盗估算约 $59.12 亿；新加坡 Pangolin Intelligence 同向。币安官方仍未归因。",
+      "category": "分析师推测",
+      "source": "TRM Labs 博客 / CNN / CoinDesk",
+      "time": "2026-10-30T11:20:00+08:00",
+      "title": "TRM Labs、Chainalysis 相继高信心归因朝鲜",
+      "url": "https://www.trmlabs.com/resources/blog/north-korea-steals-usd-6-36-billion-from-binance-in-the-largest-hack-in-history"
+    },
+    {
+      "body": "Onchain Lens 称攻击者把超 $1B 的 ETH 转至新钱包，疑为混币清洗做准备，并开始抛售 STRK（监测转述，未独立核实）。First Digital 冻结关联地址约 $340 万 FDUSD（Specter/TokenPost）。",
+      "category": "链上数据",
+      "source": "Onchain Lens（经 PANews）/ TokenPost",
+      "time": "2026-10-30T10:50:00+08:00",
+      "title": "攻击者转移超 $1B ETH 至新钱包；FDUSD 新增冻结约 $340 万",
+      "url": "https://www.panewslab.com/zh"
+    },
+    {
+      "body": "币安公布初步根因：一名 DevOps 工程师笔记本被入侵，攻击者进入服务容器并提交未经授权的提现交易；未发现钱包私钥泄露证据。总影响约 $6.3B，链上已冻结约 $3B；用 SAFU 基金+公司资金承担全部损失，用户资金安全；充值与提现均暂停；已撤销受影响地址授权；补救完成后发布更新版储备证明。官方未做归因，详细技术复盘待调查完成后发布。",
+      "category": "官方确认",
+      "source": "@binance 官方帖 + 币安公告页",
+      "time": "2026-10-30T10:25:00+08:00",
+      "title": "币安官方初步调查：DevOps 笔记本被入侵，总影响约 $6.3B",
+      "url": "https://www.binance.com/en/support/announcement/detail/c5a8729a97ac486d963784d96c5642d7"
+    },
+    {
+      "body": "神鱼（Cobo 联创）复盘称黑客急于把 USDT 换成 ETH 损耗约 $7,000 万；近 46 万 ETH 停在新地址、冻不住。其“授权是币安自己签的”与官方“无私钥泄露”不必然冲突：签名能力被滥用不等于密钥被偷。",
+      "category": "分析师推测",
+      "source": "神鱼（经 PANewsCN 转述）",
+      "time": "2026-10-30T09:12:00+08:00",
+      "title": "神鱼复盘：黑客急换 USDT→ETH 亏约 $7,000 万",
+      "url": "https://x.com/PANewsCN/status/2115974973303202014"
+    },
+    {
+      "body": "币安更新冻结进度：经核实链上冻结总额约 $3B（前一口径为 $2.54B），继续追踪冻结中。冻结指黑客无法动用，不等于已追回返还。",
+      "category": "官方确认",
+      "source": "币安（经 PANews / FinanceFeeds / Reuters）",
+      "time": "2026-10-30T08:52:00+08:00",
+      "title": "币安更新：经核实冻结总额约 $3B",
+      "url": "https://financefeeds.com/binance-hack-3-billion-frozen/"
+    },
+    {
+      "body": "攻击者抛压使 Uniswap 上 ETH 被买到 $2,560–$2,750，Aave 预言机价 $2,250–$2,290，价差 15–30% 持续约 1 小时；套利者经 Aave 借 ETH 高卖，第一名赚约 $347 万、前十合计约 $636 万。窗口随后关闭，Aave 已冻结主网 V3。此机会已结束、不可追。",
+      "category": "链上数据",
+      "source": "社区复盘（经 @0xNaiXi / ChainCatcher）",
+      "time": "2026-10-30T08:41:00+08:00",
+      "title": "Aave 套利复盘：价差窗口约 1 小时，第一名赚约 $347 万",
+      "url": "https://x.com/0xNaiXi/status/2115967318274789609"
+    },
+    {
+      "body": "链上显示被盗的 Binance 14 热钱包已撤销 EIP-7702 授权。在此之前，委托持续生效期间曾发生补扫。",
+      "category": "链上数据",
+      "source": "链上记录（经 Odaily / ChainCatcher）",
+      "time": "2026-10-30T08:10:00+08:00",
+      "title": "Binance 14 的 EIP-7702 委托被撤销",
+      "url": "https://www.odaily.news/zh-TW/post/5213662"
+    },
+    {
+      "body": "针对流传的 $1.8B 等数字，币安澄清经核实冻结总额为 $2.54B，称只公布确认数字、可能继续增加。",
+      "category": "官方确认",
+      "source": "币安（经 FinanceFeeds）",
+      "time": "2026-10-30T07:22:00+08:00",
+      "title": "币安澄清冻结总额 $2.54B",
+      "url": "https://financefeeds.com/binance-hack-3-billion-frozen/"
+    },
+    {
+      "body": "工程师 Justin Kalland 观察：攻击者钱包 0xAa24…54a0 收到 1.75 亿 USDT、已有足够 gas 后，仍使用 MetaMask Gas Station（付 127.67 USDT，垫付 ETH 与后两笔 gas 上限精确到 wei 吻合），可能经 MetaMask Sentinel 留下含 IP 的链下记录。属个人观察+推测，未获 MetaMask 或官方确认。",
+      "category": "分析师推测",
+      "source": "Justin Kalland @justinkalland（PANewsCN 转述）",
+      "time": "2026-10-30T07:20:00+08:00",
+      "title": "线索：攻击者疑误用 MetaMask Gas Station，或留下 IP 记录",
+      "url": "https://x.com/justinkalland/status/2115946980665151955"
+    },
+    {
+      "body": "币安暂停 Binance Alpha 交易（涉现货钱包买币、Alpha 即时交易、CEX 买预测市场）。",
+      "category": "官方确认",
+      "source": "币安（经 PANews）",
+      "time": "2026-10-30T07:06:00+08:00",
+      "title": "Binance Alpha 交易暂停",
+      "url": "https://www.panewslab.com/zh"
+    },
+    {
+      "body": "币安暂停多网络提现，其后表述改为“安全检查完成、问题完全解决后恢复”。市场方面：BTC 一度跌至约 $77,054、ETH 约 $2,215、BNB 跌 8–9%；一小时全网爆仓约 $6.277 亿。",
+      "category": "官方确认",
+      "source": "币安发言人（经 TechCrunch）/ CoinDesk / Coinglass",
+      "time": "2026-10-30T06:15:00+08:00",
+      "title": "多网络提现暂停",
+      "url": "https://www.coindesk.com/business/2026/10/29/potential-multi-billion-binance-hack-hitting-crypto-markets"
+    },
+    {
+      "body": "币安称注意到潜在安全问题、正在调查；措辞经多次编辑后为“用户资金完全安全”。此前约 05:15 CZ 首帖称用户资金安全、“看起来是币安被黑”。",
+      "category": "官方确认",
+      "source": "@binance / @cz_binance（经 Blockhead）",
+      "time": "2026-10-30T05:24:00+08:00",
+      "title": "币安首份官方声明",
+      "url": "https://www.blockhead.co/2026/10/30/binance-halts-withdrawals-after-multibillion-dollar-hot-wallet-drain-hours-after-polymarket-vendor-exploit/"
+    },
+    {
+      "body": "Aave 官方响应（风险服务商 LlamaRisk）披露：北京时间 04:57–05:01，攻击者集群的一个钱包向 Aave V3 以太坊核心市场存入 6,000 万 USDT 作抵押，借出 19,762 枚 WETH（约 $4,460 万），赶在 Tether 冻结与 Aave 紧急冻结之前，把可冻结的稳定币换成冻不住的 ETH。这是攻击者在 Aave 全网的唯一仓位：现抵押约 $5,990 万、债务约 $4,380 万，仍属超额抵押、可正常清算，Aave 称不危及存款人。该仓位的抵押品不在已公布的约 $3B 冻结范围内。",
+      "category": "链上数据",
+      "source": "Aave 官方治理论坛（LlamaRisk / Aave Labs）",
+      "time": "2026-10-30T04:58:00+08:00",
+      "title": "攻击者抢在冻结前，把 6,000 万 USDT 存入 Aave 借出 19,762 枚 ETH",
+      "url": "https://governance.aave.com/t/binance-hot-wallet-exploit-aaves-response/25954"
+    },
+    {
+      "body": "约 04:39，约 195,460 ETH（约 $4.4 亿）转至 0x8532…43D4。ETH 没有发行方，无法冻结。此后攻击者持续把山寨币换成 ETH，ETH 持仓一度达约 46.7 万枚。",
+      "category": "链上数据",
+      "source": "TechFlow / PANews 链上追踪",
+      "time": "2026-10-30T04:39:00+08:00",
+      "title": "约 195,460 ETH 转入第二地址",
+      "url": "https://www.techflowpost.com/article/34982"
+    },
+    {
+      "body": "04:24:23，Binance 14 热钱包（0x28C6…1d60）单笔转出 167,464.25 ETH、16.15 亿 USDT 及 60 余种代币（约 $2.5B）至 0x5227…2f8c。04:20 一笔交易打包 50 份 EIP-7702 授权（nonce 18,914,775–18,914,824，命中 18,914,809），清扫合约 0x63e8…6fAe。其前后 Binance 16 自行签名转出约 28,006 ETH；Hot Wallet 34 因把 Binance 14 列为 operator，攻击者借道其 execute/executeBatch 分两笔转走共 8.23 亿 USDC（7.8 亿 + 0.43 亿）；BTC（18,270.2 枚）、波场等多链钱包亦相继流出。委托未撤销前，币安自身归集程序继续往 Binance 14 送入资金并被反复清扫，直至 08:10 委托撤销。补扫与 Binance 16 细节（投机实验室 @LabSpeculation 逐笔核对，与 CertiK 工程师 Dickson 经 ChainCatcher 的复盘交叉一致）：Binance 16 在主扫后约 24 秒起自行签名 9 笔转账，除约 28,006 ETH 外还转出约 5,570 万 USDT 及 RLUSD、WBTC 等；Binance 14 在委托撤销前被反复补扫，05:04 与 05:44 两次共扫走约 2,070 ETH 与 2.043 亿 USDT（其中约 2 亿 USDT 为币安自身钱包刚补入、入账约 72 秒即被扫走，随后被 Tether 冻结），06:39 最后一次清扫 128.5 ETH 与 122 种小币至新钱包。",
+      "category": "链上数据",
+      "source": "Blockaid / TechFlow / Odaily / drk.vc 技术分析 / 投机实验室 @LabSpeculation / CertiK（经 ChainCatcher）",
+      "time": "2026-10-30T04:24:00+08:00",
+      "title": "总攻：Binance 14 一笔被扫约 $2.5B",
+      "url": "https://blockaid.io/blog/binance-55b-hack-using-advanced-ai-models-blockaid-detects-the-biggest-theft-in-crypto-history"
+    },
+    {
+      "body": "10-28 起攻击者主钱包多次从 Tornado Cash 各取约 0.1 ETH 作 gas 并以自有钱包演练委托+清扫；10-29 23:59 部署最终清扫合约 0x63e842B054Bd624a465454D533C33F573e9c6fAe。发起地址 0x7C8601d4645b93cea45F71e118A729332e6B5CA0。",
+      "category": "链上数据",
+      "source": "TechFlow / Blockaid / 神鱼",
+      "time": "2026-10-29T23:59:00+08:00",
+      "title": "攻击准备：Tornado Cash 备 gas、演练、部署清扫合约",
+      "url": "https://www.techflowpost.com/article/34982"
+    }
+  ],
+  "watchlist": [
+    "币安详细技术复盘：DevOps 入口与 EIP-7702 的 50 份授权如何衔接",
+    "最终净损失定案与冻结资产返还进度（冻结≠返还）",
+    "提现实际开始恢复的时间与币种/网络顺序；充值口径统一",
+    "18,270 枚 BTC 是否开始转移；ETH 是否进入 Tornado Cash 等混币器",
+    "更新版储备证明（PoR）：被盗钱包储备是否已补回",
+    "MetaMask 是否回应 Gas Station / Sentinel 日志线索",
+    "官方或执法机构正式归因"
+  ]
 }
