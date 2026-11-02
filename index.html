@@ -874,7 +874,7 @@ footer a:hover {
     </div>
     <div class="loading-state" id="timelineLoading">正在加载时间线…</div>
     <p id="err" role="alert">数据加载失败，请稍后刷新。</p>
-    <div class="tl" id="timeline" role="feed" aria-label="事件时间线"></div>
+    <div class="tl" id="timelineList" role="feed" aria-label="事件时间线"></div>
     <div class="load-more" id="loadMoreWrap" style="display:none">
       <button id="loadMore" type="button" aria-label="加载更多条目">加载更多 <span id="remainingCount"></span></button>
     </div>
@@ -883,7 +883,7 @@ footer a:hover {
   <section id="watchlist">
     <h2>待确认清单</h2>
     <div class="watch">
-      <ul id="watchlist" role="list"></ul>
+      <ul id="watchlistList" role="list"></ul>
     </div>
   </section>
 
@@ -942,7 +942,7 @@ let currentSearch = "";
 
 // Render timeline
 function render() {
-  const tl = document.getElementById("timeline");
+  const tl = document.getElementById("timelineList");
   const search = currentSearch.toLowerCase();
 
   let filtered = ALL.filter(u => {
@@ -1070,7 +1070,7 @@ fetch("updates.json")
     render();
 
     // Watchlist
-    const wl = document.getElementById("watchlist");
+    const wl = document.getElementById("watchlistList");
     d.watchlist.forEach(w => {
       const li = document.createElement("li");
       li.textContent = w;
