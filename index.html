@@ -6,136 +6,904 @@
 <title>币安被盗事件追踪 · Binance Hack Tracker</title>
 <meta name="description" content="2026-10-30 币安热钱包被盗事件持续追踪：关键数字、官方表态、链上动向与待确认清单，每 30 分钟增量更新。结构化数据 updates.json 供任何 Agent 读取。">
 <style>
-  :root{
-    --bg:#0b0e14; --card:#151a24; --card2:#1a2130; --line:#232c3d;
-    --text:#e8edf5; --dim:#93a1b5; --faint:#5f6f86;
-    --gold:#f0b90b; --red:#f6465d; --green:#0ecb81; --blue:#4da3ff; --purple:#b18cff;
+:root {
+  --surface-1: #05070C;
+  --surface-2: #0A0D12;
+  --surface-3: #0F131C;
+  --surface-4: #161D2B;
+  --surface-5: #1E2636;
+  --line: #2A3447;
+  --text: #E8EDF5;
+  --text-dim: #93A1B5;
+  --text-faint: #5F6F86;
+  --accent: #F0B90B;
+  --red: #F6465D;
+  --green: #0ECB81;
+  --blue: #4DA3FF;
+  --purple: #B18CFF;
+  --font-base: clamp(15px, 1.6vw, 16px);
+  --font-sm: clamp(13px, 1.4vw, 14px);
+  --font-xs: clamp(12px, 1.3vw, 13px);
+  --font-lg: clamp(18px, 2vw, 20px);
+  --font-xl: clamp(24px, 3vw, 30px);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --gap: clamp(12px, 1.5vw, 16px);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --surface-1: #FFFFFF;
+    --surface-2: #F8F9FB;
+    --surface-3: #F0F2F5;
+    --surface-4: #E8EAED;
+    --surface-5: #DFE1E6;
+    --line: #D0D4DB;
+    --text: #0F131C;
+    --text-dim: #3E4A5C;
+    --text-faint: #6B7785;
+    --accent: #F0B90B;
+    --red: #D9304E;
+    --green: #0EAB71;
+    --blue: #2B7FD9;
+    --purple: #8C5FD9;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.6;padding:0 16px 64px}
-  .wrap{max-width:880px;margin:0 auto}
-  header{padding:34px 0 8px}
-  .kicker{color:var(--gold);font-weight:700;letter-spacing:.18em;font-size:12px}
-  h1{font-size:30px;line-height:1.25;margin:8px 0 6px}
-  .sub{color:var(--dim);font-size:14px}
-  .updated{color:var(--faint);font-size:13px;margin-top:6px}
-  .updated b{color:var(--dim);font-weight:600}
-  .alert{background:linear-gradient(90deg,rgba(246,70,93,.16),rgba(246,70,93,.04));border:1px solid rgba(246,70,93,.4);border-radius:12px;padding:12px 16px;margin:18px 0 4px;font-size:14px}
-  .alert b{color:#ff8296}
-  h2{font-size:18px;margin:30px 0 12px;display:flex;align-items:center;gap:8px}
-  h2::before{content:"";width:4px;height:18px;background:var(--gold);border-radius:2px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-  .stat .label{color:var(--dim);font-size:12.5px}
-  .stat .value{font-size:19px;font-weight:700;margin:3px 0 4px}
-  .stat .detail{color:var(--faint);font-size:12.5px;line-height:1.5}
-  .filters{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 14px}
-  .chip{border:1px solid var(--line);background:var(--card);color:var(--dim);border-radius:999px;padding:5px 14px;font-size:13px;cursor:pointer}
-  .chip.on{background:var(--gold);color:#111;border-color:var(--gold);font-weight:600}
-  .tl{position:relative;padding-left:22px}
-  .tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
-  .item{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
-  .item::before{content:"";position:absolute;left:-22px;top:20px;width:10px;height:10px;border-radius:50%;background:var(--faint);border:2px solid var(--bg)}
-  .item.c-official::before{background:var(--green)}
-  .item.c-onchain::before{background:var(--blue)}
-  .item.c-analyst::before{background:var(--purple)}
-  .item.c-statement::before{background:var(--gold)}
-  .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12.5px;color:var(--faint)}
-  .badge{border-radius:6px;padding:1px 8px;font-size:12px;font-weight:600}
-  .b-official{background:rgba(14,203,129,.15);color:var(--green)}
-  .b-onchain{background:rgba(77,163,255,.15);color:var(--blue)}
-  .b-analyst{background:rgba(177,140,255,.16);color:var(--purple)}
-  .b-statement{background:rgba(240,185,11,.16);color:var(--gold)}
-  .item h3{font-size:16px;margin:5px 0 4px}
-  .item p{color:var(--dim);font-size:14px}
-  .src{margin-top:8px;font-size:12.5px;color:var(--faint)}
-  .src a{color:var(--blue);text-decoration:none}
-  .src a:hover{text-decoration:underline}
-  .watch{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
-  .watch li{color:var(--dim);font-size:14px;margin:5px 0 5px 18px}
-  .agentbox{background:linear-gradient(135deg,#1b2440,#141a2b);border:1px solid #2c3a5f;border-radius:12px;padding:16px 18px;margin-top:30px}
-  .agentbox h2{margin-top:0}
-  .agentbox p{color:var(--dim);font-size:14px}
-  .agentbox code{background:#0d1220;border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:13px;color:#cfe0ff}
-  .agentbox button{margin-top:10px;background:var(--gold);border:0;color:#111;font-weight:700;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:14px}
-  footer{color:var(--faint);font-size:12.5px;margin-top:34px;line-height:1.7}
-  footer a{color:var(--dim)}
-  #err{color:var(--red);font-size:14px;display:none}
-  .fundalert{display:none;border-radius:12px;padding:14px 16px;margin:18px 0 4px;font-size:14px;border:1px solid}
-  .fundalert.show{display:block}
-  .fundalert.move{background:linear-gradient(90deg,rgba(246,70,93,.22),rgba(246,70,93,.05));border-color:rgba(246,70,93,.55)}
-  .fundalert.quiet{background:rgba(14,203,129,.08);border-color:rgba(14,203,129,.35)}
-  .fundalert .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);margin-right:7px;animation:pl 1.2s infinite}
-  @keyframes pl{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
-  .fundalert b{color:#ff8296}
-  .fundalert .when{color:var(--dim);font-size:12.5px}
-  .pool .st{font-size:11.5px;font-weight:700;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
-  .st-quiet{background:rgba(240,185,11,.16);color:var(--gold)}
-  .st-watch,.st-moved{background:rgba(77,163,255,.15);color:var(--blue)}
-  .st-frozen{background:rgba(147,161,181,.18);color:var(--dim)}
-  .st-active{background:rgba(246,70,93,.16);color:#ff8296}
-  .st-recovered{background:rgba(14,203,129,.15);color:var(--green)}
-  .flowimg{width:100%;border:1px solid var(--line);border-radius:12px;background:#fbf7ee}
-  .flows{list-style:none}
-  .flows li{color:var(--dim);font-size:13.5px;padding:7px 0;border-bottom:1px dashed var(--line)}
-  .flows li:last-child{border-bottom:0}
-  .flows b{color:var(--text);font-weight:600}
-  @media(max-width:560px){h1{font-size:24px}.grid{grid-template-columns:1fr 1fr}.stat .value{font-size:16px}}
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--surface-1);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.6;
+  font-size: var(--font-base);
+}
+
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 var(--gap) 64px;
+}
+
+/* Header */
+header {
+  padding: clamp(24px, 4vw, 34px) 0 clamp(16px, 2vw, 24px);
+}
+
+.kicker {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-size: var(--font-xs);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: var(--font-xl);
+  line-height: 1.25;
+  margin: 8px 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  color: var(--text-dim);
+  font-size: var(--font-sm);
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+.updated {
+  color: var(--text-faint);
+  font-size: var(--font-xs);
+  margin-top: 8px;
+}
+
+.updated b {
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+  margin: 0 calc(var(--gap) * -1);
+  padding: 0 var(--gap);
+}
+
+nav ul {
+  display: flex;
+  gap: clamp(16px, 3vw, 24px);
+  list-style: none;
+  padding: 12px 0;
+}
+
+nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Alert */
+.alert,
+.fundalert {
+  background: linear-gradient(90deg, rgba(246, 70, 93, 0.16), rgba(246, 70, 93, 0.04));
+  border: 1px solid rgba(246, 70, 93, 0.4);
+  border-radius: var(--radius);
+  padding: 14px var(--gap);
+  margin: clamp(16px, 2vw, 20px) 0;
+  font-size: var(--font-sm);
+  line-height: 1.65;
+}
+
+.alert b,
+.fundalert b {
+  color: #FF8296;
+  font-weight: 600;
+}
+
+.fundalert {
+  display: none;
+}
+
+.fundalert.show {
+  display: block;
+}
+
+.fundalert.quiet {
+  background: rgba(14, 203, 129, 0.08);
+  border-color: rgba(14, 203, 129, 0.35);
+}
+
+.fundalert.quiet b {
+  color: var(--green);
+}
+
+.fundalert .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  margin-right: 8px;
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.fundalert .when {
+  color: var(--text-dim);
+  font-size: var(--font-xs);
+}
+
+/* Section */
+section {
+  margin: clamp(32px, 5vw, 48px) 0;
+}
+
+h2 {
+  font-size: var(--font-lg);
+  margin-bottom: clamp(12px, 2vw, 16px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.01em;
+}
+
+h2::before {
+  content: "";
+  width: 4px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.section-desc {
+  color: var(--text-dim);
+  font-size: var(--font-sm);
+  line-height: 1.65;
+  margin-bottom: var(--gap);
+}
+
+.section-desc a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.section-desc a:hover {
+  text-decoration: underline;
+}
+
+.section-desc code {
+  background: var(--surface-3);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.92em;
+  color: var(--blue);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: clamp(10px, 1.5vw, 12px);
+}
+
+.stat {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(12px, 1.8vw, 14px) clamp(14px, 2vw, 16px);
+  transition: background 0.2s;
+}
+
+.stat:hover {
+  background: var(--surface-3);
+}
+
+.stat .label {
+  color: var(--text-dim);
+  font-size: var(--font-xs);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat .value {
+  font-size: clamp(17px, 2.2vw, 19px);
+  font-weight: 700;
+  margin: 4px 0 6px;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+}
+
+.stat .detail {
+  color: var(--text-faint);
+  font-size: var(--font-xs);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.stat.expandable .detail {
+  cursor: pointer;
+  position: relative;
+}
+
+.stat.expandable .detail.clamped::after {
+  content: "展开";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: var(--surface-2);
+  color: var(--blue);
+  padding-left: 16px;
+  font-weight: 500;
+}
+
+.stat.expandable .detail.expanded {
+  -webkit-line-clamp: unset;
+}
+
+.stat.expandable .detail.expanded::after {
+  content: "收起";
+  position: static;
+  display: block;
+  margin-top: 4px;
+}
+
+.st {
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 2px 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.st-quiet { background: rgba(240, 185, 11, 0.16); color: var(--accent); }
+.st-watch, .st-moved { background: rgba(77, 163, 255, 0.15); color: var(--blue); }
+.st-frozen { background: rgba(147, 161, 181, 0.18); color: var(--text-dim); }
+.st-active { background: rgba(246, 70, 93, 0.16); color: #FF8296; }
+.st-recovered { background: rgba(14, 203, 129, 0.15); color: var(--green); }
+
+/* Funds */
+.flowimg {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #FBF7EE;
+  display: block;
+}
+
+@media (prefers-color-scheme: light) {
+  .flowimg {
+    background: var(--surface-2);
+  }
+}
+
+.flows {
+  list-style: none;
+}
+
+.flows li {
+  color: var(--text-dim);
+  font-size: var(--font-sm);
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+  line-height: 1.6;
+}
+
+.flows li:last-child {
+  border-bottom: 0;
+}
+
+.flows b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: clamp(14px, 2vw, 18px);
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: min(240px, 100%);
+}
+
+.search-box input {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 16px 8px 36px;
+  font-size: var(--font-sm);
+  color: var(--text);
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.search-box input::placeholder {
+  color: var(--text-faint);
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--surface-3);
+}
+
+.search-box::before {
+  content: "🔍";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: var(--font-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background: var(--surface-3);
+  border-color: var(--text-faint);
+}
+
+.chip:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.chip.on {
+  background: var(--accent);
+  color: var(--surface-1);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+/* Timeline */
+.tl {
+  position: relative;
+  padding-left: 24px;
+}
+
+.tl::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--line);
+}
+
+.item {
+  position: relative;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(12px, 1.8vw, 14px) clamp(14px, 2vw, 16px);
+  margin-bottom: clamp(12px, 1.8vw, 14px);
+  transition: background 0.2s;
+}
+
+.item:hover {
+  background: var(--surface-3);
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  border: 2px solid var(--surface-1);
+  transition: background 0.3s;
+}
+
+.item.c-official::before { background: var(--green); }
+.item.c-onchain::before { background: var(--blue); }
+.item.c-analyst::before { background: var(--purple); }
+.item.c-statement::before { background: var(--accent); }
+
+.meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: var(--font-xs);
+  color: var(--text-faint);
+  margin-bottom: 6px;
+}
+
+.badge {
+  border-radius: 6px;
+  padding: 2px 9px;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.b-official { background: rgba(14, 203, 129, 0.15); color: var(--green); }
+.b-onchain { background: rgba(77, 163, 255, 0.15); color: var(--blue); }
+.b-analyst { background: rgba(177, 140, 255, 0.16); color: var(--purple); }
+.b-statement { background: rgba(240, 185, 11, 0.16); color: var(--accent); }
+
+.item h3 {
+  font-size: clamp(15px, 1.8vw, 16px);
+  margin: 4px 0 6px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.item .body {
+  color: var(--text-dim);
+  font-size: var(--font-sm);
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.item .body.long {
+  cursor: pointer;
+  position: relative;
+}
+
+.item .body.long.clamped::after {
+  content: "展开全文";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: var(--surface-2);
+  color: var(--blue);
+  padding-left: 20px;
+  font-weight: 500;
+}
+
+.item:hover .body.long.clamped::after {
+  background: var(--surface-3);
+}
+
+.item .body.expanded {
+  -webkit-line-clamp: unset;
+}
+
+.item .body.expanded::after {
+  content: "收起";
+  display: block;
+  margin-top: 6px;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.src {
+  margin-top: 8px;
+  font-size: var(--font-xs);
+  color: var(--text-faint);
+}
+
+.src a {
+  color: var(--blue);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.src a:hover {
+  text-decoration: underline;
+}
+
+/* Watch list */
+.watch {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(12px, 1.8vw, 14px) clamp(16px, 2vw, 18px);
+}
+
+.watch h3 {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: var(--font-base);
+}
+
+.watch ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.watch li {
+  color: var(--text-dim);
+  font-size: var(--font-sm);
+  margin: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.watch li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Agent box */
+.agentbox {
+  background: linear-gradient(135deg, var(--surface-4), var(--surface-3));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(14px, 2vw, 16px) clamp(16px, 2.2vw, 18px);
+  margin: clamp(24px, 4vw, 32px) 0;
+}
+
+.agentbox h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.agentbox p {
+  color: var(--text-dim);
+  font-size: var(--font-sm);
+  line-height: 1.7;
+  margin: 8px 0;
+}
+
+.agentbox button,
+.agentbox .btn {
+  margin-top: 10px;
+  background: var(--accent);
+  border: 0;
+  color: var(--surface-1);
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  cursor: pointer;
+  font-size: var(--font-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.agentbox button:hover,
+.agentbox .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(240, 185, 11, 0.3);
+}
+
+.agentbox button:focus,
+.agentbox .btn:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.agentbox .btn-secondary {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.agentbox .btn-secondary:hover {
+  background: var(--surface-2);
+  box-shadow: none;
+}
+
+/* Footer */
+footer {
+  color: var(--text-faint);
+  font-size: var(--font-xs);
+  margin-top: clamp(32px, 5vw, 48px);
+  line-height: 1.8;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+footer a {
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--blue);
+}
+
+/* Loading */
+.loading-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-dim);
+  font-size: var(--font-sm);
+}
+
+.loading-state::before {
+  content: "⏳";
+  display: block;
+  font-size: 32px;
+  margin-bottom: 12px;
+  animation: pulse 1.5s infinite;
+}
+
+#err {
+  display: none;
+  background: rgba(246, 70, 93, 0.12);
+  border: 1px solid rgba(246, 70, 93, 0.4);
+  border-radius: var(--radius);
+  padding: 14px var(--gap);
+  margin: 20px 0;
+  color: var(--red);
+  font-size: var(--font-sm);
+}
+
+#err.show {
+  display: block;
+}
+
+/* Load more */
+.load-more {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.load-more button {
+  background: var(--surface-3);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 10px 24px;
+  cursor: pointer;
+  font-size: var(--font-sm);
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.load-more button:hover {
+  background: var(--surface-4);
+  border-color: var(--text-faint);
+}
+
+.load-more button:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    gap: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav a {
+    white-space: nowrap;
+  }
+
+  .search-box {
+    min-width: 100%;
+  }
+
+  .agentbox .btn-secondary {
+    display: block;
+    margin: 8px 0 0 0;
+  }
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="kicker">INCIDENT TRACKER · 持续更新</div>
+    <div class="kicker">Incident Tracker · 持续更新</div>
     <h1>币安被盗事件追踪</h1>
     <div class="sub">2026 年 10 月 30 日凌晨，币安多个热钱包被盗，为有记录以来最大单起加密资产失窃事件。本页汇总关键数字、官方表态与链上动向，冲突数字并列，冻结 ≠ 追回返还。</div>
     <div class="updated">最近更新：<b id="updatedAt">加载中…</b>（北京时间）· 数据源 <a href="updates.json" style="color:var(--blue)">updates.json</a></div>
   </header>
 
-  <div class="fundalert" id="fundAlert"></div>
+  <nav role="navigation" aria-label="页面导航">
+    <ul>
+      <li><a href="#status">状态总览</a></li>
+      <li><a href="#funds">资金动向</a></li>
+      <li><a href="#timeline">时间线</a></li>
+      <li><a href="#watchlist">待确认</a></li>
+    </ul>
+  </nav>
 
-  <div class="alert"><b>当前状态：</b>提现暂停中，何一称 48 小时内开始逐步恢复（约 11 月 1 日中午）；SAFU + 公司资金全额赔付；官方尚未归因。</div>
+  <div class="fundalert" id="fundAlert" role="alert"></div>
 
-  <h2>关键数字与状态</h2>
-  <div class="grid" id="stats"></div>
-
-  <h2>攻击者资金流向</h2>
-  <p style="color:var(--dim);font-size:14px;margin-bottom:12px">钱从币安热钱包出来之后去了哪：哪些被冻住、哪些换成了冻不住的币、哪些还躺着未动、哪些已进洗钱环节。结构化数据：<a href="funds.json" style="color:var(--blue)">funds.json</a>（含 <code>alert</code> 字段）——有新动静时，本页顶部会出现红色提醒，订阅的 Agent 也应优先播报 <code>alert</code> 与资金动向类条目。</p>
-  <img class="flowimg" src="funds-diagram.svg" alt="攻击者资金流向线索图">
-  <div class="grid" id="fundPools" style="margin-top:12px"></div>
-  <div class="watch" style="margin-top:12px"><div style="font-weight:700;margin-bottom:6px">流向线索（按时间）</div><ul class="flows" id="fundFlows"></ul></div>
-
-  <h2>事件时间线</h2>
-  <div class="filters" id="filters">
-    <button class="chip on" data-f="all">全部</button>
-    <button class="chip" data-f="官方确认">官方确认</button>
-    <button class="chip" data-f="官方表态">官方表态</button>
-    <button class="chip" data-f="链上数据">链上数据</button>
-    <button class="chip" data-f="分析师推测">分析师推测</button>
+  <div class="alert" role="status" aria-live="polite">
+    <b>当前状态：</b>提现暂停中，何一称 48 小时内开始逐步恢复（约 11 月 1 日中午）；SAFU + 公司资金全额赔付；官方尚未归因。
   </div>
-  <p id="err">数据加载失败，请稍后刷新。</p>
-  <div class="tl" id="timeline"></div>
 
-  <h2>待确认清单</h2>
-  <div class="watch"><ul id="watchlist"></ul></div>
+  <section id="status">
+    <h2>关键数字与状态</h2>
+    <div class="loading-state" id="statsLoading">正在加载状态数据…</div>
+    <div class="grid" id="stats" role="list" aria-label="关键状态指标"></div>
+  </section>
+
+  <section id="funds">
+    <h2>攻击者资金流向</h2>
+    <p class="section-desc">钱从币安热钱包出来之后去了哪：哪些被冻住、哪些换成了冻不住的币、哪些还躺着未动、哪些已进洗钱环节。结构化数据：<a href="funds.json">funds.json</a>（含 <code>alert</code> 字段）——有新动静时，本页顶部会出现红色提醒，订阅的 Agent 也应优先播报 <code>alert</code> 与资金动向类条目。</p>
+    <img class="flowimg" src="funds-diagram.svg" alt="攻击者资金流向线索图" loading="lazy">
+    <div class="grid" id="fundPools" style="margin-top:12px" role="list" aria-label="资金池状态"></div>
+    <div class="watch" style="margin-top:12px">
+      <h3>流向线索（按时间）</h3>
+      <ul class="flows" id="fundFlows" role="list"></ul>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2>事件时间线</h2>
+    <div class="controls">
+      <div class="search-box">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="搜索关键词…"
+          aria-label="搜索时间线内容"
+          autocomplete="off"
+        />
+      </div>
+      <div class="filter-row" role="group" aria-label="分类筛选">
+        <button class="chip on" data-f="all" type="button">全部</button>
+        <button class="chip" data-f="官方确认" type="button">官方确认</button>
+        <button class="chip" data-f="官方表态" type="button">官方表态</button>
+        <button class="chip" data-f="链上数据" type="button">链上数据</button>
+        <button class="chip" data-f="分析师推测" type="button">分析师推测</button>
+      </div>
+    </div>
+    <div class="loading-state" id="timelineLoading">正在加载时间线…</div>
+    <p id="err" role="alert">数据加载失败，请稍后刷新。</p>
+    <div class="tl" id="timeline" role="feed" aria-label="事件时间线"></div>
+    <div class="load-more" id="loadMoreWrap" style="display:none">
+      <button id="loadMore" type="button" aria-label="加载更多条目">加载更多 <span id="remainingCount"></span></button>
+    </div>
+  </section>
+
+  <section id="watchlist">
+    <h2>待确认清单</h2>
+    <div class="watch">
+      <ul id="watchlist" role="list"></ul>
+    </div>
+  </section>
 
   <div class="agentbox">
     <h2>参与进来：提交新进展</h2>
-    <p>这个追踪开放投稿：你或你的 Agent 发现新动态（官方表态、链上动向、冻结/返还进展、提恢复、归因进展），都可以提交进来。维护者逐条打开来源核实后录入，推测不会被写成确认，重复和无来源的不收。</p>
+    <p>这个追踪开放投稿：你或你的 Agent 发现新动态（官方表态、链上动向、冻结/返还进展、提现恢复、归因进展），都可以提交进来。维护者逐条打开来源核实后录入，推测不会被写成确认，重复和无来源的不收。</p>
     <p style="margin-top:10px">
-      <a href="https://github.com/yatstudio/binance-hack-2026/issues/new?template=news-submission.yml" target="_blank" rel="noopener" style="display:inline-block;background:var(--gold);color:#111;font-weight:700;border-radius:8px;padding:8px 16px;text-decoration:none;font-size:14px;margin-right:8px">✏️ 提 Issue 投稿（最简单）</a>
-      <a href="https://github.com/yatstudio/binance-hack-2026/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" style="display:inline-block;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 16px;text-decoration:none;font-size:14px">PR 投稿指南</a>
+      <a href="https://github.com/yatstudio/binance-hack-2026/issues/new?template=news-submission.yml" target="_blank" rel="noopener" class="btn" aria-label="在 GitHub 提交 Issue 投稿">✏️ 提 Issue 投稿（最简单）</a>
+      <a href="https://github.com/yatstudio/binance-hack-2026/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" class="btn btn-secondary" aria-label="查看 Pull Request 投稿指南">PR 投稿指南</a>
     </p>
-    <button id="copySubmitBtn" style="margin-top:10px;background:transparent;border:1px solid var(--line);color:var(--text);font-weight:600;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:14px">📋 复制投稿话术给我的 Agent</button>
+    <button id="copySubmitBtn" type="button" aria-label="复制投稿话术给 AI Agent">📋 复制投稿话术给我的 Agent</button>
   </div>
 
   <div class="agentbox">
     <h2>让你的 Agent 订阅这个追踪</h2>
     <p>本页数据以结构化 JSON 公开（<code>updates.json</code>），任何 AI Agent（Codex / Muse / Hermes 等）都可以直接读取并给它的用户做进展提醒。把下面这段话发给你的 Agent 即可：</p>
-    <button id="copyBtn">📋 复制订阅话术给我的 Agent</button>
+    <button id="copyBtn" type="button" aria-label="复制订阅话术给 AI Agent">📋 复制订阅话术给我的 Agent</button>
   </div>
 
-  <footer>
+  <footer role="contentinfo">
     数据来源：币安官方公告与 X 表态、Blockaid、TechFlow、TRM Labs、Chainalysis、慢雾、PANews、CoinDesk、Reuters 等公开报道，逐条标注于时间线。<br>
     本页为事件信息汇总，不构成投资建议。金额多为案发时点估值，随价格与口径变化；最终数字以币安官方复盘与储备证明为准。<br>
     仓库：<a href="https://github.com/yatstudio/binance-hack-2026">github.com/yatstudio/binance-hack-2026</a> · 机器可读说明：<a href="llms.txt">llms.txt</a> / <a href="agent.json">agent.json</a>
@@ -144,80 +912,278 @@
 <script>
 const CAT_CLASS = {"官方确认":"c-official","链上数据":"c-onchain","分析师推测":"c-analyst","官方表态":"c-statement"};
 const CAT_BADGE = {"官方确认":"b-official","链上数据":"b-onchain","分析师推测":"b-analyst","官方表态":"b-statement"};
-const fmt = t => { const d=new Date(t); const p=n=>String(n).padStart(2,"0"); return `${d.getMonth()+1}月${d.getDate()}日 ${p(d.getHours())}:${p(d.getMinutes())}`; };
+const STATUS_LABEL = {"quiet":"未动","watch":"盯防中","frozen":"已冻结","moved":"已转移","active":"进行中","recovered":"已追回"};
+
+// Time formatting
+const fmt = t => {
+  const d = new Date(t);
+  const p = n => String(n).padStart(2, "0");
+  return `${d.getMonth()+1}月${d.getDate()}日 ${p(d.getHours())}:${p(d.getMinutes())}`;
+};
+
+const relativeTime = t => {
+  const now = new Date();
+  const then = new Date(t);
+  const diff = Math.floor((now - then) / 1000);
+  if (diff < 60) return "刚刚";
+  if (diff < 3600) return `${Math.floor(diff / 60)} 分钟前`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)} 小时前`;
+  const days = Math.floor(diff / 86400);
+  if (days === 1) return "昨天";
+  if (days === 2) return "前天";
+  if (days < 7) return `${days} 天前`;
+  return fmt(t);
+};
+
 let ALL = [];
-function render(){
-  const f = document.querySelector(".chip.on").dataset.f;
+let displayLimit = 20;
+let currentFilter = "all";
+let currentSearch = "";
+
+// Render timeline
+function render() {
   const tl = document.getElementById("timeline");
+  const search = currentSearch.toLowerCase();
+
+  let filtered = ALL.filter(u => {
+    if (currentFilter !== "all" && u.category !== currentFilter) return false;
+    if (search && !u.title.toLowerCase().includes(search) && !u.body.toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  const visible = filtered.slice(0, displayLimit);
+  const remaining = filtered.length - displayLimit;
+
   tl.innerHTML = "";
-  ALL.filter(u => f==="all" || u.category===f).forEach(u=>{
+
+  if (visible.length === 0) {
+    tl.innerHTML = '<p style="color:var(--text-faint);text-align:center;padding:40px 20px;">未找到匹配的条目</p>';
+    document.getElementById("loadMoreWrap").style.display = "none";
+    return;
+  }
+
+  visible.forEach(u => {
     const div = document.createElement("div");
-    div.className = "item " + (CAT_CLASS[u.category]||"");
-    div.innerHTML = `<div class="meta"><span>${fmt(u.time)}</span><span class="badge ${CAT_BADGE[u.category]||""}">${u.category}</span></div>
-      <h3></h3><p></p>
-      <div class="src">来源：${u.url ? `<a href="${u.url}" target="_blank" rel="noopener"></a>` : `<span></span>`}</div>`;
+    div.className = "item " + (CAT_CLASS[u.category] || "");
+    div.setAttribute("role", "article");
+
+    const bodyText = u.body || "";
+    const isLong = bodyText.length > 200;
+    const bodyClass = isLong ? "body long clamped" : "body";
+
+    div.innerHTML = `
+      <div class="meta">
+        <time datetime="${u.time}">${relativeTime(u.time)}</time>
+        <span class="badge ${CAT_BADGE[u.category] || ""}">${u.category}</span>
+      </div>
+      <h3></h3>
+      <div class="${bodyClass}"></div>
+      <div class="src">来源：${u.url ? `<a href="${u.url}" target="_blank" rel="noopener"></a>` : `<span></span>`}</div>
+    `;
+
     div.querySelector("h3").textContent = u.title;
-    div.querySelector("p").textContent = u.body;
-    const a = div.querySelector(".src a, .src span"); a.textContent = u.source;
+    div.querySelector(".body").textContent = bodyText;
+    const srcLink = div.querySelector(".src a, .src span");
+    srcLink.textContent = u.source;
+
+    // Expand/collapse for long text
+    if (isLong) {
+      const bodyEl = div.querySelector(".body");
+      bodyEl.addEventListener("click", () => {
+        bodyEl.classList.toggle("clamped");
+        bodyEl.classList.toggle("expanded");
+      });
+      bodyEl.setAttribute("role", "button");
+      bodyEl.setAttribute("tabindex", "0");
+      bodyEl.setAttribute("aria-expanded", "false");
+      bodyEl.addEventListener("keydown", e => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          bodyEl.click();
+          bodyEl.setAttribute("aria-expanded", bodyEl.classList.contains("expanded"));
+        }
+      });
+    }
+
     tl.appendChild(div);
   });
-}
-fetch("updates.json").then(r=>r.json()).then(d=>{
-  document.getElementById("updatedAt").textContent = fmt(d.meta.updated_at);
-  const order = ["total_impact","frozen","net_loss","coverage","withdrawals","deposits","root_cause","attribution","attacker_btc","attacker_eth"];
-  const grid = document.getElementById("stats");
-  order.forEach(k=>{ const s=d.status[k]; if(!s) return;
-    const div=document.createElement("div"); div.className="stat";
-    div.innerHTML = `<div class="label"></div><div class="value"></div><div class="detail"></div>`;
-    div.querySelector(".label").textContent=s.label; div.querySelector(".value").textContent=s.value; div.querySelector(".detail").textContent=s.detail;
-    grid.appendChild(div);
-  });
-  ALL = d.updates;
-  const wl = document.getElementById("watchlist");
-  d.watchlist.forEach(w=>{ const li=document.createElement("li"); li.textContent=w; wl.appendChild(li); });
-  render();
-}).catch(()=>{ document.getElementById("err").style.display="block"; });
-fetch("funds.json").then(r=>r.json()).then(f=>{
-  const fa=document.getElementById("fundAlert");
-  if(f.alert && f.alert.active){
-    fa.className="fundalert show move";
-    fa.innerHTML=`<span class="dot"></span><b>资金动静提醒：</b><span id="faH"></span> <span class="when" id="faW"></span><br><span id="faD" style="color:var(--dim)"></span>`;
-    fa.querySelector("#faH").textContent=f.alert.headline;
-    fa.querySelector("#faW").textContent="· "+fmt(f.alert.time)+"（北京时间）";
-    fa.querySelector("#faD").textContent=f.alert.detail;
+
+  // Load more button
+  const loadMoreWrap = document.getElementById("loadMoreWrap");
+  if (remaining > 0) {
+    loadMoreWrap.style.display = "block";
+    document.getElementById("remainingCount").textContent = `(还有 ${remaining} 条)`;
   } else {
-    fa.className="fundalert show quiet";
-    fa.innerHTML=`<b style="color:var(--green)">资金暂无新动静：</b> BTC 与 ETH 大头仍在原地，监控中。`;
+    loadMoreWrap.style.display = "none";
   }
-  const pg=document.getElementById("fundPools");
-  (f.pools||[]).forEach(s=>{
-    const div=document.createElement("div"); div.className="stat pool";
-    div.innerHTML=`<div class="label"></div><div class="value" style="font-size:16px"></div><div class="detail"></div>`;
-    div.querySelector(".label").innerHTML=""; div.querySelector(".label").textContent=s.label;
-    const st=document.createElement("span"); st.className="st st-"+s.status; st.textContent=({"quiet":"未动","watch":"盯防中","frozen":"已冻结","moved":"已转移","active":"进行中","recovered":"已追回"})[s.status]||s.status; div.querySelector(".label").appendChild(st);
-    div.querySelector(".value").textContent=s.value; div.querySelector(".detail").textContent=s.detail;
-    pg.appendChild(div);
+}
+
+// Load updates.json
+fetch("updates.json")
+  .then(r => r.json())
+  .then(d => {
+    document.getElementById("timelineLoading").style.display = "none";
+    document.getElementById("updatedAt").textContent = fmt(d.meta.updated_at);
+
+    // Stats
+    const order = ["total_impact","frozen","net_loss","coverage","withdrawals","deposits","root_cause","attribution","attacker_btc","attacker_eth"];
+    const grid = document.getElementById("stats");
+    document.getElementById("statsLoading").style.display = "none";
+
+    order.forEach(k => {
+      const s = d.status[k];
+      if (!s) return;
+
+      const div = document.createElement("div");
+      div.className = "stat" + (s.detail && s.detail.length > 100 ? " expandable" : "");
+      div.setAttribute("role", "listitem");
+      div.innerHTML = `<div class="label"></div><div class="value"></div><div class="detail"></div>`;
+      div.querySelector(".label").textContent = s.label;
+      div.querySelector(".value").textContent = s.value;
+
+      const detailEl = div.querySelector(".detail");
+      detailEl.textContent = s.detail;
+
+      if (s.detail && s.detail.length > 100) {
+        detailEl.classList.add("clamped");
+        detailEl.addEventListener("click", () => {
+          detailEl.classList.toggle("clamped");
+          detailEl.classList.toggle("expanded");
+        });
+        detailEl.setAttribute("role", "button");
+        detailEl.setAttribute("tabindex", "0");
+        detailEl.setAttribute("aria-expanded", "false");
+        detailEl.addEventListener("keydown", e => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            detailEl.click();
+            detailEl.setAttribute("aria-expanded", detailEl.classList.contains("expanded"));
+          }
+        });
+      }
+
+      grid.appendChild(div);
+    });
+
+    // Timeline
+    ALL = d.updates;
+    render();
+
+    // Watchlist
+    const wl = document.getElementById("watchlist");
+    d.watchlist.forEach(w => {
+      const li = document.createElement("li");
+      li.textContent = w;
+      li.setAttribute("role", "listitem");
+      wl.appendChild(li);
+    });
+  })
+  .catch(() => {
+    document.getElementById("timelineLoading").style.display = "none";
+    document.getElementById("statsLoading").style.display = "none";
+    document.getElementById("err").classList.add("show");
   });
-  const fl=document.getElementById("fundFlows");
-  (f.flows||[]).forEach(x=>{
-    const li=document.createElement("li");
-    li.innerHTML=`<b></b> → <b></b>：<span></span>`;
-    const bs=li.querySelectorAll("b"); bs[0].textContent=x.from; bs[1].textContent=x.to; li.querySelector("span").textContent=x.amount;
-    fl.appendChild(li);
+
+// Load funds.json
+fetch("funds.json")
+  .then(r => r.json())
+  .then(f => {
+    const fa = document.getElementById("fundAlert");
+    if (f.alert && f.alert.active) {
+      fa.className = "fundalert show move";
+      fa.innerHTML = `<span class="dot" aria-hidden="true"></span><b>资金动静提醒：</b><span id="faH"></span> <span class="when" id="faW"></span><br><span id="faD" style="color:var(--text-dim)"></span>`;
+      fa.querySelector("#faH").textContent = f.alert.headline;
+      fa.querySelector("#faW").textContent = "· " + fmt(f.alert.time) + "（北京时间）";
+      fa.querySelector("#faD").textContent = f.alert.detail;
+    } else {
+      fa.className = "fundalert show quiet";
+      fa.innerHTML = `<b>资金暂无新动静：</b> BTC 与 ETH 大头仍在原地，监控中。`;
+    }
+
+    // Pools
+    const pg = document.getElementById("fundPools");
+    (f.pools || []).forEach(s => {
+      const div = document.createElement("div");
+      div.className = "stat pool";
+      div.setAttribute("role", "listitem");
+      div.innerHTML = `<div class="label"></div><div class="value" style="font-size:clamp(15px,2vw,16px)"></div><div class="detail"></div>`;
+
+      const labelEl = div.querySelector(".label");
+      labelEl.textContent = s.label + " ";
+
+      const st = document.createElement("span");
+      st.className = "st st-" + s.status;
+      st.textContent = STATUS_LABEL[s.status] || s.status;
+      st.setAttribute("aria-label", `状态：${STATUS_LABEL[s.status] || s.status}`);
+      labelEl.appendChild(st);
+
+      div.querySelector(".value").textContent = s.value;
+      div.querySelector(".detail").textContent = s.detail;
+      pg.appendChild(div);
+    });
+
+    // Flows
+    const fl = document.getElementById("fundFlows");
+    (f.flows || []).forEach(x => {
+      const li = document.createElement("li");
+      li.setAttribute("role", "listitem");
+      li.innerHTML = `<b></b> → <b></b>：<span></span>`;
+      const bs = li.querySelectorAll("b");
+      bs[0].textContent = x.from;
+      bs[1].textContent = x.to;
+      li.querySelector("span").textContent = x.amount;
+      fl.appendChild(li);
+    });
+  })
+  .catch(() => {});
+
+// Filter chips
+document.querySelectorAll(".chip").forEach(chip => {
+  chip.addEventListener("click", () => {
+    document.querySelectorAll(".chip").forEach(c => c.classList.remove("on"));
+    chip.classList.add("on");
+    currentFilter = chip.dataset.f;
+    displayLimit = 20;
+    render();
   });
-}).catch(()=>{});
-document.getElementById("filters").addEventListener("click", e=>{
-  if(!e.target.classList.contains("chip")) return;
-  document.querySelectorAll(".chip").forEach(c=>c.classList.remove("on"));
-  e.target.classList.add("on"); render();
 });
-document.getElementById("copySubmitBtn").addEventListener("click", ()=>{
+
+// Search
+let searchTimeout;
+document.getElementById("searchInput").addEventListener("input", e => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    currentSearch = e.target.value.trim();
+    displayLimit = 20;
+    render();
+  }, 300);
+});
+
+// Load more
+document.getElementById("loadMore").addEventListener("click", () => {
+  displayLimit += 20;
+  render();
+});
+
+// Copy buttons
+document.getElementById("copySubmitBtn").addEventListener("click", () => {
   const text = "请帮我向「币安被盗事件追踪」投稿一条新进展：先读 https://github.com/yatstudio/binance-hack-2026/blob/main/CONTRIBUTING.md 的投稿规则，核对我给你的来源链接属实、且 https://yatstudio.github.io/binance-hack-2026/updates.json 里还没有这条，然后按 Issue 模板提交（或 fork 后只改 updates.json 提 PR）。分类按证据等级老实选，不要把推测写成确认。";
-  navigator.clipboard.writeText(text).then(()=>{ document.getElementById("copySubmitBtn").textContent="✅ 已复制，去发给你的 Agent"; });
+  navigator.clipboard.writeText(text).then(() => {
+    document.getElementById("copySubmitBtn").textContent = "✅ 已复制，去发给你的 Agent";
+    setTimeout(() => {
+      document.getElementById("copySubmitBtn").textContent = "📋 复制投稿话术给我的 Agent";
+    }, 3000);
+  });
 });
-document.getElementById("copyBtn").addEventListener("click", ()=>{
+
+document.getElementById("copyBtn").addEventListener("click", () => {
   const text = "请订阅「币安被盗事件追踪」：定期抓取 https://yatstudio.github.io/binance-hack-2026/updates.json（备用 https://raw.githubusercontent.com/yatstudio/binance-hack-2026/main/updates.json），只在出现新进展时提醒我：币安官方新表态、提现恢复、新的冻结或返还、攻击者资金新动向（尤其 18,270 枚 BTC 是否转移、ETH 是否进入混币器）、根因复盘、官方归因、储备证明更新。提醒时按条目 category 区分官方确认/链上数据/分析师推测，附来源链接，不把推测当确认。";
-  navigator.clipboard.writeText(text).then(()=>{ document.getElementById("copyBtn").textContent="✅ 已复制，去发给你的 Agent"; });
+  navigator.clipboard.writeText(text).then(() => {
+    document.getElementById("copyBtn").textContent = "✅ 已复制，去发给你的 Agent";
+    setTimeout(() => {
+      document.getElementById("copyBtn").textContent = "📋 复制订阅话术给我的 Agent";
+    }, 3000);
+  });
 });
 </script>
 </body>
