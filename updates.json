@@ -4,7 +4,7 @@
     "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
     "timezone": "Asia/Shanghai",
     "title": "币安被盗事件追踪 · Binance Hack Tracker",
-    "updated_at": "2026-11-03T14:20:00+08:00"
+    "updated_at": "2026-11-03T15:17:00+08:00"
   },
   "status": {
     "attacker_btc": {
@@ -90,6 +90,14 @@
       "category": "官方确认",
       "source": "币安官方恢复更新#6（经 TradingView 刊发币安新闻稿）",
       "url": "https://www.tradingview.com/news/binance_news:e0429bebc094b:0-binance-to-reopen-withdrawals-for-additional-assets/"
+    },
+    {
+      "time": "2026-11-03T09:37:00+08:00",
+      "title": "🚨 Relay 宣布拦截后，被盗 SOL 仍在继续换 BTC：11-03 上午又转出约 1.4 万枚 SOL，剩余约 39.9 万枚",
+      "body": "动区动趋（Blocktempo，北京时间 11-03 11:24 刊发）据 Solana 链上纪录梳理：跨链协议 Relay 于 11-02 晚 23:30 在 X 公告，部分交易与路由可能暂停或延迟，因其正在阻止币安被盗资金经由 Relay 移动，并与币安、执法单位合作（Relay 11-02 的拦截公告经 CryptoNews/The Defiant/ChainCatcher 转述佐证：多层风险与合规筛查、未披露被拦下的具体金额或某一笔交易、未给解封时间表）。但拦截并未止住该 SOL 地址的转出：公告后转出放慢但没有停，11-03 上午 09:37 又转出约 1.4 万枚 SOL；截至 09:50 该地址还剩约 39.9 万枚 SOL（以约 92.5 美元计约 3690 万美元），累计约 59% 已转走。关键限定：这是 11-01 18:35 已报的 SOL→BTC 换币动向（全量约 97.05 万枚、经 Relay 换 BTC）的后续推进，不是第二笔全量 SOL 转移，不能与 48.7 万枚首笔相加后重复计为全量之外的量；09:37 这一笔约 1.4 万枚（约 130 万美元量级）本身不大，其新闻价值在于 Relay 拦截公告后的“仍在动”与剩余量更新，而非一笔大额新转移；实际换成 BTC 的数量与接收 BTC 地址仍未披露，不能报成 SOL 已全部换完或已套现；18,270 枚被盗 BTC 本身仍未动——动区同文核查的 19 个 BTC 钱包近日收到的 77 笔小额转帐、59 条留言均为陌生人发来的尘埃附言/讨钱/推币，与此前轮次已处置的“路人向被盗 BTC 地址发小额附言”同类，属外部流入、非攻击者资金动向，不计入本条。未变事项：补回仍约 95%、前十大仍 100% 储备、冻结总额仍约 30 亿美元、第二阶段除 12:23 已报的 ETH 五稳定币外截至本轮仍未见新一批逐项开放确认、Alpha 仍无恢复消息（仍为 10-30 07:06 暂停口径）、被盗 XRP 分入的 6 个新钱包仍未见再转出确认、最终损失数字仍未定案、11-04 新一轮 PoR 快照计划未变均未变。本条命中 funds.json 的资金动向触发点（被可靠来源确认的资金移动），首页 alert 已同步更新为本笔 SOL 动静。",
+      "category": "链上数据",
+      "source": "动区动趋 Blocktempo（据 Solana 链上纪录；Relay 拦截公告经 CryptoNews / The Defiant / ChainCatcher 转述）",
+      "url": "https://www.blocktempo.com/binance-hacker-bitcoin-wallets-strangers-beg-onchain-messages-fake-thorchain/"
     },
     {
       "time": "2026-11-03T05:25:00+08:00",
