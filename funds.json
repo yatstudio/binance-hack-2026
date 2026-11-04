@@ -2,11 +2,11 @@
   "alert": {
     "active": true,
     "level": "movement",
-    "time": "2026-11-04T17:15:00+08:00",
-    "headline": "资金有动静：被盗 SOL 已转出约 81%，Arkham 实体钱包仅余约 18.24 万枚 SOL（约 $1690 万），THORChain 恢复交易后换 BTC 继续",
-    "detail": "Arkham 实体数据（经 Cointelegraph 11-04 17:15 报道）：归入“币安黑客”实体的钱包仅余 182,443 枚 SOL（约 1690 万美元），约占被盗 970,522 枚的 18.8%，即约 81% 已转出；路径与 11-04 10:58 条一致（SOL→USDC→以太坊 ETH→THORChain→BTC）。仍未确认：换得 BTC 的数量与接收地址、是否已套现为法币；本条与 Relay 路径、Privacy Cash 约 8567 枚 SOL 混币为不同环节/口径，不相加；Arkham 实体余量与 Elliptic 原始钱包余量（约 82.5 万枚）、Affz 单地址余量（约 39.9 万枚）范围不同，不直接替换。18,270 枚直接被盗 BTC 本身仍未见新转移报道；冻结≠追回返还；上一条动静（11-04 10:58 SOL→BTC 路径）见 flows。",
-    "source": "Arkham 实体数据（经 Cointelegraph 报道；Lookonchain 路径监测）",
-    "url": "https://cointelegraph.com/news/binance-hackers-move-81-stolen-solana-route-thorchain"
+    "time": "2026-11-04T17:26:00+08:00",
+    "headline": "资金有动静：THORChain 恢复交易后 25 分钟内，41 笔黑客相关兑换全部成交，共兑出 368.12 枚 ETH",
+    "detail": "KOL Grey Ledger 追踪 Elliptic 标记地址（经 PANews 11-04 17:26 报道）：THORChain 完成 v3.21.1 升级恢复 11 条链兑换后 25 分钟内，41 笔相关兑换全部成交，共兑出 368.12 枚 ETH，另约 132.7 万枚 TRX 退回发送钱包。兑换地址本身均未直接命中 FBI 名单，但 25 笔的接收钱包此前曾向 FBI 名单地址转过 ETH；FBI 10-31 的拦截要求仍未被 THORChain 现行规则满足。仍未确认：换得 BTC 的数量与最终接收地址、是否套现为法币。本条为 11-04 10:58 SOL→BTC 路径与 17:15 Arkham 约 81% SOL 转出（实体余量约 18.24 万枚 SOL）同一通道的执行细节，不叠加；18,270 枚直接被盗 BTC 本身仍未见新转移报道；冻结≠追回返还。",
+    "source": "Grey Ledger 追踪（经 PANews 报道；THORChain 官方升级公告）",
+    "url": "https://www.panews.io/articles/01a1a5e2-046b-76e5-ae9b-d69cd63746a6"
   },
   "flows": [
     {
@@ -225,13 +225,20 @@
       "status": "reported",
       "time": "2026-11-04T17:15:00+08:00",
       "to": "BTC（经 USDC→以太坊 ETH→THORChain 兑换；换得 BTC 量与接收地址未披露）"
+    },
+    {
+      "amount": "41 笔兑换全部成交，共兑出 368.12 枚 ETH，另约 132.7 万枚 TRX 退回发送钱包（兑换发生在 THORChain 恢复交易后 25 分钟内；换得 BTC 量与最终接收地址未披露）",
+      "from": "与币安黑客相关的 THORChain 兑换（Elliptic 标记地址，KOL Grey Ledger 追踪）",
+      "status": "reported",
+      "time": "2026-11-04T17:26:00+08:00",
+      "to": "ETH（接收钱包中 25 个此前曾向 FBI 名单地址转过 ETH；兑换地址本身未直接命中 FBI 名单；THORChain 现行规则仍无法定向拦截）"
     }
   ],
   "meta": {
     "note": "冻结≠追回返还；未确认的动向标注为未确认，不当已发生。alert.active=true 表示最近一次被确认的资金动静，首页会置顶提醒。",
     "timezone": "Asia/Shanghai",
     "title": "攻击者资金流向 · Funds Flow Watch",
-    "updated_at": "2026-11-04T17:47:00+08:00"
+    "updated_at": "2026-11-04T18:47:00+08:00"
   },
   "pools": [
     {
