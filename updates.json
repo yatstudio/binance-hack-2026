@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-11-04T14:17:00+08:00"
+  "updated_at": "2026-11-04T17:47:00+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -59,6 +59,14 @@
   }
  },
  "updates": [
+  {
+   "time": "2026-11-04T17:15:00+08:00",
+   "title": "Arkham：被盗 SOL 已转出约 81%，攻击者实体钱包仅余约 18.24 万枚 SOL；THORChain 周三恢复交易后换 BTC 通道继续",
+   "body": "Arkham 实体数据（经 Cointelegraph 北京时间 11-04 17:15 报道）：归入“币安黑客”实体的钱包目前仅持有 182,443 枚 SOL（约 1690 万美元），约占被盗 SOL 总量 970,522 枚的 18.8%，即约 81% 已转出。换币路径与本轮 10:58 条 Lookonchain 监测一致（SOL 分散卖 USDC→跨链至以太坊买 ETH→经 THORChain 换 BTC），本条新增的是转出比例的量化、而非一条新路径；换得 BTC 的数量与接收地址仍未披露，不能把本条与 Relay 路径、Privacy Cash 约 8567 枚 SOL 混币相加。背景：THORChain 已于周三恢复 BTC、ETH 等多链交易，此前周六因以太坊区块重组暴露的退款漏洞而暂停；Chainalysis 称此次暂停无意中拖慢了洗钱节奏；SomaXBT 估计攻击者在 Tron 与 Solana 上的逾 4.76 万笔交易中约 54% 为自动化。口径限定：Arkham 实体集群余量（约 18.24 万枚）与 Elliptic 原始 Solana 被盗钱包余量（11-03 08:40 UTC 约 82.5 万枚）、Affz 单地址余量（11-03 09:50 约 39.9 万枚）为不同统计范围，不直接相减或替换。未变事项：18,270 枚直接被盗 BTC 本身仍未见新转移报道、被盗 XRP 分入的 6 个新钱包仍未见再转出确认、冻结总额仍约 30 亿美元（初步报告 28.5 亿美元为待核对口径并列，本条不新增冻结）、补回仍以 11-03 22:31 初步报告的 98%（截至 10-31）为准、第二阶段已确认仍为 ETH 网络 36 项与 SOL 网络 20 项、其余计划资产仍在安检中、Alpha 仍无恢复消息（仍为 10-30 07:06 暂停口径）、11-04 新一轮 PoR 快照仍为计划（截至本轮 17:47 尚未见快照完成或新证明的报道）、最终损失数字仍未定案、MetaMask 对 Gas Station 日志线索仍无回应。本条命中资金动向触发点（被盗 SOL 持续换 BTC 的量化进展），首页 alert 已同步更新为本笔动静。",
+   "category": "链上数据",
+   "source": "Arkham 实体数据（经 Cointelegraph 报道；Lookonchain 路径监测）",
+   "url": "https://cointelegraph.com/news/binance-hackers-move-81-stolen-solana-route-thorchain"
+  },
   {
    "time": "2026-11-04T13:14:00+08:00",
    "title": "CZ 发文：大规模攻击意味着严重安全漏洞，不能以“没有系统绝对安全”开脱，呼吁币安透明担责并实质改进",
