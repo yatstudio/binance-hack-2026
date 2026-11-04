@@ -4,7 +4,7 @@
     "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
     "timezone": "Asia/Shanghai",
     "title": "币安被盗事件追踪 · Binance Hack Tracker",
-    "updated_at": "2026-11-04T10:17:00+08:00"
+    "updated_at": "2026-11-04T12:47:00+08:00"
   },
   "status": {
     "attacker_btc": {
@@ -59,6 +59,14 @@
     }
   },
   "updates": [
+    {
+      "time": "2026-11-04T10:58:00+08:00",
+      "title": "Lookonchain：币安黑客持续将 SOL 换 BTC，新路径为 SOL 分散卖 USDC→跨链买 ETH→经 THORChain 换 BTC",
+      "body": "Lookonchain 监测（经 PANews 北京时间 11-04 10:58、ChainCatcher、Cointime 转述）：币安黑客正持续将 SOL 兑换为 BTC，新路径为先把 SOL 分散至多个钱包卖出换成 USDC，再将 USDC 跨链至以太坊买入 ETH，最后通过 THORChain 将 ETH 兑换为 BTC。关键限定：三家转述均未披露本笔的具体 SOL 数量、换得 BTC 数量与接收 BTC 地址，不能把本条与此前已报的 SOL→BTC 量相加——此前 Relay 路径（11-01 约 48.7 万枚 SOL、约 97.05 万枚总量口径）与本条 THORChain 路径为不同换币通道/不同时段的监测，不等于同一笔的重复表述，也不等于已套现为法币；本条亦与 11-04 01:19 的 Privacy Cash 混币（约 8567 枚 SOL）为不同环节，不能相加。未变事项：18,270 枚直接被盗 BTC 仍未见新转移报道、被盗 XRP 分入的 6 个新钱包仍未见再转出确认、冻结总额仍约 30 亿美元（初步报告 28.5 亿美元为待核对口径并列，本条不新增冻结）、补回仍以 11-03 22:31 初步报告的 98%（截至 10-31）为准、第二阶段已确认仍为 ETH 网络 36 项与 SOL 网络 20 项、其余计划资产仍在安检中、Alpha 仍无恢复消息（仍为 10-30 07:06 暂停口径）、11-04 新一轮 PoR 快照仍为计划（截至本轮 12:47 尚未见快照完成或新证明的报道）、最终损失数字仍未定案、MetaMask 对 Gas Station 日志线索仍无回应。本条命中资金动向触发点（其他被可靠来源确认的资金移动：被盗 SOL 持续换 BTC），首页 alert 已同步更新为本笔动静。",
+      "category": "链上数据",
+      "source": "Lookonchain 监测（经 PANews / Cointime / ChainCatcher 转述）",
+      "url": "https://www.panewslab.com/zh/articles/01a1a47e-1e76-729a-be29-86b4780946e7"
+    },
     {
       "time": "2026-11-04T09:53:00+08:00",
       "title": "补报：初步报告时间线细化——攻击始于6月篡改工具、9月假面试、10月20日控住钱包开发系统、10月29日触发脚本盗走约63亿美元",
