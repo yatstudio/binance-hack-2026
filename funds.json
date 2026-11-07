@@ -274,13 +274,20 @@
    "to": "BTC（换币所得新地址）/ Wasabi CoinJoin / Privacy Cash",
    "amount": "洗钱累计：逾 2 万钱包、16 链、36+ 服务、6.5 万+ 笔交易；换币所得 BTC 约 1,650 枚（约 $1.24 亿，含 XRP 换币）；CoinJoin 累计约 33 枚 BTC（约 $250 万，此前口径约 28 枚）；Privacy Cash 累计约 $110 万 ETH+SOL（此前口径约 $80 万 SOL）；全部被盗 SOL 已换/桥/混完，仅余约 430 枚；Tron 链上仅余约 $100 万；约 31.1 亿美元仍在关联地址（主要为 ETH 与 BTC）",
    "status": "reported"
+  },
+  {
+   "time": "2026-11-06T23:23:00+08:00",
+   "from": "5 个被封堵地址（币安关联约 4663 万枚 POL + Polymarket 关联约 2386 万枚 POL）",
+   "to": "币安与 Polymarket 回收钱包（硬分叉划转，尚未激活、尚未划转）",
+   "amount": "约 7049 万枚 POL（约 $650 万）；11-05 治理会议已通过提案、进入内部规划，激活仍须经治理流程批准与 Amoy 测试网签核，余额将在分叉快照时重核",
+   "status": "reported"
   }
  ],
  "meta": {
   "note": "冻结≠追回返还；未确认的动向标注为未确认，不当已发生。alert.active=true 表示最近一次被确认的资金动静，首页会置顶提醒。",
   "timezone": "Asia/Shanghai",
   "title": "攻击者资金流向 · Funds Flow Watch",
-  "updated_at": "2026-11-06T23:47:00+08:00"
+  "updated_at": "2026-11-07T14:47:00+08:00"
  },
  "pools": [
   {
