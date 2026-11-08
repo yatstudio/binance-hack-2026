@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-11-08T17:47:00+08:00"
+  "updated_at": "2026-11-08T22:17:00+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -59,6 +59,14 @@
   }
  },
  "updates": [
+  {
+   "body": "币安在 X 发文宣布，联席 CEO Richard Teng、何一与首席安全官 Jimmy Su 将于北京时间 11 月 9 日 20:00 举行 X Space 炉边谈话，由 Jessica 主持（PANews 快讯与 BBX 于 11-08 21:40 左右报道）。背景：10-29 被盗约 63 亿美元、11-03 已发布初步调查报告，完整 post-mortem 仍待发布。关键限定：公告未说明本次谈话的具体议程，是否为完整复盘发布场合未知；本条为官方活动预告，不改变其他口径：补回仍约 98%、冻结总额仍约 30 亿美元（Elliptic 口径约 28.5 亿美元并列）、11-04 PoR 快照完整零知识证明已上线、HYPE 与 APT 提现已恢复（11-08 16:52）、INJ/PLASMA/NEAR/LTC 仍无恢复确认、Alpha 仍为系统升级中、18,270 枚直接被盗 BTC 与 9 个最大 ETH 地址（占攻击者 ETH 89%）自 10-30 起仍未动、最终损失数字仍未定案、MetaMask 对 Gas Station 日志线索仍无回应。本条非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-07 16:00 的 XRP→BTC 动静记录不变。",
+   "category": "官方表态",
+   "source": "币安 X 发文（经 PANews / BBX 报道）",
+   "time": "2026-11-08T21:40:00+08:00",
+   "title": "币安宣布明晚 20:00 举行 X Space 炉边谈话，Teng、何一与首席安全官 Jimmy Su 出席",
+   "url": "https://bbx.com/news-detail/3177430"
+  },
   {
    "body": "币安 11-08 16:52（北京时间）在 X 发布最新提现更新（帖文标题为 Latest Withdrawal Update，未编号为更新 #10）：HYPE 与 APT 提现已恢复，为 11-06 更新 #9 中“下周末前（约 11-13）恢复”的六个资产（HYPE、INJ、APT、PLASMA、NEAR、LTC）中首批提前落地的两项；INJ、PLASMA、NEAR、LTC 仍无恢复确认。该帖同时列出“已启用”资产清单：ETH 网络 RLUSD、USD1、TUSD、FDUSD、XUSD，以及 ENA、USDE、PENDLE、WLD、QNT、SHIB、ZRO、FET、NIL、ONDO、ALT、SKY、LINK、ETHFI、REZ、JASMY、PUNDIX、BTC、BAT、STRK、POL、ANIME、LSK、RE、BREV、RLC、AMP、PLUME、BLUR、WBETH、ZBT、ENSO、AVA 等；SOL 网络 USD1、PUMP、FDUSD、BMT、RENDER、RAY、TRUMP、MET、PENGU、JUP、PYTH、BONK、KMNO、BNSOL、ORCA、WIF、W、HUMA、JTO、IO、Z2、BOME——为更新 #9 批次此前未见逐项确认的部分提供了官方逐项确认（原帖由浏览器直读核实，发布时间 16:52；17:09 为 Odaily 快讯发布时间、非原帖时间）。币安称将继续按安检完成情况分阶段恢复更多资产与网络。其他口径未变：补回仍约 98%、冻结总额仍约 30 亿美元（Elliptic 口径约 28.5 亿美元并列）、11-04 PoR 快照完整零知识证明已上线、Alpha 仍为系统升级中（200+ 积分用户可分 $35 万空投）、18,270 枚直接被盗 BTC 仍未动、最终损失数字仍未定案、MetaMask 对 Gas Station 日志线索仍无回应、完整 post-mortem 仍待发布。本条为提现恢复进展、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-07 16:00 的 XRP→BTC 动静记录不变。",
    "category": "官方确认",
