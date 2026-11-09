@@ -4,7 +4,7 @@
   "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
   "timezone": "Asia/Shanghai",
   "title": "币安被盗事件追踪 · Binance Hack Tracker",
-  "updated_at": "2026-11-09T14:17:00+08:00"
+  "updated_at": "2026-11-09T18:47:00+08:00"
  },
  "status": {
   "attacker_btc": {
@@ -59,6 +59,14 @@
   }
  },
  "updates": [
+  {
+   "body": "黑客组织 ShinyHunters 在论坛挂出出售信息，声称窃取了约 3.359 亿条币安用户记录（含 KYC 证件、密码、交易记录与钱包信息），索要 90 万美元（BTC 或 XMR 支付），样本置于付费墙后；监测机构 ThreatMon 与 Brandefense 均称该说法未经证实、持怀疑态度。币安客服账号 11 月 8 日在 X 回应：初步审查认为该挂单很可能是骗局，未发现系统、KYC 数据、账户凭证或私钥泄露的证据；币安不以明文存储密码、也不持有用户外部钱包私钥；挂单所列司法管辖区多为币安已退出的地区；以往类似挂单多源于用户设备上的信息窃取木马，而非币安基础设施被入侵；调查仍在继续。关键限定：这是与 10-29 约 63.4 亿美元热钱包被盗案无关的独立勒索宣称（多家报道明确区分两者），不改变被盗案任何口径：补回仍约 98%、冻结总额仍约 30 亿美元（Elliptic 口径约 28.5 亿美元并列）、11-04 PoR 快照完整零知识证明已上线、HYPE 与 APT 提现已恢复（11-08）、INJ/PLASMA/NEAR/LTC 仍无恢复确认、Alpha 交易与空投竞赛是否恢复仍未说明、18,270 枚直接被盗 BTC 与 9 个最大 ETH 地址（占攻击者 ETH 89%）自 10-30 起仍未动、最终损失数字仍未定案、MetaMask 对 Gas Station 日志线索仍无回应、完整 post-mortem 仍待发布；今晚 20:00 Teng、何一与首席安全官 Jimmy Su 的 X Space 炉边谈话尚未开始。本条非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-07 16:00 的 XRP→BTC 动静记录不变。",
+   "category": "官方表态",
+   "source": "币安客服 X 回应（经 The Defiant / Cryptonomist / PANews / Odaily 报道）",
+   "time": "2026-11-09T09:06:00+08:00",
+   "title": "币安称 ShinyHunters 所谓 3.35 亿用户记录被盗是骗局，未发现系统入侵",
+   "url": "https://thedefiant.io/news/hacks/binance-says-335-9-million-record-breach-claim-is-likely-a-scam"
+  },
   {
    "body": "币安今日约 13:00（北京时间）宣布，Binance Alpha 已恢复 BSC、以太坊、Base、Arbitrum 四条网络的提现；更多资产与网络将随安全检查完成分阶段恢复，后续进展经币安官方渠道公布。关键限定：本条为 Alpha（钱包内交易产品）的提现恢复，不是主站现货提现的新一批开放；Alpha 交易本身与空投/交易竞赛是否恢复未说明，此前 11-06 口径仍为“系统升级中、待升级后恢复”，以官方后续公告为准。其他口径未变：主站 HYPE 与 APT 提现已于 11-08 恢复，INJ/PLASMA/NEAR/LTC 仍无恢复确认、目标约 11-13；补回仍约 98%、冻结总额仍约 30 亿美元（Elliptic 口径约 28.5 亿美元并列）；11-04 PoR 快照完整零知识证明已上线；18,270 枚直接被盗 BTC 与 9 个最大 ETH 地址（占攻击者 ETH 89%）自 10-30 起仍未动；最终损失数字仍未定案；MetaMask 对 Gas Station 日志线索仍无回应；完整 post-mortem 仍待发布，今晚 20:00 将举行 Teng、何一与首席安全官 Jimmy Su 的 X Space 炉边谈话。本条为提现恢复进展、非攻击者资金动向，不触发 funds.json 的资金动静提醒，首页 alert 保持 11-07 16:00 的 XRP→BTC 动静记录不变。",
    "category": "官方确认",
