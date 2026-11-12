@@ -2,11 +2,11 @@
   "alert": {
     "active": true,
     "level": "movement",
-    "time": "2026-11-10T19:00:00+08:00",
-    "headline": "资金有动静：Tornado Cash 累计进账约 11,000 枚 ETH（约 $2,400 万），XRP 一夜再换约 $3,800 万",
-    "detail": "Elliptic 主追踪文章 11-10 11:00 UTC 全账更新（较 11-09 13:15 UTC 版）：Tornado Cash 累计进账约 11,000 枚 ETH（约 $2,400 万），一日内再增约 4,000 枚；XRP 一夜再换约 3,500 万枚（约 $3,800 万），仅余约 6,000 万枚（约 $6,400 万），11-10 上午 THORChain 疑似再次暂停 XRP 兑换并退回新存款（未见官方确认）；换币所得 BTC 累计约 3,350 枚（约 $2.5 亿）；Wasabi 式 CoinJoin 累计约 150 枚 BTC（约 $1,100 万）；Privacy Cash 存入额重述为约 $670 万（此前约 $110 万），此后无新增。仍未确认/尚未发生：直接被盗 18,270 枚 BTC 与 9 个最大 ETH 地址（占攻击者 ETH 89%）自 10-30 起仍未动；仅约 $300 万 ETH（共约 $12.5 亿）已动；尚未见转入交易所充值地址或套现成法币的确认。冻结约 $28.5–30 亿口径未变，冻结≠追回返还。上一条动静（11-09 21:15 Tornado Cash 约 7,000 枚）为本条累计口径的前序截点，仍记录在 flows 中。",
-    "source": "Elliptic 主追踪文章（Last updated 11-10 11:00 UTC）",
-    "url": "https://www.elliptic.co/insights/how-north-korea-is-laundering-the-6-4-billion-stolen-from-binance/"
+    "time": "2026-11-13T05:40:00+08:00",
+    "headline": "资金有动静：美国司法部获法院授权扣押/限制逾 $12 亿被盗币安资产（属已冻结逾 $27 亿的一部分），尚未没收返还",
+    "detail": "美国司法部 11 月 12 日官方新闻稿（北京时间 11-13 05:40）：已获法院授权对逾 12 亿美元被盗币安加密货币实施扣押或限制，为本案首次法院授权层面的扣押进展；该金额是美政府与私营部门协同冻结逾 27 亿美元的一部分（彭博法律版称该 27 亿美元即 Tether 与 Circle 在案发后立即冻结的部分）。FBI 洛杉矶外勤办公室正协调追回，联合 USSS 与 IRS-CI，追踪/冻结/扣押/没收仍在继续。仍未确认/尚未发生：法院授权≠没收、≠已返还币安，返还须待法院程序，未披露币种、地址与时间表；$12 亿为 $27 亿冻结池子集，不相加；DOJ 的 $27 亿口径与币安核实约 $30 亿、Elliptic 约 $28.5 亿为不同统计范围，并列、不替换；直接被盗 18,270 枚 BTC 与 9 个最大 ETH 地址自 10-30 起仍未动；Tornado Cash 约 11,000 枚 ETH（约 $2,400 万）仍为 11-10 Elliptic 截点、无新增。上一条动静（11-10 19:00 Tornado Cash 约 11,000 枚 ETH）仍记录在 flows 中。",
+    "source": "美国司法部（DOJ）官方新闻稿",
+    "url": "https://www.justice.gov/opa/pr/justice-department-announces-actions-disrupt-north-koreas-massive-theft-cryptocurrency"
   },
   "flows": [
     {
@@ -337,13 +337,20 @@
       "status": "reported",
       "time": "2026-11-10T19:00:00+08:00",
       "to": "Tornado Cash / BTC（换币所得新地址）/ Wasabi CoinJoin / Privacy Cash"
+    },
+    {
+      "amount": "逾 $12 亿美元（法院授权扣押/限制；属已冻结逾 $27 亿池子的一部分）",
+      "from": "被盗币安资产（已冻结池）",
+      "status": "confirmed",
+      "time": "2026-11-13T05:40:00+08:00",
+      "to": "美国司法部法院授权扣押/限制（尚未没收、尚未返还币安；返还须待法院程序）"
     }
   ],
   "meta": {
     "note": "冻结≠追回返还；未确认的动向标注为未确认，不当已发生。alert.active=true 表示最近一次被确认的资金动静，首页会置顶提醒。",
     "timezone": "Asia/Shanghai",
     "title": "攻击者资金流向 · Funds Flow Watch",
-    "updated_at": "2026-11-12T13:50:26+08:00"
+    "updated_at": "2026-11-13T06:17:00+08:00"
   },
   "pools": [
     {
@@ -361,7 +368,7 @@
       "value": "约 48 万枚 · 约 $10.8 亿"
     },
     {
-      "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC，另有 FDUSD 约 $340 万、Arbitrum 约 $3,050 万、USDT0 约 $618 万、PUNDIX 约 $37 万等。冻结指动不了，不等于已返还。11-05 23:16 币安已向 ArbitrumDAO 提交宪法草案，申请解冻其中的 8,426 ETH + 7,456 万枚 ARB（逾 $3,100 万）以填补 SAFU 及储备，须经 DAO 投票、预计至少 7 周，尚未返还。",
+      "detail": "Tether >15.67 亿 USDT、Circle 约 8.23 亿 USDC，另有 FDUSD 约 $340 万、Arbitrum 约 $3,050 万、USDT0 约 $618 万、PUNDIX 约 $37 万等。冻结指动不了，不等于已返还。11-05 23:16 币安已向 ArbitrumDAO 提交宪法草案，申请解冻其中的 8,426 ETH + 7,456 万枚 ARB（逾 $3,100 万）以填补 SAFU 及储备，须经 DAO 投票、预计至少 7 周，尚未返还。11-13 05:40 美国司法部宣布已获法院授权扣押/限制其中逾 $12 亿（属美政府与私营部门协同冻结逾 $27 亿的一部分；彭博法律版称该 $27 亿即 Tether 与 Circle 在案发后立即冻结的部分），为本案首次法院授权扣押进展——授权≠没收归还，资金尚未返还币安；DOJ 的 $27 亿口径与币安核实约 $30 亿、Elliptic 约 $28.5 亿为不同统计范围，并列、不替换。",
       "id": "frozen_stables",
       "label": "稳定币等 · 已冻结",
       "status": "frozen",
