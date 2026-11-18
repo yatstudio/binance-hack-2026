@@ -4,7 +4,7 @@
     "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
     "timezone": "Asia/Shanghai",
     "title": "币安被盗事件追踪 · Binance Hack Tracker",
-    "updated_at": "2026-11-17T18:47:00+08:00"
+    "updated_at": "2026-11-18T00:47:00+08:00"
   },
   "status": {
     "attacker_btc": {
@@ -59,6 +59,14 @@
     }
   },
   "updates": [
+    {
+      "time": "2026-11-18T00:47:00+08:00",
+      "title": "币安与 HashDit 上线被盗资金公开实时追踪器（Binance Exploiter Tracker）",
+      "body": "币安官方 X 账号 @binance 于 11 月 17 日发帖，宣布与安全公司 HashDit 联合上线被盗资金公开实时追踪器（Binance Exploiter Tracker），供社区与行业实时查看被盗资金流向。币安原话：“我们知道大家希望看到可以验证的清晰信息，这个担忧是合理的。实时追踪器是社区与整个行业的重要资源，能让资金流向更透明、支持追回工作的跨方协调，并给更广泛的生态更多工具来监测与事件相关的动向。它也是交易所、钱包与平台识别关联地址、并在出现新动向时更快响应的实用工具。”追踪器链接即原帖所附 https://t.co/OKL6APqMN2，本轮直读已确认解析为 HashDit 的 Binance Exploiter Tracker 页面。与此前结论相比改变了什么：这是币安官方首次推出面向公众的被盗资金实时追踪工具（此前主追踪为 Elliptic 第三方文章），属于官方透明度与追回协调的新动作，不改变资金本身的状态。仍未改变：直接被盗 18,270 枚 BTC 自 10-30 起仍未动（Elliptic 11-16 口径）；74,880 枚 ETH 经 THORChain 换 BTC 仍在进行中，已换得 BTC 的数量与接收地址尚未披露（11-17 18:17 条）；冻结/扣押仍约 $28.5 亿，无新增冻结/追回；提现仍按 11-14 公告分阶段恢复、目标下周末前（约 11-22）恢复其余全部网络与资产，本轮未见更新；最终损失数字仍未定案、MetaMask 对 Gas Station 日志线索仍无回应、完整 post-mortem 仍待发布。本条为官方动作、不涉及攻击者资金新移动，未命中 funds.json watch_triggers，funds.json 的 alert 不动。原帖具体发帖时刻未在援引来源中披露，本条按本轮发现时间 11-18 00:47 登记。",
+      "category": "官方确认",
+      "source": "币安官方 X 账号 @binance（U.Today 11-17 援引）",
+      "url": "https://u.today/xrp-whales-snatch-127-million-off-binance-below-1-main-crypto-news-this-morning"
+    },
     {
       "time": "2026-11-17T18:17:00+08:00",
       "title": "攻击者开始把 ETH 换成 BTC：过去 3 小时 74,880 枚 ETH（约 $1.368 亿）经 THORChain 兑换",
