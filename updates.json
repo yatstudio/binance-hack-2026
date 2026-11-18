@@ -4,7 +4,7 @@
     "note": "时间为北京时间。冻结≠追回返还；冲突数字并列，不擅自选一。分类：官方确认 / 链上数据 / 分析师推测 / 官方表态。",
     "timezone": "Asia/Shanghai",
     "title": "币安被盗事件追踪 · Binance Hack Tracker",
-    "updated_at": "2026-11-18T16:47:00+08:00"
+    "updated_at": "2026-11-18T19:47:00+08:00"
   },
   "status": {
     "attacker_btc": {
@@ -66,6 +66,14 @@
       "category": "链上数据",
       "source": "Beosin 监测，经 Lookonchain / PANews",
       "url": "https://lookonchain.com/feeds/82875"
+    },
+    {
+      "time": "2026-11-18T15:40:00+08:00",
+      "title": "币安亚太负责人：计划 2027 年进入五个亚洲市场，称无需融资、财务稳健",
+      "body": "路透社 11 月 18 日于新加坡金融科技节边会采访币安亚太负责人 SB Seker：币安计划 2027 年进入五个亚洲市场，南亚与东南亚为重点，细节预计 2027 年一季度公布；即使遭遇 63 亿美元被盗案，也无需融资、财务稳健。与此前结论相比改变了什么：这是被盗案后币安高管首次就业务扩张与资金状况的公开表态，属官方对“财务稳健”的再确认，不改变任何事件口径。注意：同篇路透转述的两处为旧口径/重述——“已补回 95% 被盗代币”落后于币安 11-13 宣布的 100% 全额覆盖（见 11-13 01:15 条），“目标本周末前恢复其余全部提现”与 11-14 公告一致、无更新。其他口径未变：直接被盗 18,270 枚 BTC 仍未动；78,415 枚 ETH 批次截至 16:24 仅确认分入 7 个地址、未见进入 THORChain/混币器/交易所的确认（11-17 批次已换 7,598 枚见 12:21 条）；冻结/扣押仍约 $28.5 亿；198 种代币 PoR 完整零知识证明已生成（11-14 19:52 条）；最终损失数字仍未定案、MetaMask 对 Gas Station 日志线索仍无回应、完整 post-mortem 仍待发布。本条为官方表态、不涉及攻击者资金新移动，未命中 funds.json watch_triggers，funds.json 的 alert 不动。",
+      "category": "官方表态",
+      "source": "路透社，币安亚太负责人 SB Seker",
+      "url": "https://www.businesstimes.com.sg/companies-markets/after-us6-3-billion-crypto-heist-binance-plans-foray-five-asian-markets-2027"
     },
     {
       "time": "2026-11-18T12:21:00+08:00",
